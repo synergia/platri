@@ -14,6 +14,7 @@
 
 class View {
 public:
+	static void init();
 	static void init(int * argc, char ** argv);
 	static void keyboard(unsigned char key, int x, int y);
 	static void display();
@@ -25,7 +26,5 @@ public:
 	static int height;
 	static Manager * manager;
 };
-
-
 
 #endif

@@ -16,6 +16,12 @@ Manager * View::manager;
 int View::width;
 int View::height;
 
+void View::init(){
+	int argc = 0;
+	char **argv;
+	init(&argc, argv);
+}
+
 void View::init(int * argc, char ** argv){
 	glutInit(argc, argv);
 	
