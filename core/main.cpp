@@ -1,7 +1,8 @@
 #include <iostream>
+#include "Manager.h"
 
 int main (int argc, char * const argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    Manager *m = new Manager();
+	sleep(100); // hax
     return 0;
 }
