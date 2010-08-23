@@ -28,36 +28,52 @@ void Manager::setApp(Application *app){
 }
 
 Application* Manager::app(){
-	// TODO: Add throw Exception when _app is null
+	// TODO: Add throw Exception if _app is null
 	return _app;
 }
 
 
 void Manager::addTuioObject(TuioObject *tobj){
-	log("Object add");
 	objects.push_back(app()->createObject(tobj));
+	printf("Objects#size: %d\n", (int)objects.size());
 }
 
 void Manager::updateTuioObject(TuioObject *tobj){
-	log("Object update");
+	//printf("Objects#size: %d\n", objects.size());
 }
 
 void Manager::removeTuioObject(TuioObject *tobj){
-	log("Object remove");
+	// see http://gist.github.com/545615
+	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
+		if((*it)->tobj == tobj){
+			objects.remove(*it);
+		}
+	}
+	
+	printf("Objects#size: %d\n", (int)objects.size());
 }
 
 void Manager::addTuioCursor(TuioCursor *tcur){
-	log("Cursor add");
-}
+	cursors.push_back(app()->createCursor(tcur));
+	printf("Cursors#size: %d\n", (int)cursors.size());}
 
 void Manager::updateTuioCursor(TuioCursor *tcur){
-	log("Cursor update");
+	//log("Cursor update");
 }
 
 void Manager::removeTuioCursor(TuioCursor *tcur){
-	log("Cursor remove");
-}
+	for (list<Cursor*>::iterator it = cursors.begin(); it != cursors.end(); ++it){
+		if((*it)->tcur == tcur){
+			cursors.remove(*it);
+		}
+	}
+	
+	printf("Cursors#size: %d\n", (int)cursors.size());}
 
 void Manager::refresh(TuioTime ftime){
-	log("Refresh");
+	//log("Refresh");
 }
+
+
+
+
