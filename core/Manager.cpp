@@ -23,8 +23,19 @@ Manager::Manager(){
 }
 
 
+void Manager::setApp(Application *app){
+	_app = app;
+}
+
+Application* Manager::app(){
+	// TODO: Add throw Exception when _app is null
+	return _app;
+}
+
+
 void Manager::addTuioObject(TuioObject *tobj){
 	log("Object add");
+	objects.push_back(app()->createObject(tobj));
 }
 
 void Manager::updateTuioObject(TuioObject *tobj){

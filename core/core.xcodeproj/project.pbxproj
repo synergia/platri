@@ -18,6 +18,9 @@
 		6F635C651222AF8D0079F382 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C571222AF8D0079F382 /* OscPrintReceivedElements.cpp */; };
 		6F635C661222AF8D0079F382 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C591222AF8D0079F382 /* OscReceivedElements.cpp */; };
 		6F635C671222AF8D0079F382 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C5B1222AF8D0079F382 /* OscTypes.cpp */; };
+		6F635CB51222B4170079F382 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635CB41222B4170079F382 /* Application.cpp */; };
+		6F635CC31222B5830079F382 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635CC21222B5830079F382 /* Object.cpp */; };
+		6F635CD31222B63C0079F382 /* Cursor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635CD21222B63C0079F382 /* Cursor.cpp */; };
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* core.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* core.1 */; };
 /* End PBXBuildFile section */
@@ -74,6 +77,12 @@
 		6F635C5C1222AF8D0079F382 /* OscTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
 		6F635C5D1222AF8D0079F382 /* readme */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme; sourceTree = "<group>"; };
 		6F635C5E1222AF8D0079F382 /* todo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = todo; sourceTree = "<group>"; };
+		6F635CB31222B4170079F382 /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		6F635CB41222B4170079F382 /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
+		6F635CC11222B5830079F382 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		6F635CC21222B5830079F382 /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
+		6F635CD11222B63C0079F382 /* Cursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cursor.h; sourceTree = "<group>"; };
+		6F635CD21222B63C0079F382 /* Cursor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cursor.cpp; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* core */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = core; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* core.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = core.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,6 +116,12 @@
 				08FB7796FE84155DC02AAC07 /* main.cpp */,
 				6F635A4B1222A3EA0079F382 /* Manager.h */,
 				6F635A4C1222A3EA0079F382 /* Manager.cpp */,
+				6F635CB31222B4170079F382 /* Application.h */,
+				6F635CB41222B4170079F382 /* Application.cpp */,
+				6F635CC11222B5830079F382 /* Object.h */,
+				6F635CC21222B5830079F382 /* Object.cpp */,
+				6F635CD11222B63C0079F382 /* Cursor.h */,
+				6F635CD21222B63C0079F382 /* Cursor.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -255,6 +270,9 @@
 				6F635C651222AF8D0079F382 /* OscPrintReceivedElements.cpp in Sources */,
 				6F635C661222AF8D0079F382 /* OscReceivedElements.cpp in Sources */,
 				6F635C671222AF8D0079F382 /* OscTypes.cpp in Sources */,
+				6F635CB51222B4170079F382 /* Application.cpp in Sources */,
+				6F635CC31222B5830079F382 /* Object.cpp in Sources */,
+				6F635CD31222B63C0079F382 /* Cursor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

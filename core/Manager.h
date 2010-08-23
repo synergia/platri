@@ -7,10 +7,18 @@
  *
  */
 
+
+#ifndef _MANAGER_H_
+#define _MANAGER_H_
+
+#include <list>
+
 #include "TuioListener.h"
 #include "TuioClient.h"
+#include "Application.h"
 
 using namespace TUIO;
+using namespace std;
 
 class Manager : public TuioListener {
 public:
@@ -19,6 +27,9 @@ public:
 		tuioClient->disconnect();
 		delete tuioClient;
 	}
+	
+	void setApp(Application *app);
+	Application* app();
 	
 	// TUIO callbacks
 	void addTuioObject(TuioObject *tobj);
@@ -31,5 +42,12 @@ public:
 	
 	void refresh(TuioTime frameTime);
 	
+protected:
+	Application *_app;
 	TuioClient *tuioClient;
+	
+	list<Object*> objects;
+	list<Cursor*> cursors;
 };
+
+#endif
