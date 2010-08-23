@@ -21,6 +21,9 @@
 		6F635CB51222B4170079F382 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635CB41222B4170079F382 /* Application.cpp */; };
 		6F635CC31222B5830079F382 /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635CC21222B5830079F382 /* Object.cpp */; };
 		6F635CD31222B63C0079F382 /* Cursor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635CD21222B63C0079F382 /* Cursor.cpp */; };
+		6F635E581222F0D40079F382 /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635E571222F0D40079F382 /* View.cpp */; };
+		6F635E781222F2710079F382 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F635E771222F2710079F382 /* GLUT.framework */; };
+		6F635EB11222F4380079F382 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F635EB01222F4380079F382 /* OpenGL.framework */; };
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* core.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* core.1 */; };
 /* End PBXBuildFile section */
@@ -83,6 +86,10 @@
 		6F635CC21222B5830079F382 /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
 		6F635CD11222B63C0079F382 /* Cursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cursor.h; sourceTree = "<group>"; };
 		6F635CD21222B63C0079F382 /* Cursor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cursor.cpp; sourceTree = "<group>"; };
+		6F635E561222F0D40079F382 /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		6F635E571222F0D40079F382 /* View.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View.cpp; sourceTree = "<group>"; };
+		6F635E771222F2710079F382 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		6F635EB01222F4380079F382 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		8DD76F6C0486A84900D96B5E /* core */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = core; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* core.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = core.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F635E781222F2710079F382 /* GLUT.framework in Frameworks */,
+				6F635EB11222F4380079F382 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +115,7 @@
 				08FB7795FE84155DC02AAC07 /* Source */,
 				C6859E8C029090F304C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
+				6F635E7B1222F2770079F382 /* Linked frameworks */,
 			);
 			name = core;
 			sourceTree = "<group>";
@@ -122,6 +132,8 @@
 				6F635CC21222B5830079F382 /* Object.cpp */,
 				6F635CD11222B63C0079F382 /* Cursor.h */,
 				6F635CD21222B63C0079F382 /* Cursor.cpp */,
+				6F635E561222F0D40079F382 /* View.h */,
+				6F635E571222F0D40079F382 /* View.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -207,6 +219,15 @@
 			path = osc;
 			sourceTree = "<group>";
 		};
+		6F635E7B1222F2770079F382 /* Linked frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F635EB01222F4380079F382 /* OpenGL.framework */,
+				6F635E771222F2710079F382 /* GLUT.framework */,
+			);
+			name = "Linked frameworks";
+			sourceTree = "<group>";
+		};
 		C6859E8C029090F304C91782 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +294,7 @@
 				6F635CB51222B4170079F382 /* Application.cpp in Sources */,
 				6F635CC31222B5830079F382 /* Object.cpp in Sources */,
 				6F635CD31222B63C0079F382 /* Cursor.cpp in Sources */,
+				6F635E581222F0D40079F382 /* View.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
