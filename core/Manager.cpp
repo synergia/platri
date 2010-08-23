@@ -7,10 +7,8 @@
  *
  */
 
-#include <iostream>
+#include <stdio.h>
 #include "Manager.h"
-
-#define log(str) cout << "[TUIO] " << str << endl;
 
 
 using namespace std;
@@ -32,6 +30,17 @@ Application* Manager::app(){
 	return _app;
 }
 
+void Manager::displayObjectsAndCursors(){
+	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
+		if(*it != NULL){
+			(*it)->display();
+		}
+	}
+}
+
+
+
+// TUIO callbacks
 
 void Manager::addTuioObject(TuioObject *tobj){
 	objects.push_back(app()->createObject(tobj));

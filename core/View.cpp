@@ -7,26 +7,33 @@
  *
  */
 
+#include <stdlib.h>
 #include <GLUT/glut.h>
 #include "View.h"
+#include "Application.h"
 
-#include <stdlib.h>
+Manager * View::manager;
+int View::width;
+int View::height;
 
 void View::init(int * argc, char ** argv){
 	glutInit(argc, argv);
 	
 	// TODO: Take these from argv
 	bool fullscreen = false;
-	int width = 400;
-	int height = 300;
+	width = 1280; //400;
+	height = 960; //300;
 	const char * name = "platri";
 	
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	
 	if(fullscreen){
 		// TODO: Add fullscreen init
+		glutGameModeString("1280x960:16@60");
+		glutEnterGameMode();
 	} else {
 		glutInitWindowSize(width, height);
+		//glutInitWindowPosition(800, 200);
 		glutCreateWindow(name);
 	}
 
@@ -37,6 +44,10 @@ void View::init(int * argc, char ** argv){
 	
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	
+	
+	manager = new Manager();
+	manager->setApp(new Application());
 }
 
 void View::keyboard(unsigned char key, int x, int y){
@@ -48,7 +59,14 @@ void View::keyboard(unsigned char key, int x, int y){
 }
 
 void View::display(){
-	
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClearColor(1.0, 1.0, 1.0, 1.0);
+
+	glPushMatrix();
+	manager->displayObjectsAndCursors();
+	glPopMatrix();
+
+	glutSwapBuffers();
 }
 
 void View::idle(){

@@ -18,6 +18,11 @@ class Object {
 public:
 	Object(TuioObject *tobj);
 	
+	int x();
+	int y();
+	
+	virtual void display();
+	
 	TuioObject *tobj;
 };
 

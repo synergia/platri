@@ -7,6 +7,11 @@
  *
  */
 
+#ifndef _VIEW_H_
+#define _VIEW_H_
+
+#include "Manager.h"
+
 class View {
 public:
 	static void init(int * argc, char ** argv);
@@ -15,4 +20,12 @@ public:
 	static void idle();
 	static void reshape(int width, int height);	
 	static void start();
+	
+	static int width;
+	static int height;
+	static Manager * manager;
 };
+
+
+
+#endif
