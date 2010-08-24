@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+require "optitron"
+
+def sh(cmd)
+  puts "[Platri] Invoking: #{cmd}"
+  system cmd
+end
+
+class Runner < Optitron::CLI
+  desc "Start GUI"
+  opt "width", "Window width", :type => :numeric
+  opt "height", "Window height", :type => :numeric
+  opt "fullscreen", "Enable fulscreen", :type => :boolean, :default => false
+  def start
+    require "./platri"
+    
+    Platri::View.init
+    Platri::View.start
+  end
+  
+  desc "Build bundle"
+  def build
+    sh "make clean"
+    sh "rm platri_wrap.cxx"
+    sh "swig -c++ -ruby platri.i"
+    sh "ruby extconf.rb"
+    sh "make && sudo cp core/build/Debug/libplatri.dylib /usr/local/lib/"
+  end
+
+end
+
+Runner.dispatch

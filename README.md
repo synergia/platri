@@ -1,6 +1,6 @@
 # Platri
 
 # Usage
-    ./build_binding
-    ruby main.rb
+    ./platri build
+    ./platri start
     

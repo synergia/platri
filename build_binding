@@ -1,8 +1,0 @@
-#!/bin/sh
-
-make clean
-rm platri_wrap.cxx
-swig -c++ -ruby platri.i
-ruby extconf.rb
-make && sudo cp core/build/Debug/libplatri.dylib /usr/local/lib/
-# irb -r binding_test.rb
