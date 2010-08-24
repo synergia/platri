@@ -21,11 +21,12 @@ class Runner < Optitron::CLI
   
   desc "Build bundle"
   def build
+    sh "install_name_tool -id ./core/build/Debug/libplatri.dylib core/build/Debug/libplatri.dylib"
     sh "make clean"
     sh "rm platri_wrap.cxx"
     sh "swig -c++ -ruby platri.i"
     sh "ruby extconf.rb"
-    sh "make && sudo cp core/build/Debug/libplatri.dylib /usr/local/lib/"
+    sh "make"
   end
 
 end
