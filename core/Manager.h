@@ -27,7 +27,7 @@ public:
 		delete tuioClient;
 	}
 	
-	void displayObjectsAndCursors();
+	void display();
 	
 	void setApp(Application *app);
 	Application* app();

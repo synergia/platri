@@ -24,6 +24,9 @@ public:
 	// Display mostly static GUI
 	virtual void display();
 	
+	// Hook for starting application
+	virtual void start();
+	
 };
 
 

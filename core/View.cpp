@@ -13,34 +13,36 @@
 #include "Application.h"
 
 Manager * View::manager;
-int View::width;
-int View::height;
+int View::windowWidth;
+int View::windowHeight;
 
 void View::init(){
-	int argc = 0;
-	char **argv;
-	init(&argc, argv);
+	init(1280, 960, false);
 }
 
-void View::init(int * argc, char ** argv){
+void View::init(int width, int height, bool fullscreen){
+	int argc = 0;
+	char **argv;
+	init(width, height, fullscreen, &argc, argv);
+}
+
+void View::init(int width, int height, bool fullscreen, int * argc, char ** argv){
+	windowWidth = width;
+	windowHeight = height;
+	
 	glutInit(argc, argv);
-	
-	// TODO: Take these from argv
-	bool fullscreen = false;
-	width = 1280; //400;
-	height = 960; //300;
-	const char * name = "platri";
-	
+		
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
 	
 	if(fullscreen){
-		// TODO: Add fullscreen init
+		char buffer[20];
+		sprintf(buffer, "%dx%d:16@60", width, height);
 		glutGameModeString("1280x960:16@60");
 		glutEnterGameMode();
 	} else {
 		glutInitWindowSize(width, height);
 		//glutInitWindowPosition(800, 200);
-		glutCreateWindow(name);
+		glutCreateWindow("platri");
 	}
 
 	glutDisplayFunc(display);
@@ -50,10 +52,6 @@ void View::init(int * argc, char ** argv){
 	
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	
-	
-	manager = new Manager();
-	manager->setApp(new Application());
 }
 
 void View::keyboard(unsigned char key, int x, int y){
@@ -69,7 +67,7 @@ void View::display(){
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 
 	glPushMatrix();
-	manager->displayObjectsAndCursors();
+	manager->display();
 	glPopMatrix();
 
 	glutSwapBuffers();
@@ -88,6 +86,9 @@ void View::reshape(int width, int height){
 	glMatrixMode(GL_MODELVIEW);
 }
 
-void View::start(){
+void View::start(Application * app){
+	manager = new Manager();
+	manager->setApp(app);
+	
 	glutMainLoop();
 }

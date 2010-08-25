@@ -11,15 +11,36 @@
 #include <GLUT/glut.h>
 #include "Object.h"
 #include "View.h"
+#include "TuioObject.h"
 
-Object::Object(TuioObject *tobj):tobj(tobj){
+Object::Object(TuioObject *tobj):_tobj(tobj){
 	
 }
 
-int Object::x(){ return tobj->getX() * View::width; }
-int Object::y(){ return (1.0-tobj->getY()) * View::height; }
+TuioObject * Object::tobj(){
+//	if(_tobj == NULL){
+//		throw 10;
+//	} else {
+//		return _tobj;
+//	}
+	
+	//_tobj = NULL;
+	return _tobj;
+}
 
-void Object::display(){	
+int Object::x(){ 
+	return tobj()->getX() * View::windowWidth; 
+}
+
+int Object::y(){ 
+	return (1.0-tobj()->getY()) * View::windowHeight;
+}
+
+int Object::symbolID() { 
+	return tobj()->getSymbolID();
+};
+
+void Object::display(){
 	glPushMatrix();
 	glColor3f(1.0, 0.0, 0.0);
 	glTranslated(this->x(), this->y(), 0);

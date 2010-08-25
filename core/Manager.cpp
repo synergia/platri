@@ -23,6 +23,7 @@ Manager::Manager(){
 
 void Manager::setApp(Application *app){
 	_app = app;
+	_app->start();
 }
 
 Application* Manager::app(){
@@ -30,12 +31,18 @@ Application* Manager::app(){
 	return _app;
 }
 
-void Manager::displayObjectsAndCursors(){
+void Manager::display(){
+	// display application
+	app()->display();
+	
+	// display objects	
 	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
 		if(*it != NULL){
 			(*it)->display();
 		}
 	}
+	
+	// TODO: display cursors
 }
 
 
@@ -54,7 +61,7 @@ void Manager::updateTuioObject(TuioObject *tobj){
 void Manager::removeTuioObject(TuioObject *tobj){
 	// see http://gist.github.com/545615
 	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
-		if((*it)->tobj == tobj){
+		if((*it) == NULL || (*it)->tobj() == tobj){
 			objects.remove(*it);
 		}
 	}

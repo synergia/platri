@@ -20,3 +20,7 @@ Cursor* Application::createCursor(TuioCursor *tcur){
 void Application::display(){
 	
 }
+
+void Application::start(){
+	printf("[Platri] Starting up Application\n");
+}

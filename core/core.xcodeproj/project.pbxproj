@@ -24,38 +24,14 @@
 		6F635EB11222F4380079F382 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F635EB01222F4380079F382 /* OpenGL.framework */; };
 		6FB88423122338BA00DAD45F /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB88421122338BA00DAD45F /* OscOutboundPacketStream.cpp */; };
 		6FB88424122338BA00DAD45F /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB88421122338BA00DAD45F /* OscOutboundPacketStream.cpp */; };
-		6FB88425122338BA00DAD45F /* OscOutboundPacketStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FB88422122338BA00DAD45F /* OscOutboundPacketStream.h */; };
-		6FB8842C122338E700DAD45F /* IpEndpointName.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635C441222AF8D0079F382 /* IpEndpointName.h */; };
-		6FB8842D122338E700DAD45F /* NetworkingUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635C451222AF8D0079F382 /* NetworkingUtils.h */; };
-		6FB8842E122338E700DAD45F /* PacketListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635C461222AF8D0079F382 /* PacketListener.h */; };
-		6FB8842F122338E700DAD45F /* TimerListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635C4A1222AF8D0079F382 /* TimerListener.h */; };
-		6FB88430122338E700DAD45F /* UdpSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635C4B1222AF8D0079F382 /* UdpSocket.h */; };
-		6FB88431122338E700DAD45F /* OscException.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635C521222AF8D0079F382 /* OscException.h */; };
-		6FB88432122338E700DAD45F /* OscHostEndianness.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635C531222AF8D0079F382 /* OscHostEndianness.h */; };
-		6FB88433122338E700DAD45F /* OscPacketListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635C561222AF8D0079F382 /* OscPacketListener.h */; };
-		6FB88434122338E700DAD45F /* OscReceivedElements.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635C5A1222AF8D0079F382 /* OscReceivedElements.h */; };
-		6FB88435122338E700DAD45F /* OscTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635C5C1222AF8D0079F382 /* OscTypes.h */; };
 		6FB88436122338F300DAD45F /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C431222AF8D0079F382 /* IpEndpointName.cpp */; };
 		6FB88437122338F300DAD45F /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C481222AF8D0079F382 /* NetworkingUtils.cpp */; };
 		6FB88438122338F300DAD45F /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C491222AF8D0079F382 /* UdpSocket.cpp */; };
 		6FB88439122338FD00DAD45F /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C591222AF8D0079F382 /* OscReceivedElements.cpp */; };
 		6FB8843A122338FD00DAD45F /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C5B1222AF8D0079F382 /* OscTypes.cpp */; };
-		6FB8843B1223390800DAD45F /* TuioClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635BBE1222AA4C0079F382 /* TuioClient.h */; };
-		6FB8843C1223390800DAD45F /* TuioContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635BBF1222AA4C0079F382 /* TuioContainer.h */; };
-		6FB8843D1223390800DAD45F /* TuioCursor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635BC01222AA4C0079F382 /* TuioCursor.h */; };
-		6FB8843E1223390800DAD45F /* TuioListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635BC11222AA4C0079F382 /* TuioListener.h */; };
-		6FB8843F1223390800DAD45F /* TuioObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635BC21222AA4C0079F382 /* TuioObject.h */; };
-		6FB884401223390800DAD45F /* TuioPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635BC31222AA4C0079F382 /* TuioPoint.h */; };
-		6FB884411223390800DAD45F /* TuioServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635BC51222AA4C0079F382 /* TuioServer.h */; };
-		6FB884421223390800DAD45F /* TuioTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635BC71222AA4C0079F382 /* TuioTime.h */; };
 		6FB884431223391100DAD45F /* TuioClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635BBD1222AA4C0079F382 /* TuioClient.cpp */; };
 		6FB884441223391100DAD45F /* TuioServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635BC41222AA4C0079F382 /* TuioServer.cpp */; };
 		6FB884451223391100DAD45F /* TuioTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635BC61222AA4C0079F382 /* TuioTime.cpp */; };
-		6FB884561223392300DAD45F /* Manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635A4B1222A3EA0079F382 /* Manager.h */; };
-		6FB884571223392300DAD45F /* Application.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635CB31222B4170079F382 /* Application.h */; };
-		6FB884581223392300DAD45F /* Object.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635CC11222B5830079F382 /* Object.h */; };
-		6FB884591223392300DAD45F /* Cursor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635CD11222B63C0079F382 /* Cursor.h */; };
-		6FB8845A1223392300DAD45F /* View.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635E561222F0D40079F382 /* View.h */; };
 		6FB8845B1223392B00DAD45F /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635A4C1222A3EA0079F382 /* Manager.cpp */; };
 		6FB8845C1223392B00DAD45F /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635CB41222B4170079F382 /* Application.cpp */; };
 		6FB8845D1223392B00DAD45F /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635CC21222B5830079F382 /* Object.cpp */; };
@@ -63,6 +39,40 @@
 		6FB8845F1223392B00DAD45F /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635E571222F0D40079F382 /* View.cpp */; };
 		6FB884831223393500DAD45F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F635EB01222F4380079F382 /* OpenGL.framework */; };
 		6FB884841223393500DAD45F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F635E771222F2710079F382 /* GLUT.framework */; };
+		6FB885531223CC7500DAD45F /* OpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB885521223CC7500DAD45F /* OpenGL.cpp */; };
+		6FB885651223CCF200DAD45F /* Application.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635CB31222B4170079F382 /* Application.h */; };
+		6FB885661223CCF200DAD45F /* Object.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635CC11222B5830079F382 /* Object.h */; };
+		6FB885671223CCF200DAD45F /* Cursor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635CD11222B63C0079F382 /* Cursor.h */; };
+		6FB885681223CCF200DAD45F /* View.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635E561222F0D40079F382 /* View.h */; };
+		6FB8856A1223CCFF00DAD45F /* TuioCursor.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635BC01222AA4C0079F382 /* TuioCursor.h */; };
+		6FB8856B1223CCFF00DAD45F /* TuioObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F635BC21222AA4C0079F382 /* TuioObject.h */; };
+		6FB885A31223DE4500DAD45F /* OpenGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FB885511223CC7500DAD45F /* OpenGL.h */; };
+		6FB885A41223DE4700DAD45F /* OpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB885521223CC7500DAD45F /* OpenGL.cpp */; };
+		6FB885A61223DE5400DAD45F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F635EB01222F4380079F382 /* OpenGL.framework */; };
+		6FB885A71223DE5400DAD45F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F635E771222F2710079F382 /* GLUT.framework */; };
+		6FB885F2122447A600DAD45F /* TestApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB885F1122447A600DAD45F /* TestApp.cpp */; };
+		6FB8862712251E0300DAD45F /* Ruby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB8862612251E0300DAD45F /* Ruby.framework */; };
+		6FB8874812253A8000DAD45F /* Ruby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB8862612251E0300DAD45F /* Ruby.framework */; };
+		6FB8874912253A8C00DAD45F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; };
+		6FB8878812253D9300DAD45F /* platri_wrap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB8878712253D9300DAD45F /* platri_wrap.cpp */; };
+		6FB887A412253E2900DAD45F /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635A4C1222A3EA0079F382 /* Manager.cpp */; };
+		6FB887A512253E2900DAD45F /* TuioClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635BBD1222AA4C0079F382 /* TuioClient.cpp */; };
+		6FB887A612253E2900DAD45F /* TuioServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635BC41222AA4C0079F382 /* TuioServer.cpp */; };
+		6FB887A712253E2900DAD45F /* TuioTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635BC61222AA4C0079F382 /* TuioTime.cpp */; };
+		6FB887A812253E2900DAD45F /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C431222AF8D0079F382 /* IpEndpointName.cpp */; };
+		6FB887A912253E2900DAD45F /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C481222AF8D0079F382 /* NetworkingUtils.cpp */; };
+		6FB887AA12253E2900DAD45F /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C491222AF8D0079F382 /* UdpSocket.cpp */; };
+		6FB887AB12253E2900DAD45F /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C591222AF8D0079F382 /* OscReceivedElements.cpp */; };
+		6FB887AC12253E2900DAD45F /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635C5B1222AF8D0079F382 /* OscTypes.cpp */; };
+		6FB887AD12253E2900DAD45F /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635CB41222B4170079F382 /* Application.cpp */; };
+		6FB887AE12253E2900DAD45F /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635CC21222B5830079F382 /* Object.cpp */; };
+		6FB887AF12253E2900DAD45F /* Cursor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635CD21222B63C0079F382 /* Cursor.cpp */; };
+		6FB887B012253E2900DAD45F /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F635E571222F0D40079F382 /* View.cpp */; };
+		6FB887B112253E2900DAD45F /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB88421122338BA00DAD45F /* OscOutboundPacketStream.cpp */; };
+		6FB887B212253E2900DAD45F /* OpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB885521223CC7500DAD45F /* OpenGL.cpp */; };
+		6FB887B312253E2900DAD45F /* TestApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB885F1122447A600DAD45F /* TestApp.cpp */; };
+		6FB887B712253E3C00DAD45F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F635E771222F2710079F382 /* GLUT.framework */; };
+		6FB887B812253E3C00DAD45F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F635EB01222F4380079F382 /* OpenGL.framework */; };
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* core.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* core.1 */; };
 /* End PBXBuildFile section */
@@ -123,6 +133,16 @@
 		6FB883D4122334B900DAD45F /* libplatri.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libplatri.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FB88421122338BA00DAD45F /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscOutboundPacketStream.cpp; sourceTree = "<group>"; };
 		6FB88422122338BA00DAD45F /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscOutboundPacketStream.h; sourceTree = "<group>"; };
+		6FB884E31223B7C800DAD45F /* platri.i */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c.preprocessed; name = platri.i; path = ../platri.i; sourceTree = SOURCE_ROOT; };
+		6FB885511223CC7500DAD45F /* OpenGL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGL.h; sourceTree = "<group>"; };
+		6FB885521223CC7500DAD45F /* OpenGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OpenGL.cpp; sourceTree = "<group>"; };
+		6FB885A01223DE3E00DAD45F /* libopengl_helpers.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libopengl_helpers.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FB885F0122447A600DAD45F /* TestApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestApp.h; sourceTree = "<group>"; };
+		6FB885F1122447A600DAD45F /* TestApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestApp.cpp; sourceTree = "<group>"; };
+		6FB8862612251E0300DAD45F /* Ruby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ruby.framework; path = System/Library/Frameworks/Ruby.framework; sourceTree = SDKROOT; };
+		6FB8874412253A7900DAD45F /* run */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = run; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FB8878712253D9300DAD45F /* platri_wrap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = platri_wrap.cpp; sourceTree = "<group>"; };
+		6FB8878F12253DB400DAD45F /* platri_wrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platri_wrap.h; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* core */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = core; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* core.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = core.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,12 +157,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6FB8859E1223DE3E00DAD45F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FB885A61223DE5400DAD45F /* OpenGL.framework in Frameworks */,
+				6FB885A71223DE5400DAD45F /* GLUT.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FB8874212253A7900DAD45F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FB887B712253E3C00DAD45F /* GLUT.framework in Frameworks */,
+				6FB887B812253E3C00DAD45F /* OpenGL.framework in Frameworks */,
+				6FB8874812253A8000DAD45F /* Ruby.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DD76F660486A84900D96B5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6F635E781222F2710079F382 /* GLUT.framework in Frameworks */,
 				6F635EB11222F4380079F382 /* OpenGL.framework in Frameworks */,
+				6FB8862712251E0300DAD45F /* Ruby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +192,7 @@
 		08FB7794FE84155DC02AAC07 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				6FB884E31223B7C800DAD45F /* platri.i */,
 				6F635C401222AF8D0079F382 /* oscpack */,
 				6F635BBB1222AA4C0079F382 /* TUIO */,
 				08FB7795FE84155DC02AAC07 /* Source */,
@@ -176,6 +217,12 @@
 				6F635CD21222B63C0079F382 /* Cursor.cpp */,
 				6F635E561222F0D40079F382 /* View.h */,
 				6F635E571222F0D40079F382 /* View.cpp */,
+				6FB885511223CC7500DAD45F /* OpenGL.h */,
+				6FB885521223CC7500DAD45F /* OpenGL.cpp */,
+				6FB885F0122447A600DAD45F /* TestApp.h */,
+				6FB8878F12253DB400DAD45F /* platri_wrap.h */,
+				6FB8878712253D9300DAD45F /* platri_wrap.cpp */,
+				6FB885F1122447A600DAD45F /* TestApp.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -185,6 +232,8 @@
 			children = (
 				8DD76F6C0486A84900D96B5E /* core */,
 				6FB883D4122334B900DAD45F /* libplatri.dylib */,
+				6FB885A01223DE3E00DAD45F /* libopengl_helpers.dylib */,
+				6FB8874412253A7900DAD45F /* run */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -258,6 +307,7 @@
 		6F635E7B1222F2770079F382 /* Linked frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6FB8862612251E0300DAD45F /* Ruby.framework */,
 				6F635EB01222F4380079F382 /* OpenGL.framework */,
 				6F635E771222F2710079F382 /* GLUT.framework */,
 			);
@@ -279,30 +329,20 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FB884561223392300DAD45F /* Manager.h in Headers */,
-				6FB884571223392300DAD45F /* Application.h in Headers */,
-				6FB884581223392300DAD45F /* Object.h in Headers */,
-				6FB884591223392300DAD45F /* Cursor.h in Headers */,
-				6FB8845A1223392300DAD45F /* View.h in Headers */,
-				6FB8843B1223390800DAD45F /* TuioClient.h in Headers */,
-				6FB8843C1223390800DAD45F /* TuioContainer.h in Headers */,
-				6FB8843D1223390800DAD45F /* TuioCursor.h in Headers */,
-				6FB8843E1223390800DAD45F /* TuioListener.h in Headers */,
-				6FB8843F1223390800DAD45F /* TuioObject.h in Headers */,
-				6FB884401223390800DAD45F /* TuioPoint.h in Headers */,
-				6FB884411223390800DAD45F /* TuioServer.h in Headers */,
-				6FB884421223390800DAD45F /* TuioTime.h in Headers */,
-				6FB88425122338BA00DAD45F /* OscOutboundPacketStream.h in Headers */,
-				6FB8842C122338E700DAD45F /* IpEndpointName.h in Headers */,
-				6FB8842D122338E700DAD45F /* NetworkingUtils.h in Headers */,
-				6FB8842E122338E700DAD45F /* PacketListener.h in Headers */,
-				6FB8842F122338E700DAD45F /* TimerListener.h in Headers */,
-				6FB88430122338E700DAD45F /* UdpSocket.h in Headers */,
-				6FB88431122338E700DAD45F /* OscException.h in Headers */,
-				6FB88432122338E700DAD45F /* OscHostEndianness.h in Headers */,
-				6FB88433122338E700DAD45F /* OscPacketListener.h in Headers */,
-				6FB88434122338E700DAD45F /* OscReceivedElements.h in Headers */,
-				6FB88435122338E700DAD45F /* OscTypes.h in Headers */,
+				6FB8856A1223CCFF00DAD45F /* TuioCursor.h in Headers */,
+				6FB8856B1223CCFF00DAD45F /* TuioObject.h in Headers */,
+				6FB885651223CCF200DAD45F /* Application.h in Headers */,
+				6FB885661223CCF200DAD45F /* Object.h in Headers */,
+				6FB885671223CCF200DAD45F /* Cursor.h in Headers */,
+				6FB885681223CCF200DAD45F /* View.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FB8859C1223DE3E00DAD45F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FB885A31223DE4500DAD45F /* OpenGL.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +365,39 @@
 			productName = platri;
 			productReference = 6FB883D4122334B900DAD45F /* libplatri.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
+		};
+		6FB8859F1223DE3E00DAD45F /* opengl_helpers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FB885A51223DE5000DAD45F /* Build configuration list for PBXNativeTarget "opengl_helpers" */;
+			buildPhases = (
+				6FB8859C1223DE3E00DAD45F /* Headers */,
+				6FB8859D1223DE3E00DAD45F /* Sources */,
+				6FB8859E1223DE3E00DAD45F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = opengl_helpers;
+			productName = opengl_helpers;
+			productReference = 6FB885A01223DE3E00DAD45F /* libopengl_helpers.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		6FB8874312253A7900DAD45F /* run */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FB8875512253A9500DAD45F /* Build configuration list for PBXNativeTarget "run" */;
+			buildPhases = (
+				6FB8874112253A7900DAD45F /* Sources */,
+				6FB8874212253A7900DAD45F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = run;
+			productName = run;
+			productReference = 6FB8874412253A7900DAD45F /* run */;
+			productType = "com.apple.product-type.tool";
 		};
 		8DD76F620486A84900D96B5E /* core */ = {
 			isa = PBXNativeTarget;
@@ -358,6 +431,8 @@
 			targets = (
 				8DD76F620486A84900D96B5E /* core */,
 				6FB883D3122334B900DAD45F /* platri */,
+				6FB8859F1223DE3E00DAD45F /* opengl_helpers */,
+				6FB8874312253A7900DAD45F /* run */,
 			);
 		};
 /* End PBXProject section */
@@ -384,6 +459,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6FB8859D1223DE3E00DAD45F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FB885A41223DE4700DAD45F /* OpenGL.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FB8874112253A7900DAD45F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FB887A412253E2900DAD45F /* Manager.cpp in Sources */,
+				6FB887A512253E2900DAD45F /* TuioClient.cpp in Sources */,
+				6FB887A612253E2900DAD45F /* TuioServer.cpp in Sources */,
+				6FB887A712253E2900DAD45F /* TuioTime.cpp in Sources */,
+				6FB887A812253E2900DAD45F /* IpEndpointName.cpp in Sources */,
+				6FB887A912253E2900DAD45F /* NetworkingUtils.cpp in Sources */,
+				6FB887AA12253E2900DAD45F /* UdpSocket.cpp in Sources */,
+				6FB887AB12253E2900DAD45F /* OscReceivedElements.cpp in Sources */,
+				6FB887AC12253E2900DAD45F /* OscTypes.cpp in Sources */,
+				6FB887AD12253E2900DAD45F /* Application.cpp in Sources */,
+				6FB887AE12253E2900DAD45F /* Object.cpp in Sources */,
+				6FB887AF12253E2900DAD45F /* Cursor.cpp in Sources */,
+				6FB887B012253E2900DAD45F /* View.cpp in Sources */,
+				6FB887B112253E2900DAD45F /* OscOutboundPacketStream.cpp in Sources */,
+				6FB887B212253E2900DAD45F /* OpenGL.cpp in Sources */,
+				6FB887B312253E2900DAD45F /* TestApp.cpp in Sources */,
+				6FB8878812253D9300DAD45F /* platri_wrap.cpp in Sources */,
+				6FB8874912253A8C00DAD45F /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DD76F640486A84900D96B5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -403,6 +511,8 @@
 				6F635CD31222B63C0079F382 /* Cursor.cpp in Sources */,
 				6F635E581222F0D40079F382 /* View.cpp in Sources */,
 				6FB88423122338BA00DAD45F /* OscOutboundPacketStream.cpp in Sources */,
+				6FB885531223CC7500DAD45F /* OpenGL.cpp in Sources */,
+				6FB885F2122447A600DAD45F /* TestApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +611,72 @@
 			};
 			name = Release;
 		};
+		6FB885A11223DE3E00DAD45F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = lib;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = opengl_helpers;
+			};
+			name = Debug;
+		};
+		6FB885A21223DE3E00DAD45F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				PREBINDING = NO;
+				PRODUCT_NAME = opengl_helpers;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		6FB8874612253A7900DAD45F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				HEADER_SEARCH_PATHS = (
+					./oscpack,
+					"$(HEADERS_SEARCH_PATH)",
+				);
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = run;
+			};
+			name = Debug;
+		};
+		6FB8874712253A7900DAD45F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = run;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -527,6 +703,24 @@
 			buildConfigurations = (
 				6FB883D5122334BA00DAD45F /* Debug */,
 				6FB883D6122334BA00DAD45F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FB885A51223DE5000DAD45F /* Build configuration list for PBXNativeTarget "opengl_helpers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FB885A11223DE3E00DAD45F /* Debug */,
+				6FB885A21223DE3E00DAD45F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FB8875512253A9500DAD45F /* Build configuration list for PBXNativeTarget "run" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FB8874612253A7900DAD45F /* Debug */,
+				6FB8874712253A7900DAD45F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

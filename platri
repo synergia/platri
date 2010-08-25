@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+require "rubygems"
 require "optitron"
 
 def sh(cmd)
@@ -8,25 +8,92 @@ def sh(cmd)
 end
 
 class Runner < Optitron::CLI
-  desc "Start GUI"
-  opt "width", "Window width", :type => :numeric
-  opt "height", "Window height", :type => :numeric
+  desc "Start application"
+  opt "width", "Window width", :type => :numeric, :default => 400
+  opt "height", "Window height", :type => :numeric, :default => 300
   opt "fullscreen", "Enable fulscreen", :type => :boolean, :default => false
-  def start
-    require "./platri"
+  def start(application)
+    require File.join(File.expand_path(File.dirname(__FILE__)), "lib", "platri")
+    
+    app = Object.const_get(application.capitalize)
     
     Platri::View.init
-    Platri::View.start
+    Platri::View.start(app.new)
+    
+  rescue NameError => e
+    puts e
+    puts "Application '#{application}' not found."
+    puts
+    list
+  end
+  
+  desc "Run IRB session"
+  def console
+    $: << "."
+    require "irb"
+    require File.join(File.expand_path(File.dirname(__FILE__)), "lib", "platri")
+    ARGV.clear
+    IRB.start(__FILE__)
+  end
+  
+  desc "List available applications"
+  def list
+    require File.join(File.expand_path(File.dirname(__FILE__)), "lib", "platri")
+    
+    puts "Available applications:"
+    Platri.applications.each do |app|
+      puts "  - #{app}"
+    end
+    puts
+    puts "Use ./platri start [application] to start application"
   end
   
   desc "Build bundle"
-  def build
-    sh "install_name_tool -id ./core/build/Debug/libplatri.dylib core/build/Debug/libplatri.dylib"
-    sh "make clean"
-    sh "rm platri_wrap.cxx"
-    sh "swig -c++ -ruby platri.i"
-    sh "ruby extconf.rb"
-    sh "make"
+  def build(what = "all")
+    core = lambda do
+      # common
+      sh "rm platri_wrap.o"
+      sh "rm platri.bundle"
+      sh "rm platri_wrap.cxx"
+      
+      # platri
+      puts
+      puts "=== Building platri.dylib ==="
+      puts
+      sh "xcodebuild -project core/core.xcodeproj -target platri -configuration Debug"
+      sh "install_name_tool -id ./core/build/Debug/libplatri.dylib core/build/Debug/libplatri.dylib"
+      sh "swig -c++ -ruby platri.i"
+      sh "ruby extconf.rb platri"
+      sh "make"
+    end
+    
+    opengl = lambda do
+      # common
+      sh "rm opengl_helpers_wrap.o"
+      sh "rm opengl_helpers.bundle"
+      sh "rm opengl_helpers_wrap.cxx"
+      
+      # opengl helpers
+      puts
+      puts "=== Building opengl_helpers.dylib ==="
+      puts
+      sh "xcodebuild -project core/core.xcodeproj -target opengl_helpers -configuration Debug"
+      sh "install_name_tool -id ./core/build/Debug/libopengl_helpers.dylib core/build/Debug/libopengl_helpers.dylib"
+      sh "swig -c++ -ruby opengl_helpers.i"
+      sh "ruby extconf.rb opengl_helpers"
+      sh "make"
+    end
+    
+    types = {
+      "core" => core,
+      "opengl" => opengl,
+      "all" => lambda { 
+        core.call
+        opengl.call
+      }
+    }
+    
+    types[what].call
   end
 
 end

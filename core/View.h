@@ -15,15 +15,16 @@
 class View {
 public:
 	static void init();
-	static void init(int * argc, char ** argv);
+	static void init(int width, int height, bool fullscreen);
+	static void init(int width, int height, bool fullscreen, int * argc, char ** argv);
 	static void keyboard(unsigned char key, int x, int y);
 	static void display();
 	static void idle();
 	static void reshape(int width, int height);	
-	static void start();
+	static void start(Application * app);
 	
-	static int width;
-	static int height;
+	static int windowWidth;
+	static int windowHeight;
 	static Manager * manager;
 };
 

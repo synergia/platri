@@ -21,9 +21,11 @@ public:
 	int x();
 	int y();
 	
+	int symbolID();
+	TuioObject * tobj();
 	virtual void display();
-	
-	TuioObject *tobj;
+protected:	
+	TuioObject *_tobj;
 };
 
 
