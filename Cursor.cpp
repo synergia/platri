@@ -8,7 +8,31 @@
  */
 
 #include "Cursor.h"
+#include "View.h"
+#include <GLUT/GLUT.h>
 
-Cursor::Cursor(TuioCursor *tcur):tcur(tcur){
+Cursor::Cursor(TuioCursor * tcur):tcur(tcur){
 	
+}
+
+int Cursor::x(){ 
+	return tcur->getX() * View::windowWidth; 
+}
+
+int Cursor::y(){ 
+	return tcur->getY() * View::windowHeight;
+}
+
+void Cursor::display(){
+	glPushMatrix();
+	glColor3f(1.0, 0.0, 0.0);
+	glTranslated(x(), y(), 0);
+	GLUquadric * quad = gluNewQuadric();
+	gluDisk(quad, 0, 20, 24, 10);
+	gluDeleteQuadric(quad);
+	glPopMatrix();
+}
+
+bool Cursor::checkTuioCursor(TuioCursor * cur){
+	return (tcur == cur);
 }

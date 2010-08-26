@@ -18,6 +18,14 @@ class Cursor {
 public:
 	Cursor(TuioCursor *tcur);
 	
+	// properties accessors
+	int x();
+	int y();
+	
+	virtual void display();
+	
+	bool checkTuioCursor(TuioCursor * cur);
+protected:
 	TuioCursor *tcur;
 };
 

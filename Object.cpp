@@ -31,7 +31,6 @@ int Object::y(){
 	return tobj->getY() * View::windowHeight;
 }
 
-
 int Object::angle(){
 	return tobj->getAngleDegrees();	
 }
