@@ -8,19 +8,16 @@
  */
 
 #include "DemoObject.h"
-
+#include "helpers.h"
 #include <GLUT/glut.h>
 
+using namespace helpers;
+
 void DemoObject::display(){
-	glColor3f(1.0, 0.0, 0.0);
-	
-	glPushMatrix();
-	glTranslated(x(), y(), 0);
-	glBegin(GL_QUADS);
-	glVertex2f(0, 0);
-	glVertex2f(0, 50);
-	glVertex2f(50, 50);
-	glVertex2f(50, 0);
-	glEnd();
-	glPopMatrix();
+	color("#f90");
+	pushMatrix();
+	translate(x(), y());
+	rotate(angle());
+	square(50);
+	popMatrix();
 }

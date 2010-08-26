@@ -21,5 +21,6 @@ namespace helpers {
 	void circle(int r);
 	void ellipse(int rx, int ry);
 	void ring(int ri, int ro);	
+	void arc(int ri, int ro, int start, int angle);
 }
 

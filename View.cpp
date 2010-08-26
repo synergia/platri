@@ -41,7 +41,7 @@ void View::init(int width, int height, bool fullscreen, int * argc, char ** argv
 		glutEnterGameMode();
 	} else {
 		glutInitWindowSize(width, height);
-		//glutInitWindowPosition(800, 200);
+		// glutInitWindowPosition(800, 200);
 		glutCreateWindow("platri");
 	}
 
@@ -82,7 +82,7 @@ void View::reshape(int width, int height){
 	    
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluOrtho2D(0, width, 0, height);
+	gluOrtho2D(0, width, height, 0); // Use top-left as (0,0) and bottom-right as (width, height)
 	glMatrixMode(GL_MODELVIEW);
 }
 

@@ -18,12 +18,15 @@ class Object {
 public:
 	Object(TuioObject *tobj);
 	
+	// properties accessors
+	int symbolID();
 	int x();
 	int y();
+	int angle();	
 	
-	int symbolID();
 	TuioObject * tobj();
 	virtual void display();
+	
 protected:	
 	TuioObject *_tobj;
 };

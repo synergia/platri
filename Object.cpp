@@ -28,17 +28,25 @@ TuioObject * Object::tobj(){
 	return _tobj;
 }
 
+// properties accessors
+
+int Object::symbolID() { 
+	return tobj()->getSymbolID();
+};
+
 int Object::x(){ 
 	return tobj()->getX() * View::windowWidth; 
 }
 
 int Object::y(){ 
-	return (1.0-tobj()->getY()) * View::windowHeight;
+	return tobj()->getY() * View::windowHeight;
 }
 
-int Object::symbolID() { 
-	return tobj()->getSymbolID();
-};
+
+int Object::angle(){
+	return tobj()->getAngleDegrees();	
+}
+
 
 void Object::display(){
 	glPushMatrix();

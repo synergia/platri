@@ -80,6 +80,10 @@ void helpers::ring(int ri, int ro){
 	gluDisk(gluNewQuadric(), ri, ro, 24, 10);
 }
 
+void helpers::arc(int ri, int ro, int start, int angle){
+	gluPartialDisk(gluNewQuadric(), ri, ro, 24, 10, start, angle);
+}
+
 float * _parse_color(const char * str){
     int size = strlen(str);
 	float * ret = new float[4];
