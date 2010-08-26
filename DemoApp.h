@@ -7,14 +7,17 @@
  *
  */
 
-#ifndef _TEST_APP_H_
-#define _TEST_APP_H_
+#ifndef _DEMO_APP_H_
+#define _DEMO_APP_H_
 
 #include "Application.h"
 
-class TestApp : public Application {
+class DemoApp : public Application {
 public:
-	void display();	
+	Object * createObject(TuioObject * tobj);
+	
+	void display();
+	
 };
 
 

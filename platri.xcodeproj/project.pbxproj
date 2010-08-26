@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FB8881E1226A28100DAD45F /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888021226A28100DAD45F /* IpEndpointName.cpp */; };
+		6FB8881F1226A28100DAD45F /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888071226A28100DAD45F /* NetworkingUtils.cpp */; };
+		6FB888201226A28100DAD45F /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888081226A28100DAD45F /* UdpSocket.cpp */; };
+		6FB888231226A28100DAD45F /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888131226A28100DAD45F /* OscOutboundPacketStream.cpp */; };
+		6FB888241226A28100DAD45F /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888161226A28100DAD45F /* OscPrintReceivedElements.cpp */; };
+		6FB888251226A28100DAD45F /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888181226A28100DAD45F /* OscReceivedElements.cpp */; };
+		6FB888261226A28100DAD45F /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB8881A1226A28100DAD45F /* OscTypes.cpp */; };
+		6FB888331226A28B00DAD45F /* TuioClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888281226A28A00DAD45F /* TuioClient.cpp */; };
+		6FB888341226A28B00DAD45F /* TuioServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB8882F1226A28B00DAD45F /* TuioServer.cpp */; };
+		6FB888351226A28B00DAD45F /* TuioTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888311226A28B00DAD45F /* TuioTime.cpp */; };
+		6FB888381226A2A400DAD45F /* View.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888361226A2A400DAD45F /* View.cpp */; };
+		6FB888431226A2B000DAD45F /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888391226A2B000DAD45F /* Application.cpp */; };
+		6FB888441226A2B000DAD45F /* Cursor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB8883B1226A2B000DAD45F /* Cursor.cpp */; };
+		6FB888451226A2B000DAD45F /* Manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB8883D1226A2B000DAD45F /* Manager.cpp */; };
+		6FB888461226A2B000DAD45F /* Object.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB8883F1226A2B000DAD45F /* Object.cpp */; };
+		6FB888471226A2B000DAD45F /* DemoApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888411226A2B000DAD45F /* DemoApp.cpp */; };
+		6FB8884A1226A2C300DAD45F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB888491226A2C300DAD45F /* GLUT.framework */; };
+		6FB8884C1226A2C300DAD45F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB8884B1226A2C300DAD45F /* OpenGL.framework */; };
+		6FB888761226A61100DAD45F /* DemoObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888751226A61100DAD45F /* DemoObject.cpp */; };
+		6FB888D71226B5BB00DAD45F /* helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888D61226B5BB00DAD45F /* helpers.cpp */; };
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* platri.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* platri.1 */; };
 /* End PBXBuildFile section */
@@ -26,6 +46,55 @@
 
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6FB888021226A28100DAD45F /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
+		6FB888031226A28100DAD45F /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
+		6FB888041226A28100DAD45F /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
+		6FB888051226A28100DAD45F /* PacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PacketListener.h; sourceTree = "<group>"; };
+		6FB888071226A28100DAD45F /* NetworkingUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NetworkingUtils.cpp; sourceTree = "<group>"; };
+		6FB888081226A28100DAD45F /* UdpSocket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UdpSocket.cpp; sourceTree = "<group>"; };
+		6FB888091226A28100DAD45F /* TimerListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerListener.h; sourceTree = "<group>"; };
+		6FB8880A1226A28100DAD45F /* UdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UdpSocket.h; sourceTree = "<group>"; };
+		6FB888101226A28100DAD45F /* MessageMappingOscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageMappingOscPacketListener.h; sourceTree = "<group>"; };
+		6FB888111226A28100DAD45F /* OscException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscException.h; sourceTree = "<group>"; };
+		6FB888121226A28100DAD45F /* OscHostEndianness.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscHostEndianness.h; sourceTree = "<group>"; };
+		6FB888131226A28100DAD45F /* OscOutboundPacketStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscOutboundPacketStream.cpp; sourceTree = "<group>"; };
+		6FB888141226A28100DAD45F /* OscOutboundPacketStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscOutboundPacketStream.h; sourceTree = "<group>"; };
+		6FB888151226A28100DAD45F /* OscPacketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPacketListener.h; sourceTree = "<group>"; };
+		6FB888161226A28100DAD45F /* OscPrintReceivedElements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscPrintReceivedElements.cpp; sourceTree = "<group>"; };
+		6FB888171226A28100DAD45F /* OscPrintReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscPrintReceivedElements.h; sourceTree = "<group>"; };
+		6FB888181226A28100DAD45F /* OscReceivedElements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscReceivedElements.cpp; sourceTree = "<group>"; };
+		6FB888191226A28100DAD45F /* OscReceivedElements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
+		6FB8881A1226A28100DAD45F /* OscTypes.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = OscTypes.cpp; sourceTree = "<group>"; };
+		6FB8881B1226A28100DAD45F /* OscTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
+		6FB888281226A28A00DAD45F /* TuioClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TuioClient.cpp; sourceTree = "<group>"; };
+		6FB888291226A28B00DAD45F /* TuioClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioClient.h; sourceTree = "<group>"; };
+		6FB8882A1226A28B00DAD45F /* TuioContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioContainer.h; sourceTree = "<group>"; };
+		6FB8882B1226A28B00DAD45F /* TuioCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioCursor.h; sourceTree = "<group>"; };
+		6FB8882C1226A28B00DAD45F /* TuioListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioListener.h; sourceTree = "<group>"; };
+		6FB8882D1226A28B00DAD45F /* TuioObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioObject.h; sourceTree = "<group>"; };
+		6FB8882E1226A28B00DAD45F /* TuioPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioPoint.h; sourceTree = "<group>"; };
+		6FB8882F1226A28B00DAD45F /* TuioServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TuioServer.cpp; sourceTree = "<group>"; };
+		6FB888301226A28B00DAD45F /* TuioServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioServer.h; sourceTree = "<group>"; };
+		6FB888311226A28B00DAD45F /* TuioTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TuioTime.cpp; sourceTree = "<group>"; };
+		6FB888321226A28B00DAD45F /* TuioTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TuioTime.h; sourceTree = "<group>"; };
+		6FB888361226A2A400DAD45F /* View.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = View.cpp; sourceTree = "<group>"; };
+		6FB888371226A2A400DAD45F /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
+		6FB888391226A2B000DAD45F /* Application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Application.cpp; sourceTree = "<group>"; };
+		6FB8883A1226A2B000DAD45F /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Application.h; sourceTree = "<group>"; };
+		6FB8883B1226A2B000DAD45F /* Cursor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cursor.cpp; sourceTree = "<group>"; };
+		6FB8883C1226A2B000DAD45F /* Cursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cursor.h; sourceTree = "<group>"; };
+		6FB8883D1226A2B000DAD45F /* Manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Manager.cpp; sourceTree = "<group>"; };
+		6FB8883E1226A2B000DAD45F /* Manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
+		6FB8883F1226A2B000DAD45F /* Object.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Object.cpp; sourceTree = "<group>"; };
+		6FB888401226A2B000DAD45F /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
+		6FB888411226A2B000DAD45F /* DemoApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DemoApp.cpp; sourceTree = "<group>"; };
+		6FB888421226A2B000DAD45F /* DemoApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoApp.h; sourceTree = "<group>"; };
+		6FB888491226A2C300DAD45F /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		6FB8884B1226A2C300DAD45F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		6FB888741226A61100DAD45F /* DemoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoObject.h; sourceTree = "<group>"; };
+		6FB888751226A61100DAD45F /* DemoObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DemoObject.cpp; sourceTree = "<group>"; };
+		6FB888D51226B5BB00DAD45F /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
+		6FB888D61226B5BB00DAD45F /* helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helpers.cpp; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* platri */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = platri; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* platri.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = platri.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -35,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FB8884A1226A2C300DAD45F /* GLUT.framework in Frameworks */,
+				6FB8884C1226A2C300DAD45F /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,9 +115,13 @@
 		08FB7794FE84155DC02AAC07 /* platri */ = {
 			isa = PBXGroup;
 			children = (
+				6FB8886A1226A53C00DAD45F /* Apps */,
+				6FB888271226A28A00DAD45F /* TUIO */,
+				6FB887FF1226A28100DAD45F /* oscpack */,
 				08FB7795FE84155DC02AAC07 /* Source */,
 				C6859E8C029090F304C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
+				6FB8884D1226A2CA00DAD45F /* Linked Frameworks */,
 			);
 			name = platri;
 			sourceTree = "<group>";
@@ -54,6 +129,17 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				6FB888D41226B5A400DAD45F /* OpenGL */,
+				6FB888391226A2B000DAD45F /* Application.cpp */,
+				6FB8883A1226A2B000DAD45F /* Application.h */,
+				6FB8883B1226A2B000DAD45F /* Cursor.cpp */,
+				6FB8883C1226A2B000DAD45F /* Cursor.h */,
+				6FB8883D1226A2B000DAD45F /* Manager.cpp */,
+				6FB8883E1226A2B000DAD45F /* Manager.h */,
+				6FB8883F1226A2B000DAD45F /* Object.cpp */,
+				6FB888401226A2B000DAD45F /* Object.h */,
+				6FB888361226A2A400DAD45F /* View.cpp */,
+				6FB888371226A2A400DAD45F /* View.h */,
 				08FB7796FE84155DC02AAC07 /* main.cpp */,
 			);
 			name = Source;
@@ -65,6 +151,112 @@
 				8DD76F6C0486A84900D96B5E /* platri */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6FB887FF1226A28100DAD45F /* oscpack */ = {
+			isa = PBXGroup;
+			children = (
+				6FB888011226A28100DAD45F /* ip */,
+				6FB8880F1226A28100DAD45F /* osc */,
+			);
+			path = oscpack;
+			sourceTree = "<group>";
+		};
+		6FB888011226A28100DAD45F /* ip */ = {
+			isa = PBXGroup;
+			children = (
+				6FB888021226A28100DAD45F /* IpEndpointName.cpp */,
+				6FB888031226A28100DAD45F /* IpEndpointName.h */,
+				6FB888041226A28100DAD45F /* NetworkingUtils.h */,
+				6FB888051226A28100DAD45F /* PacketListener.h */,
+				6FB888061226A28100DAD45F /* posix */,
+				6FB888091226A28100DAD45F /* TimerListener.h */,
+				6FB8880A1226A28100DAD45F /* UdpSocket.h */,
+			);
+			path = ip;
+			sourceTree = "<group>";
+		};
+		6FB888061226A28100DAD45F /* posix */ = {
+			isa = PBXGroup;
+			children = (
+				6FB888071226A28100DAD45F /* NetworkingUtils.cpp */,
+				6FB888081226A28100DAD45F /* UdpSocket.cpp */,
+			);
+			path = posix;
+			sourceTree = "<group>";
+		};
+		6FB8880F1226A28100DAD45F /* osc */ = {
+			isa = PBXGroup;
+			children = (
+				6FB888101226A28100DAD45F /* MessageMappingOscPacketListener.h */,
+				6FB888111226A28100DAD45F /* OscException.h */,
+				6FB888121226A28100DAD45F /* OscHostEndianness.h */,
+				6FB888131226A28100DAD45F /* OscOutboundPacketStream.cpp */,
+				6FB888141226A28100DAD45F /* OscOutboundPacketStream.h */,
+				6FB888151226A28100DAD45F /* OscPacketListener.h */,
+				6FB888161226A28100DAD45F /* OscPrintReceivedElements.cpp */,
+				6FB888171226A28100DAD45F /* OscPrintReceivedElements.h */,
+				6FB888181226A28100DAD45F /* OscReceivedElements.cpp */,
+				6FB888191226A28100DAD45F /* OscReceivedElements.h */,
+				6FB8881A1226A28100DAD45F /* OscTypes.cpp */,
+				6FB8881B1226A28100DAD45F /* OscTypes.h */,
+			);
+			path = osc;
+			sourceTree = "<group>";
+		};
+		6FB888271226A28A00DAD45F /* TUIO */ = {
+			isa = PBXGroup;
+			children = (
+				6FB888281226A28A00DAD45F /* TuioClient.cpp */,
+				6FB888291226A28B00DAD45F /* TuioClient.h */,
+				6FB8882A1226A28B00DAD45F /* TuioContainer.h */,
+				6FB8882B1226A28B00DAD45F /* TuioCursor.h */,
+				6FB8882C1226A28B00DAD45F /* TuioListener.h */,
+				6FB8882D1226A28B00DAD45F /* TuioObject.h */,
+				6FB8882E1226A28B00DAD45F /* TuioPoint.h */,
+				6FB8882F1226A28B00DAD45F /* TuioServer.cpp */,
+				6FB888301226A28B00DAD45F /* TuioServer.h */,
+				6FB888311226A28B00DAD45F /* TuioTime.cpp */,
+				6FB888321226A28B00DAD45F /* TuioTime.h */,
+			);
+			path = TUIO;
+			sourceTree = "<group>";
+		};
+		6FB8884D1226A2CA00DAD45F /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FB888491226A2C300DAD45F /* GLUT.framework */,
+				6FB8884B1226A2C300DAD45F /* OpenGL.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		6FB8886A1226A53C00DAD45F /* Apps */ = {
+			isa = PBXGroup;
+			children = (
+				6FB8886B1226A54200DAD45F /* Demo */,
+			);
+			name = Apps;
+			sourceTree = "<group>";
+		};
+		6FB8886B1226A54200DAD45F /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				6FB888411226A2B000DAD45F /* DemoApp.cpp */,
+				6FB888421226A2B000DAD45F /* DemoApp.h */,
+				6FB888741226A61100DAD45F /* DemoObject.h */,
+				6FB888751226A61100DAD45F /* DemoObject.cpp */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		6FB888D41226B5A400DAD45F /* OpenGL */ = {
+			isa = PBXGroup;
+			children = (
+				6FB888D51226B5BB00DAD45F /* helpers.h */,
+				6FB888D61226B5BB00DAD45F /* helpers.cpp */,
+			);
+			name = OpenGL;
 			sourceTree = "<group>";
 		};
 		C6859E8C029090F304C91782 /* Documentation */ = {
@@ -119,6 +311,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD76F650486A84900D96B5E /* main.cpp in Sources */,
+				6FB8881E1226A28100DAD45F /* IpEndpointName.cpp in Sources */,
+				6FB8881F1226A28100DAD45F /* NetworkingUtils.cpp in Sources */,
+				6FB888201226A28100DAD45F /* UdpSocket.cpp in Sources */,
+				6FB888231226A28100DAD45F /* OscOutboundPacketStream.cpp in Sources */,
+				6FB888241226A28100DAD45F /* OscPrintReceivedElements.cpp in Sources */,
+				6FB888251226A28100DAD45F /* OscReceivedElements.cpp in Sources */,
+				6FB888261226A28100DAD45F /* OscTypes.cpp in Sources */,
+				6FB888331226A28B00DAD45F /* TuioClient.cpp in Sources */,
+				6FB888341226A28B00DAD45F /* TuioServer.cpp in Sources */,
+				6FB888351226A28B00DAD45F /* TuioTime.cpp in Sources */,
+				6FB888381226A2A400DAD45F /* View.cpp in Sources */,
+				6FB888431226A2B000DAD45F /* Application.cpp in Sources */,
+				6FB888441226A2B000DAD45F /* Cursor.cpp in Sources */,
+				6FB888451226A2B000DAD45F /* Manager.cpp in Sources */,
+				6FB888461226A2B000DAD45F /* Object.cpp in Sources */,
+				6FB888471226A2B000DAD45F /* DemoApp.cpp in Sources */,
+				6FB888761226A61100DAD45F /* DemoObject.cpp in Sources */,
+				6FB888D71226B5BB00DAD45F /* helpers.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +368,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ./oscpack;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.6;
