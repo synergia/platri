@@ -24,11 +24,12 @@ public:
 	int y();
 	int angle();	
 	
-	TuioObject * tobj();
 	virtual void display();
 	
+	bool checkTuioObject(TuioObject * obj);
+	
 protected:	
-	TuioObject *_tobj;
+	TuioObject * tobj;
 };
 
 

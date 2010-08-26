@@ -36,11 +36,11 @@ void Manager::display(){
 	app()->display();
 	
 	// display objects	
+	tuioClient->lockObjectList(); // prevent TUIO thread disaster
 	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
-		if(*it != NULL){
-			(*it)->display();
-		}
+		(*it)->display();
 	}
+	tuioClient->unlockObjectList();
 	
 	// TODO: display cursors
 }
@@ -51,22 +51,21 @@ void Manager::display(){
 
 void Manager::addTuioObject(TuioObject *tobj){
 	objects.push_back(app()->createObject(tobj));
-	printf("Objects#size: %d\n", (int)objects.size());
 }
 
 void Manager::updateTuioObject(TuioObject *tobj){
+	// update is done automatically via TuioObject pointers in Object instances
 	//printf("Objects#size: %d\n", objects.size());
 }
 
 void Manager::removeTuioObject(TuioObject *tobj){
 	// see http://gist.github.com/545615
 	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
-		if((*it) == NULL || (*it)->tobj() == tobj){
+		if((*it)->checkTuioObject(tobj)){
 			objects.remove(*it);
+			return;
 		}
 	}
-	
-	printf("Objects#size: %d\n", (int)objects.size());
 }
 
 void Manager::addTuioCursor(TuioCursor *tcur){

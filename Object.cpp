@@ -13,45 +13,34 @@
 #include "View.h"
 #include "TuioObject.h"
 
-Object::Object(TuioObject *tobj):_tobj(tobj){
+Object::Object(TuioObject *tobj):tobj(tobj){
 	
-}
-
-TuioObject * Object::tobj(){
-//	if(_tobj == NULL){
-//		throw 10;
-//	} else {
-//		return _tobj;
-//	}
-	
-	//_tobj = NULL;
-	return _tobj;
 }
 
 // properties accessors
 
 int Object::symbolID() { 
-	return tobj()->getSymbolID();
+	return tobj->getSymbolID();
 };
 
 int Object::x(){ 
-	return tobj()->getX() * View::windowWidth; 
+	return tobj->getX() * View::windowWidth; 
 }
 
 int Object::y(){ 
-	return tobj()->getY() * View::windowHeight;
+	return tobj->getY() * View::windowHeight;
 }
 
 
 int Object::angle(){
-	return tobj()->getAngleDegrees();	
+	return tobj->getAngleDegrees();	
 }
 
 
 void Object::display(){
 	glPushMatrix();
 	glColor3f(1.0, 0.0, 0.0);
-	glTranslated(this->x(), this->y(), 0);
+	glTranslated(x(), y(), 0);
 	glBegin(GL_QUADS);
 		glVertex2d(-50, -50);
 		glVertex2d(-50,  50);
@@ -59,4 +48,8 @@ void Object::display(){
 		glVertex2d( 50, -50);
 	glEnd();
 	glPopMatrix();
+}
+
+bool Object::checkTuioObject(TuioObject * obj){
+	return (tobj == obj);
 }
