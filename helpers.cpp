@@ -22,11 +22,13 @@ float * _parse_color(const char * str);
 void helpers::color(const char * name){
 	float * res = _parse_color(name);
 	glColor4f(res[0], res[1], res[2], res[3]);
+	delete[] res;
 }
 
 void helpers::clear(const char * name){
 	float * res = _parse_color(name);
 	glClearColor(res[0], res[1], res[2], res[3]);
+	delete[] res;
 }
 
 void helpers::pushMatrix(){
