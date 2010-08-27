@@ -86,6 +86,13 @@ void helpers::arc(int ri, int ro, int start, int angle){
 	gluPartialDisk(gluNewQuadric(), ri, ro, 24, 10, start, angle);
 }
 
+void helpers::text(int x, int y, const char * str){
+	glRasterPos2f(x, y);
+	for(char * c = (char *)str; *c != '\0'; ++c){
+		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, *c);
+	}
+}
+
 float * _parse_color(const char * str){
     int size = strlen(str);
 	float * ret = new float[4];
@@ -102,7 +109,7 @@ float * _parse_color(const char * str){
 			ret[0] = HEXCHAR2INT(str[1], str[1]) / 255.0;
 			ret[1] = HEXCHAR2INT(str[2], str[2]) / 255.0;
 			ret[2] = HEXCHAR2INT(str[3], str[3]) / 255.0;
-			ret[3] = HEXCHAR2INT(str[3], str[3]) / 255.0;
+			ret[3] = HEXCHAR2INT(str[4], str[4]) / 255.0;
 			break;
 			
 		case 7: // #rrggbb
@@ -122,3 +129,6 @@ float * _parse_color(const char * str){
 	}
     return ret;
 }
+
+
+

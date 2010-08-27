@@ -22,5 +22,6 @@ namespace helpers {
 	void ellipse(int rx, int ry);
 	void ring(int ri, int ro);	
 	void arc(int ri, int ro, int start, int angle);
+	void text(int x, int y, const char * str);
 }
 
