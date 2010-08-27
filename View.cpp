@@ -11,6 +11,12 @@
 #include <GLUT/glut.h>
 #include "View.h"
 #include "Application.h"
+#include "helpers.h"
+
+int View::frame;
+int View::_time;
+int View::timebase = 0;
+char View::s[30];
 
 Manager * View::manager;
 int View::windowWidth;
@@ -69,6 +75,8 @@ void View::display(){
 	glPushMatrix();
 	manager->display();
 	glPopMatrix();
+	
+	displayFPS();
 
 	glutSwapBuffers();
 }
@@ -91,4 +99,17 @@ void View::start(Application * app){
 	manager->setApp(app);
 	
 	glutMainLoop();
+}
+
+void View::displayFPS(){
+	frame++;
+	_time = glutGet(GLUT_ELAPSED_TIME);
+	
+	if (_time - timebase > 1000) {
+		sprintf(s, "FPS:%4.2f", frame * 1000.0 / (_time-timebase));
+		timebase = _time;		
+		frame = 0;
+	}
+	helpers::color("#fff");
+	helpers::text(300, 30, s);
 }

@@ -13,6 +13,8 @@
 #include "Object.h"
 #include "Cursor.h"
 
+#define SYMBOL(tobj) (tobj->getSymbolID())
+
 class Application {
 public:
 	// Create correct object based on TuioObject

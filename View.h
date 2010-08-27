@@ -22,10 +22,16 @@ public:
 	static void idle();
 	static void reshape(int width, int height);	
 	static void start(Application * app);
+	static void displayFPS();
 	
 	static int windowWidth;
 	static int windowHeight;
 	static Manager * manager;
+	
+	static int frame;
+	static int _time;
+	static int timebase;
+	static char s[30];
 };
 
 #endif

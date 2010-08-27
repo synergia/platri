@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F1DC0801227E24400E6B259 /* Fader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DC07F1227E24400E6B259 /* Fader.cpp */; };
 		6FB8881E1226A28100DAD45F /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888021226A28100DAD45F /* IpEndpointName.cpp */; };
 		6FB8881F1226A28100DAD45F /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888071226A28100DAD45F /* NetworkingUtils.cpp */; };
 		6FB888201226A28100DAD45F /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888081226A28100DAD45F /* UdpSocket.cpp */; };
@@ -47,6 +48,8 @@
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6F1DBEF31226FA9B00E6B259 /* Graphic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphic.h; sourceTree = "<group>"; };
+		6F1DC07E1227E24400E6B259 /* Fader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fader.h; sourceTree = "<group>"; };
+		6F1DC07F1227E24400E6B259 /* Fader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Fader.cpp; sourceTree = "<group>"; };
 		6FB888021226A28100DAD45F /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
 		6FB888031226A28100DAD45F /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
 		6FB888041226A28100DAD45F /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
@@ -130,6 +133,7 @@
 		08FB7795FE84155DC02AAC07 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				6F1DC07C1227E23800E6B259 /* Objects */,
 				6FB888D41226B5A400DAD45F /* OpenGL */,
 				08FB7796FE84155DC02AAC07 /* main.cpp */,
 				6FB888391226A2B000DAD45F /* Application.cpp */,
@@ -153,6 +157,15 @@
 				8DD76F6C0486A84900D96B5E /* platri */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6F1DC07C1227E23800E6B259 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				6F1DC07E1227E24400E6B259 /* Fader.h */,
+				6F1DC07F1227E24400E6B259 /* Fader.cpp */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 		6FB887FF1226A28100DAD45F /* oscpack */ = {
@@ -331,6 +344,7 @@
 				6FB888471226A2B000DAD45F /* DemoApp.cpp in Sources */,
 				6FB888761226A61100DAD45F /* DemoObject.cpp in Sources */,
 				6FB888D71226B5BB00DAD45F /* helpers.cpp in Sources */,
+				6F1DC0801227E24400E6B259 /* Fader.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -61,6 +61,9 @@ void Manager::addTuioObject(TuioObject *tobj){
 
 void Manager::updateTuioObject(TuioObject *tobj){
 	// update is done automatically via TuioObject pointers in Object instances
+	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
+		(*it)->onUpdate();
+	}
 }
 
 void Manager::removeTuioObject(TuioObject *tobj){
@@ -81,7 +84,10 @@ void Manager::addTuioCursor(TuioCursor *tcur){
 }
 
 void Manager::updateTuioCursor(TuioCursor *tcur){
-	// update is done automatically via TuioCursor pointers in Cursor instances//
+	// update is done automatically via TuioCursor pointers in Cursor instances
+	for (list<Cursor*>::iterator it = cursors.begin(); it != cursors.end(); ++it){
+		(*it)->onUpdate();
+	}
 }
 
 void Manager::removeTuioCursor(TuioCursor *tcur){

@@ -17,6 +17,14 @@ Object::Object(TuioObject *tobj):tobj(tobj){
 	
 }
 
+Object::~Object(){
+	for (list<Graphic<Object> *>::iterator it = graphics.begin(); it != graphics.end(); ++it){
+		Graphic<Object> * gfx = *it;
+		//graphics.remove(gfx);
+		delete gfx;
+	}
+}
+
 // properties accessors
 
 int Object::symbolID() { 
@@ -37,16 +45,7 @@ int Object::angle(){
 
 
 void Object::display(){
-	glPushMatrix();
-	glColor3f(1.0, 0.0, 0.0);
-	glTranslated(x(), y(), 0);
-	glBegin(GL_QUADS);
-		glVertex2d(-50, -50);
-		glVertex2d(-50,  50);
-		glVertex2d( 50,  50);
-		glVertex2d( 50, -50);
-	glEnd();
-	glPopMatrix();
+	displayGraphics();
 }
 
 void Object::displayGraphics(){

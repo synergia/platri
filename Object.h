@@ -18,12 +18,16 @@ using namespace TUIO;
 class Object {
 public:
 	Object(TuioObject *tobj);
+	~Object();
 	
 	// properties accessors
 	int symbolID();
 	int x();
 	int y();
 	int angle();	
+	
+	// calbacks
+	virtual void onUpdate(){};
 	
 	virtual void display();
 	void displayGraphics();

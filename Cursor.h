@@ -22,6 +22,9 @@ public:
 	int x();
 	int y();
 	
+	// calbacks
+	virtual void onUpdate(){};
+	
 	virtual void display();
 	
 	bool checkTuioCursor(TuioCursor * cur);
