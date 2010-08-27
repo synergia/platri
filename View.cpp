@@ -66,8 +66,9 @@ void View::init(int width, int height, bool fullscreen, int * argc, char ** argv
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 	
 	
-	// load textures
-	loadTexture(0, "/Users/teamon/Desktop/flare.png");
+	// load textures	
+	loadTexture(0, "../../Resources/flare.png");
+	loadTexture(1, "../../Resources/star.png");
 
 }
 

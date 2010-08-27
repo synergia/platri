@@ -37,23 +37,25 @@ using namespace helpers;
 void DemoApp::display(){
 	clear("#2c4776");
 
-	color("#fffc");
-	translate(100, 100);
+	//translate(100, 100);
 	pushMatrix();
 	
-	enableTextures();
-	selectTexture(0);
+//	enableTextures();
+//	selectTexture(0);
+//	color("#fff9");
+//	
+//	glBegin( GL_QUADS );
+//	glTexCoord2d(0.0, 0.0); glVertex2d(0.0,   0.0);
+//	glTexCoord2d(1.0, 0.0); glVertex2d(200.0, 0.0);
+//	glTexCoord2d(1.0, 1.0); glVertex2d(200.0, 200.0);
+//	glTexCoord2d(0.0, 1.0); glVertex2d(0.0,   200.0);
+//	glEnd();
+//	
+//	disableTextures();
 	
 	
-	color("#fff9");
-	glBegin( GL_QUADS );
-	glTexCoord2d(0.0,0.0); glVertex2d(0.0,   0.0);
-	glTexCoord2d(1.0,0.0); glVertex2d(200.0, 0.0);
-	glTexCoord2d(1.0,1.0); glVertex2d(200.0, 200.0);
-	glTexCoord2d(0.0,1.0); glVertex2d(0.0,   200.0);
-	glEnd();
 	
-	disableTextures();
+	
 	
 //	int ri = 80;
 //	int ro = 100;

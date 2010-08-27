@@ -63,6 +63,17 @@ void helpers::rect(int width, int height){
 	glEnd();
 }
 
+void helpers::texRect(int width, int height){
+	int w2 = width/2;
+	int h2 = height/2;
+	glBegin(GL_QUADS);
+	glTexCoord2d(0.0, 1.0); glVertex2f(-w2,  h2);
+	glTexCoord2d(1.0, 1.0); glVertex2f( w2,  h2);
+	glTexCoord2d(1.0, 0.0); glVertex2f( w2, -h2);
+	glTexCoord2d(0.0, 0.0); glVertex2f(-w2, -h2);
+	glEnd();
+}
+
 void helpers::square(int width){
 	rect(width, width);
 }

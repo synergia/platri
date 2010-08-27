@@ -29,6 +29,8 @@
 		6FB888761226A61100DAD45F /* DemoObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888751226A61100DAD45F /* DemoObject.cpp */; };
 		6FB888D71226B5BB00DAD45F /* helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888D61226B5BB00DAD45F /* helpers.cpp */; };
 		6FEFBD4E12284D2F0097DBB7 /* stb_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 6FEFBD4D12284D2F0097DBB7 /* stb_image.c */; };
+		6FEFBE911228612A0097DBB7 /* flare.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEFBE90122861150097DBB7 /* flare.png */; };
+		6FEFBE921228612D0097DBB7 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEFBC8112283D6D0097DBB7 /* star.png */; };
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* platri.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* platri.1 */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,8 @@
 		6FEFBC8112283D6D0097DBB7 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		6FEFBD4D12284D2F0097DBB7 /* stb_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image.c; sourceTree = "<group>"; };
 		6FEFBD5B12284E320097DBB7 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		6FEFBE90122861150097DBB7 /* flare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flare.png; sourceTree = "<group>"; };
+		6FEFBEAF122861AF0097DBB7 /* platri-osx-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "platri-osx-Info.plist"; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* platri */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = platri; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* platri.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = platri.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +135,7 @@
 				C6859E8C029090F304C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
 				6FB8884D1226A2CA00DAD45F /* Linked Frameworks */,
+				6FEFBEAF122861AF0097DBB7 /* platri-osx-Info.plist */,
 			);
 			name = platri;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 		6FEFBC8612283D730097DBB7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6FEFBE90122861150097DBB7 /* flare.png */,
 				6FEFBC8112283D6D0097DBB7 /* star.png */,
 			);
 			name = Resources;
@@ -307,6 +313,7 @@
 				8DD76F640486A84900D96B5E /* Sources */,
 				8DD76F660486A84900D96B5E /* Frameworks */,
 				8DD76F690486A84900D96B5E /* CopyFiles */,
+				6FEFBEA6122861720097DBB7 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -334,6 +341,18 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FEFBEA6122861720097DBB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FEFBE911228612A0097DBB7 /* flare.png in Resources */,
+				6FEFBE921228612D0097DBB7 /* star.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8DD76F640486A84900D96B5E /* Sources */ = {
