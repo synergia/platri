@@ -11,6 +11,7 @@
 #define _OBJECT_H_
 
 #include "TuioObject.h"
+#include "Graphic.h"
 
 using namespace TUIO;
 
@@ -25,11 +26,13 @@ public:
 	int angle();	
 	
 	virtual void display();
+	void displayGraphics();
 	
 	bool checkTuioObject(TuioObject * obj);
 	
 protected:	
 	TuioObject * tobj;
+	std::list<Graphic<Object> *> graphics;
 };
 
 

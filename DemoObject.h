@@ -14,8 +14,15 @@
 
 class DemoObject : public Object {
 public:
-	DemoObject(TuioObject *tobj):Object(tobj){};
+	DemoObject(TuioObject *tobj);
 	void display();	
+};
+
+class DemoGfxObject : public Graphic<Object> {
+public:
+	DemoGfxObject(Object * obj):Graphic<Object>(obj){};
+	
+	void display();
 };
 
 

@@ -46,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6F1DBEF31226FA9B00E6B259 /* Graphic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphic.h; sourceTree = "<group>"; };
 		6FB888021226A28100DAD45F /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
 		6FB888031226A28100DAD45F /* IpEndpointName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IpEndpointName.h; sourceTree = "<group>"; };
 		6FB888041226A28100DAD45F /* NetworkingUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingUtils.h; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				6FB888D41226B5A400DAD45F /* OpenGL */,
+				08FB7796FE84155DC02AAC07 /* main.cpp */,
 				6FB888391226A2B000DAD45F /* Application.cpp */,
 				6FB8883A1226A2B000DAD45F /* Application.h */,
 				6FB8883B1226A2B000DAD45F /* Cursor.cpp */,
@@ -140,7 +142,7 @@
 				6FB888401226A2B000DAD45F /* Object.h */,
 				6FB888361226A2A400DAD45F /* View.cpp */,
 				6FB888371226A2A400DAD45F /* View.h */,
-				08FB7796FE84155DC02AAC07 /* main.cpp */,
+				6F1DBEF31226FA9B00E6B259 /* Graphic.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -344,7 +346,7 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INSTALL_PATH = /usr/local/bin;
 				PRODUCT_NAME = platri;
 			};

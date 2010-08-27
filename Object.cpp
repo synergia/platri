@@ -49,6 +49,12 @@ void Object::display(){
 	glPopMatrix();
 }
 
+void Object::displayGraphics(){
+	for (list<Graphic<Object> *>::iterator it = graphics.begin(); it != graphics.end(); ++it){
+		(*it)->display();
+	}
+}
+
 bool Object::checkTuioObject(TuioObject * obj){
 	return (tobj == obj);
 }
