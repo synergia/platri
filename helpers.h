@@ -23,5 +23,11 @@ namespace helpers {
 	void ring(int ri, int ro);	
 	void arc(int ri, int ro, int start, int angle);
 	void text(int x, int y, const char * str);
+	
+	// textures
+	void enableTextures();
+	void disableTextures();
+	void loadTexture(int index, const char * filename);
+	void selectTexture(int index);
 }
 

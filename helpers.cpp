@@ -10,13 +10,14 @@
 #include <string.h>
 #include <math.h>
 #include <GLUT/glut.h>
+#include "stb_image.h"
 #include "helpers.h"
 
 #define HEXCHAR2INT(x, y)  ((x >= 'a' ? x-87 : x-48) * 16 + (y >= 'a' ? y-87 : y-48))
 
 float * _parse_color(const char * str);
 
-
+GLuint textures[10];
 
 
 void helpers::color(const char * name){
@@ -91,6 +92,31 @@ void helpers::text(int x, int y, const char * str){
 	for(char * c = (char *)str; *c != '\0'; ++c){
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, *c);
 	}
+}
+
+void helpers::enableTextures(){
+	glEnable(GL_TEXTURE_2D);
+}
+
+void helpers::disableTextures(){
+	glDisable(GL_TEXTURE_2D);
+}
+
+void helpers::loadTexture(int index, const char * filename){
+	glGenTextures(1, &textures[index]);
+	glBindTexture(GL_TEXTURE_2D, textures[index]);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		
+	int width, height, n;
+	unsigned char * data = stbi_load(filename, &width, &height, &n, 0);
+	
+	glTexImage2D(GL_TEXTURE_2D, 0, 4, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+	delete data;
+}
+
+void helpers::selectTexture(int index){
+	glBindTexture(GL_TEXTURE_2D, textures[index]);
 }
 
 float * _parse_color(const char * str){

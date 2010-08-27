@@ -13,6 +13,8 @@
 #include "Application.h"
 #include "helpers.h"
 
+using namespace helpers;
+
 int View::frame;
 int View::_time;
 int View::timebase = 0;
@@ -57,7 +59,16 @@ void View::init(int width, int height, bool fullscreen, int * argc, char ** argv
 	glutKeyboardFunc(keyboard);
 	
 	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_SMOOTH);
+	glEnable(GL_POINT_SMOOTH);
+	glEnable(GL_LINE_SMOOTH);
+	glEnable(GL_POLYGON_SMOOTH);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+	
+	
+	// load textures
+	loadTexture(0, "/Users/teamon/Desktop/flare.png");
+
 }
 
 void View::keyboard(unsigned char key, int x, int y){
@@ -110,6 +121,6 @@ void View::displayFPS(){
 		timebase = _time;		
 		frame = 0;
 	}
-	helpers::color("#fff");
-	helpers::text(300, 30, s);
+	color("#fff");
+	text(300, 30, s);
 }

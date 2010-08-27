@@ -28,6 +28,7 @@
 		6FB8884C1226A2C300DAD45F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB8884B1226A2C300DAD45F /* OpenGL.framework */; };
 		6FB888761226A61100DAD45F /* DemoObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888751226A61100DAD45F /* DemoObject.cpp */; };
 		6FB888D71226B5BB00DAD45F /* helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888D61226B5BB00DAD45F /* helpers.cpp */; };
+		6FEFBD4E12284D2F0097DBB7 /* stb_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 6FEFBD4D12284D2F0097DBB7 /* stb_image.c */; };
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* platri.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* platri.1 */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,9 @@
 		6FB888751226A61100DAD45F /* DemoObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DemoObject.cpp; sourceTree = "<group>"; };
 		6FB888D51226B5BB00DAD45F /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
 		6FB888D61226B5BB00DAD45F /* helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helpers.cpp; sourceTree = "<group>"; };
+		6FEFBC8112283D6D0097DBB7 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		6FEFBD4D12284D2F0097DBB7 /* stb_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image.c; sourceTree = "<group>"; };
+		6FEFBD5B12284E320097DBB7 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* platri */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = platri; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* platri.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = platri.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +123,7 @@
 		08FB7794FE84155DC02AAC07 /* platri */ = {
 			isa = PBXGroup;
 			children = (
+				6FEFBC8612283D730097DBB7 /* Resources */,
 				6FB8886A1226A53C00DAD45F /* Apps */,
 				6FB888271226A28A00DAD45F /* TUIO */,
 				6FB887FF1226A28100DAD45F /* oscpack */,
@@ -147,6 +152,8 @@
 				6FB888361226A2A400DAD45F /* View.cpp */,
 				6FB888371226A2A400DAD45F /* View.h */,
 				6F1DBEF31226FA9B00E6B259 /* Graphic.h */,
+				6FEFBD4D12284D2F0097DBB7 /* stb_image.c */,
+				6FEFBD5B12284E320097DBB7 /* stb_image.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -274,6 +281,14 @@
 			name = OpenGL;
 			sourceTree = "<group>";
 		};
+		6FEFBC8612283D730097DBB7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6FEFBC8112283D6D0097DBB7 /* star.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		C6859E8C029090F304C91782 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +360,7 @@
 				6FB888761226A61100DAD45F /* DemoObject.cpp in Sources */,
 				6FB888D71226B5BB00DAD45F /* helpers.cpp in Sources */,
 				6F1DC0801227E24400E6B259 /* Fader.cpp in Sources */,
+				6FEFBD4E12284D2F0097DBB7 /* stb_image.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
