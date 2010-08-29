@@ -131,7 +131,7 @@ void helpers::loadTexture(int index, const char * filename){
 	int width, height, n;
 	unsigned char * data = stbi_load(filename, &width, &height, &n, 0);
 	
-	glTexImage2D(GL_TEXTURE_2D, 0, 4, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+	glTexImage2D(GL_TEXTURE_2D, 0, n, width, height, 0, (n==3 ? GL_RGB : GL_RGBA), GL_UNSIGNED_BYTE, data);
 	delete data;
 }
 
