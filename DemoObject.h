@@ -15,32 +15,18 @@
 class DemoObject : public Object {
 public:
 	DemoObject(TuioObject *tobj);
-	void display();	
-};
-
-class DemoAnimation : public Animation<int> {
-public:
-	DemoAnimation(int * ptr):Animation<int>(ptr){};
-	
-	void step(){
-		printf("DemoAnimation#step\n");
-		sleep(1);
-	}
 };
 
 class DemoGfxObject : public Graphic<Object> {
 public:
-	DemoGfxObject(Object * obj);
-	virtual ~DemoGfxObject();
+	DemoGfxObject(Object * obj, int m):Graphic<Object>(obj),angle(0),multiply(m){};
 	
 	void display();
 	
 protected:
-	DemoAnimation * animation;
 	int angle;
+	int multiply;
 };
-
-
 
 
 #endif

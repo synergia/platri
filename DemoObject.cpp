@@ -14,42 +14,21 @@
 using namespace helpers;
 
 DemoObject::DemoObject(TuioObject *tobj):Object(tobj){
-	graphics.push_back(new DemoGfxObject(this));
+	graphics.push_back(new DemoGfxObject(this, 1));
+	graphics.push_back(new DemoGfxObject(this, 3));
 }
-
-void DemoObject::display(){
-	// do some display
-	displayGraphics();
-}
-
-DemoGfxObject::DemoGfxObject(Object * obj):Graphic<Object>(obj){
-	printf(">>> DemoGfxObject()\n");
-	animation = new DemoAnimation(&angle);
-};
-
-DemoGfxObject::~DemoGfxObject(){
-	delete animation;
-};
 
 void DemoGfxObject::display(){
+	angle += multiply;
+	if(angle >= 360) angle = 0;
+	
 	pushMatrix();
-	translate(parent->x(), parent->y());
-	rotate(parent->angle());
+	translate(multiply*parent->x(), parent->y());
+	rotate(angle);
 	
-	enableTextures();
 	selectTexture(0);
+	texRect(200, 200);
 	
-	for(int i = 0; i < 12; ++i){
-		rotate(30);
-		glBegin(GL_QUADS);
-		tex(0.0, 1.0); vertex(-20, 100);
-		tex(1.0, 1.0); vertex( 20, 100);
-		tex(1.0, 0.0); vertex( 20,  80);
-		tex(0.0, 0.0); vertex(-20,  80);
-		glEnd();
-	}
-	
-	disableTextures();
 	
 	popMatrix();
 }

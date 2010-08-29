@@ -10,8 +10,6 @@
 #ifndef _GRAPHIC_H_
 #define _GRAPHIC_H_
 
-#include "Animation.h"
-
 template <class T> class Graphic {
 public:
 	Graphic(T * obj):parent(obj){};

@@ -22,72 +22,7 @@ using namespace helpers;
 
 
 void DemoApp::display(){
-	clear("#2c4776");
-	
-	pushMatrix();
-	
-	
-	translate(200, 200);
-
-	popMatrix();
-
-	
-//	enableTextures();
-//	selectTexture(0);
-//	color("#fff9");
-//	
-//	glBegin( GL_QUADS );
-//	glTexCoord2d(0.0, 0.0); glVertex2d(0.0,   0.0);
-//	glTexCoord2d(1.0, 0.0); glVertex2d(200.0, 0.0);
-//	glTexCoord2d(1.0, 1.0); glVertex2d(200.0, 200.0);
-//	glTexCoord2d(0.0, 1.0); glVertex2d(0.0,   200.0);
-//	glEnd();
-//	
-//	disableTextures();
-	
-	
-	
-	
-	
-//	int ri = 80;
-//	int ro = 100;
-//	
-//	int field_angle = 20;
-//	int space_angle = 10;
-//	int step_angle = 5;
-//	
-//	// begin
-//	
-//	int size = field_angle + space_angle;
-//	int count = 360 / size;
-//	
-//	float field_angle_radians = DEG2RAD(field_angle);
-//	float space_angle_radians = DEG2RAD(space_angle);
-//	float step_angle_radians = DEG2RAD(step_angle);
-//	
-//	
-//	
-//	
-//	
-//	float angle = 0.0f;
-//	for(int j=0; j<count; ++j){
-//		glBegin(GL_QUADS);
-//		for(float i=0.0f; i<=field_angle_radians; i+=step_angle_radians){
-//			vertex(ri*cos(angle+i), ri*sin(angle+i));
-//			vertex(ro*cos(angle+i), ro*sin(angle+i));
-//			vertex(ro*cos(angle+i+step_angle_radians), ro*sin(angle+i+step_angle_radians));
-//			vertex(ri*cos(angle+i+step_angle_radians), ri*sin(angle+i+step_angle_radians));
-//		}
-//		glEnd();
-//		
-//		angle += field_angle_radians;		
-//		angle += space_angle_radians;
-//	}
-//	
-	
-		
-	
-	//popMatrix();
+	clear("#fff");
 }
 
 Object * DemoApp::createObject(TuioObject * tobj){

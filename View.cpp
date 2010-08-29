@@ -13,7 +13,7 @@
 #include "Application.h"
 #include "helpers.h"
 
-#define FPS 100
+#define FPS 50
 #define TIMERMSECS (1000/FPS)
 
 using namespace helpers;
@@ -43,7 +43,7 @@ void View::init(int width, int height, bool fullscreen, int * argc, char ** argv
 	
 	glutInit(argc, argv);
 		
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	
 	if(fullscreen){
 		char buffer[20];
@@ -65,16 +65,16 @@ void View::init(int width, int height, bool fullscreen, int * argc, char ** argv
 	glutKeyboardFunc(keyboard);
 	
 	glEnable(GL_BLEND);
-	glEnable(GL_SMOOTH);
-	glEnable(GL_POINT_SMOOTH);
-	glEnable(GL_LINE_SMOOTH);
-	glEnable(GL_POLYGON_SMOOTH);
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	
+//	glEnable(GL_SMOOTH);
+//	glEnable(GL_POINT_SMOOTH);
+//	glEnable(GL_LINE_SMOOTH);
+//	glEnable(GL_POLYGON_SMOOTH);
 	
 	
 	// load textures	
-	loadTexture(0, "../../Resources/flare.png");
-	loadTexture(1, "../../Resources/star.png");
+	loadTexture(0, "../../Resources/circle200.png");
 
 }
 
@@ -89,10 +89,12 @@ void View::keyboard(unsigned char key, int x, int y){
 void View::display(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor(1.0, 1.0, 1.0, 1.0);
-
+	
+	enableTextures();
 	glPushMatrix();
 	manager->display();
 	glPopMatrix();
+	disableTextures();
 	
 	displayFPS();
 

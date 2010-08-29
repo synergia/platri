@@ -120,6 +120,7 @@ void helpers::disableTextures(){
 void helpers::loadTexture(int index, const char * filename){
 	glGenTextures(1, &textures[index]);
 	glBindTexture(GL_TEXTURE_2D, textures[index]);
+
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 		

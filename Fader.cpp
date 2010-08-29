@@ -9,6 +9,7 @@
 
 #include "Fader.h"
 #include "helpers.h"
+#include <GLUT/glut.h>
 
 using namespace helpers;
 
@@ -17,14 +18,9 @@ using namespace helpers;
 #define INCRESING (_angle + E > 360)
 #define DECRESING (_angle - E < 0)
 
-Fader::Fader(TuioObject * tobj):Object(tobj), value(0), _angle(0.0), _angle_diff(0.0), _prev_rotation_speed(0.0){
-	graphics.push_back((Graphic<Object> *)new FaderGraphic(this));
-};
+Fader::Fader(TuioObject * tobj):Object(tobj), value(0), _angle(0.0), _angle_diff(0.0), _prev_rotation_speed(0.0){};
 	
-
-
 void Fader::onUpdate(){
-	
 	float rspeed = tobj->getRotationSpeed();
 	
 	if(rspeed != 0){
@@ -47,16 +43,35 @@ void Fader::onUpdate(){
 	}
 	
 	_prev_rotation_speed = tobj->getRotationSpeed();
-	
-	printf("_angle: %d\n", _angle);
 }
-
 	
-void FaderGraphic::display(){
-	printf("FaderGraphic#display\n");
+void Fader::display(){
 	pushMatrix();
-	translate(parent->x(), parent->y());
-	color("#f00");
-	arc(40, 60, 0, parent->value);
+	translate(x(), y());
+	selectTexture(0);
+	
+	int i = 0;
+	for(; i < 12; ++i){
+		rotate(30);
+		glBegin(GL_QUADS);
+		tex(0.0, 1.0); vertex(-20, 100);
+		tex(1.0, 1.0); vertex( 20, 100);
+		tex(1.0, 0.0); vertex( 20,  80);
+		tex(0.0, 0.0); vertex(-20,  80);
+		glEnd();
+	}
+	
+	selectTexture(1);
+	
+	for(; i < 12; ++i){
+		rotate(30);
+		glBegin(GL_QUADS);
+		tex(0.0, 1.0); vertex(-20, 100);
+		tex(1.0, 1.0); vertex( 20, 100);
+		tex(1.0, 0.0); vertex( 20,  80);
+		tex(0.0, 0.0); vertex(-20,  80);
+		glEnd();
+	}
+	
 	popMatrix();
 };
