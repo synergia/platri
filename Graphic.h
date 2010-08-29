@@ -1,5 +1,5 @@
 /*
- *  UIObject.h
+ *  Graphic.h
  *  platri
  *
  *  Created by Tymon Tobolski on 10-08-26.
@@ -7,8 +7,10 @@
  *
  */
 
-#ifndef _GFX_OBJECT_H_
-#define _GFX_OBJECT_H_
+#ifndef _GRAPHIC_H_
+#define _GRAPHIC_H_
+
+#include "Animation.h"
 
 template <class T> class Graphic {
 public:

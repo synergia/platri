@@ -18,12 +18,31 @@ public:
 	void display();	
 };
 
+class DemoAnimation : public Animation<int> {
+public:
+	DemoAnimation(int * ptr):Animation<int>(ptr){
+		printf("DemoAnimation()\n");
+		step();
+	};
+	
+	void step(){
+		printf("DemoAnimation#step\n");
+	}
+};
+
 class DemoGfxObject : public Graphic<Object> {
 public:
-	DemoGfxObject(Object * obj):Graphic<Object>(obj){};
+	DemoGfxObject(Object * obj);
+	~DemoGfxObject();
 	
 	void display();
+	
+protected:
+	DemoAnimation * animation;
+	int angle;
 };
+
+
 
 
 #endif

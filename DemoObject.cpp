@@ -15,13 +15,21 @@ using namespace helpers;
 
 DemoObject::DemoObject(TuioObject *tobj):Object(tobj){
 	graphics.push_back(new DemoGfxObject(this));
-	graphics.push_back(new DemoGfxObject(this));
 }
 
 void DemoObject::display(){
 	// do some display
 	displayGraphics();
 }
+
+DemoGfxObject::DemoGfxObject(Object * obj):Graphic<Object>(obj){
+	printf(">>> DemoGfxObject()\n");
+	animation = new DemoAnimation(&angle);
+};
+
+DemoGfxObject::~DemoGfxObject(){
+	delete animation;
+};
 
 void DemoGfxObject::display(){
 	pushMatrix();

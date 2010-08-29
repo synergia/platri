@@ -107,6 +107,7 @@
 		6FEFBD5B12284E320097DBB7 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		6FEFBE90122861150097DBB7 /* flare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flare.png; sourceTree = "<group>"; };
 		6FEFBEAF122861AF0097DBB7 /* platri-osx-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "platri-osx-Info.plist"; sourceTree = "<group>"; };
+		6FFBE2E4122ABF6200D50F59 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* platri */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = platri; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* platri.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = platri.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +158,7 @@
 				6FB888361226A2A400DAD45F /* View.cpp */,
 				6FB888371226A2A400DAD45F /* View.h */,
 				6F1DBEF31226FA9B00E6B259 /* Graphic.h */,
+				6FFBE2E4122ABF6200D50F59 /* Animation.h */,
 				6FEFBD4D12284D2F0097DBB7 /* stb_image.c */,
 				6FEFBD5B12284E320097DBB7 /* stb_image.h */,
 			);
