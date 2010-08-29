@@ -16,6 +16,7 @@ class DemoApp : public Application {
 public:
 	Object * createObject(TuioObject * tobj);
 	
+	void start();
 	void display();
 	
 };

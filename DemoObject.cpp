@@ -14,11 +14,11 @@
 using namespace helpers;
 
 DemoObject::DemoObject(TuioObject *tobj):Object(tobj){
-	graphics.push_back(new DemoGfxObject(this, 1));
-	graphics.push_back(new DemoGfxObject(this, 3));
+	graphics.push_back(new DemoGraphics(this, 1));
+	graphics.push_back(new DemoGraphics(this, 3));
 }
 
-void DemoGfxObject::display(){
+void DemoGraphics::display(){
 	angle += multiply;
 	if(angle >= 360) angle = 0;
 	
@@ -26,7 +26,7 @@ void DemoGfxObject::display(){
 	translate(multiply*parent->x(), parent->y());
 	rotate(angle);
 	
-	selectTexture(0);
+	selectTexture(17);
 	texRect(200, 200);
 	
 	

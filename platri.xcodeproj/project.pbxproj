@@ -29,8 +29,27 @@
 		6FB888761226A61100DAD45F /* DemoObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888751226A61100DAD45F /* DemoObject.cpp */; };
 		6FB888D71226B5BB00DAD45F /* helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888D61226B5BB00DAD45F /* helpers.cpp */; };
 		6FEFBD4E12284D2F0097DBB7 /* stb_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 6FEFBD4D12284D2F0097DBB7 /* stb_image.c */; };
-		6FEFBE911228612A0097DBB7 /* flare.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEFBE90122861150097DBB7 /* flare.png */; };
-		6FEFBE921228612D0097DBB7 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEFBC8112283D6D0097DBB7 /* star.png */; };
+		6FF33CA3122B17DA00390F48 /* circle200.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C8D122B17DA00390F48 /* circle200.png */; };
+		6FF33CA4122B17DA00390F48 /* circle200blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C8E122B17DA00390F48 /* circle200blur.png */; };
+		6FF33CA5122B17DA00390F48 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C90122B17DA00390F48 /* 0.png */; };
+		6FF33CA6122B17DA00390F48 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C91122B17DA00390F48 /* 1.png */; };
+		6FF33CA7122B17DA00390F48 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C92122B17DA00390F48 /* 10.png */; };
+		6FF33CA8122B17DA00390F48 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C93122B17DA00390F48 /* 11.png */; };
+		6FF33CA9122B17DA00390F48 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C94122B17DA00390F48 /* 12.png */; };
+		6FF33CAA122B17DA00390F48 /* 13.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C95122B17DA00390F48 /* 13.png */; };
+		6FF33CAB122B17DA00390F48 /* 14.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C96122B17DA00390F48 /* 14.png */; };
+		6FF33CAC122B17DA00390F48 /* 15.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C97122B17DA00390F48 /* 15.png */; };
+		6FF33CAD122B17DA00390F48 /* 16.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C98122B17DA00390F48 /* 16.png */; };
+		6FF33CAE122B17DA00390F48 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C99122B17DA00390F48 /* 2.png */; };
+		6FF33CAF122B17DA00390F48 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C9A122B17DA00390F48 /* 3.png */; };
+		6FF33CB0122B17DA00390F48 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C9B122B17DA00390F48 /* 4.png */; };
+		6FF33CB1122B17DA00390F48 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C9C122B17DA00390F48 /* 5.png */; };
+		6FF33CB2122B17DA00390F48 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C9D122B17DA00390F48 /* 6.png */; };
+		6FF33CB3122B17DA00390F48 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C9E122B17DA00390F48 /* 7.png */; };
+		6FF33CB4122B17DA00390F48 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C9F122B17DA00390F48 /* 8.png */; };
+		6FF33CB5122B17DA00390F48 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33CA0122B17DA00390F48 /* 9.png */; };
+		6FF33CB6122B17DA00390F48 /* flare.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33CA1122B17DA00390F48 /* flare.png */; };
+		6FF33CB7122B17DA00390F48 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33CA2122B17DA00390F48 /* star.png */; };
 		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
 		8DD76F6A0486A84900D96B5E /* platri.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C6859E8B029090EE04C91782 /* platri.1 */; };
 /* End PBXBuildFile section */
@@ -102,11 +121,31 @@
 		6FB888751226A61100DAD45F /* DemoObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DemoObject.cpp; sourceTree = "<group>"; };
 		6FB888D51226B5BB00DAD45F /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
 		6FB888D61226B5BB00DAD45F /* helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helpers.cpp; sourceTree = "<group>"; };
-		6FEFBC8112283D6D0097DBB7 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		6FEFBD4D12284D2F0097DBB7 /* stb_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image.c; sourceTree = "<group>"; };
 		6FEFBD5B12284E320097DBB7 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
-		6FEFBE90122861150097DBB7 /* flare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flare.png; sourceTree = "<group>"; };
 		6FEFBEAF122861AF0097DBB7 /* platri-osx-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "platri-osx-Info.plist"; sourceTree = "<group>"; };
+		6FF33C7B122B17A300390F48 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6FF33C8D122B17DA00390F48 /* circle200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle200.png; sourceTree = "<group>"; };
+		6FF33C8E122B17DA00390F48 /* circle200blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle200blur.png; sourceTree = "<group>"; };
+		6FF33C90122B17DA00390F48 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
+		6FF33C91122B17DA00390F48 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		6FF33C92122B17DA00390F48 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
+		6FF33C93122B17DA00390F48 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 11.png; sourceTree = "<group>"; };
+		6FF33C94122B17DA00390F48 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
+		6FF33C95122B17DA00390F48 /* 13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 13.png; sourceTree = "<group>"; };
+		6FF33C96122B17DA00390F48 /* 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 14.png; sourceTree = "<group>"; };
+		6FF33C97122B17DA00390F48 /* 15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 15.png; sourceTree = "<group>"; };
+		6FF33C98122B17DA00390F48 /* 16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 16.png; sourceTree = "<group>"; };
+		6FF33C99122B17DA00390F48 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		6FF33C9A122B17DA00390F48 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		6FF33C9B122B17DA00390F48 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		6FF33C9C122B17DA00390F48 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		6FF33C9D122B17DA00390F48 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		6FF33C9E122B17DA00390F48 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		6FF33C9F122B17DA00390F48 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		6FF33CA0122B17DA00390F48 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		6FF33CA1122B17DA00390F48 /* flare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flare.png; sourceTree = "<group>"; };
+		6FF33CA2122B17DA00390F48 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		8DD76F6C0486A84900D96B5E /* platri */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = platri; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6859E8B029090EE04C91782 /* platri.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = platri.1; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,12 +169,13 @@
 				6FB8886A1226A53C00DAD45F /* Apps */,
 				6FB888271226A28A00DAD45F /* TUIO */,
 				6FB887FF1226A28100DAD45F /* oscpack */,
-				6FEFBC8612283D730097DBB7 /* Resources */,
 				08FB7795FE84155DC02AAC07 /* Source */,
+				6FF33C8C122B17DA00390F48 /* Resources */,
 				C6859E8C029090F304C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
 				6FB8884D1226A2CA00DAD45F /* Linked Frameworks */,
 				6FEFBEAF122861AF0097DBB7 /* platri-osx-Info.plist */,
+				6FF33C7B122B17A300390F48 /* Cocoa.framework */,
 			);
 			name = platri;
 			sourceTree = "<group>";
@@ -286,13 +326,40 @@
 			name = OpenGL;
 			sourceTree = "<group>";
 		};
-		6FEFBC8612283D730097DBB7 /* Resources */ = {
+		6FF33C8C122B17DA00390F48 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6FEFBE90122861150097DBB7 /* flare.png */,
-				6FEFBC8112283D6D0097DBB7 /* star.png */,
+				6FF33C8D122B17DA00390F48 /* circle200.png */,
+				6FF33C8E122B17DA00390F48 /* circle200blur.png */,
+				6FF33C8F122B17DA00390F48 /* fader */,
+				6FF33CA1122B17DA00390F48 /* flare.png */,
+				6FF33CA2122B17DA00390F48 /* star.png */,
 			);
-			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6FF33C8F122B17DA00390F48 /* fader */ = {
+			isa = PBXGroup;
+			children = (
+				6FF33C90122B17DA00390F48 /* 0.png */,
+				6FF33C91122B17DA00390F48 /* 1.png */,
+				6FF33C92122B17DA00390F48 /* 10.png */,
+				6FF33C93122B17DA00390F48 /* 11.png */,
+				6FF33C94122B17DA00390F48 /* 12.png */,
+				6FF33C95122B17DA00390F48 /* 13.png */,
+				6FF33C96122B17DA00390F48 /* 14.png */,
+				6FF33C97122B17DA00390F48 /* 15.png */,
+				6FF33C98122B17DA00390F48 /* 16.png */,
+				6FF33C99122B17DA00390F48 /* 2.png */,
+				6FF33C9A122B17DA00390F48 /* 3.png */,
+				6FF33C9B122B17DA00390F48 /* 4.png */,
+				6FF33C9C122B17DA00390F48 /* 5.png */,
+				6FF33C9D122B17DA00390F48 /* 6.png */,
+				6FF33C9E122B17DA00390F48 /* 7.png */,
+				6FF33C9F122B17DA00390F48 /* 8.png */,
+				6FF33CA0122B17DA00390F48 /* 9.png */,
+			);
+			path = fader;
 			sourceTree = "<group>";
 		};
 		C6859E8C029090F304C91782 /* Documentation */ = {
@@ -347,8 +414,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FEFBE911228612A0097DBB7 /* flare.png in Resources */,
-				6FEFBE921228612D0097DBB7 /* star.png in Resources */,
+				6FF33CA3122B17DA00390F48 /* circle200.png in Resources */,
+				6FF33CA4122B17DA00390F48 /* circle200blur.png in Resources */,
+				6FF33CA5122B17DA00390F48 /* 0.png in Resources */,
+				6FF33CA6122B17DA00390F48 /* 1.png in Resources */,
+				6FF33CA7122B17DA00390F48 /* 10.png in Resources */,
+				6FF33CA8122B17DA00390F48 /* 11.png in Resources */,
+				6FF33CA9122B17DA00390F48 /* 12.png in Resources */,
+				6FF33CAA122B17DA00390F48 /* 13.png in Resources */,
+				6FF33CAB122B17DA00390F48 /* 14.png in Resources */,
+				6FF33CAC122B17DA00390F48 /* 15.png in Resources */,
+				6FF33CAD122B17DA00390F48 /* 16.png in Resources */,
+				6FF33CAE122B17DA00390F48 /* 2.png in Resources */,
+				6FF33CAF122B17DA00390F48 /* 3.png in Resources */,
+				6FF33CB0122B17DA00390F48 /* 4.png in Resources */,
+				6FF33CB1122B17DA00390F48 /* 5.png in Resources */,
+				6FF33CB2122B17DA00390F48 /* 6.png in Resources */,
+				6FF33CB3122B17DA00390F48 /* 7.png in Resources */,
+				6FF33CB4122B17DA00390F48 /* 8.png in Resources */,
+				6FF33CB5122B17DA00390F48 /* 9.png in Resources */,
+				6FF33CB6122B17DA00390F48 /* flare.png in Resources */,
+				6FF33CB7122B17DA00390F48 /* star.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +493,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
+				HEADER_SEARCH_PATHS = ./oscpack;
 				INSTALL_PATH = /usr/local/bin;
 				PRODUCT_NAME = platri;
 			};

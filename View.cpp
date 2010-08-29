@@ -72,10 +72,6 @@ void View::init(int width, int height, bool fullscreen, int * argc, char ** argv
 //	glEnable(GL_LINE_SMOOTH);
 //	glEnable(GL_POLYGON_SMOOTH);
 	
-	
-	// load textures	
-	loadTexture(0, "../../Resources/circle200.png");
-
 }
 
 void View::keyboard(unsigned char key, int x, int y){
@@ -122,7 +118,6 @@ void View::reshape(int width, int height){
 void View::start(Application * app){
 	manager = new Manager();
 	manager->setApp(app);
-	
 	glutMainLoop();
 }
 

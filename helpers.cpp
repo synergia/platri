@@ -32,6 +32,10 @@ void helpers::clear(const char * name){
 	delete[] res;
 }
 
+void helpers::alpha(float val){
+	glColor4f(1.0, 1.0, 1.0, val);
+}
+
 void helpers::pushMatrix(){
 	glPushMatrix();
 }

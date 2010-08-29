@@ -44,34 +44,23 @@ void Fader::onUpdate(){
 	
 	_prev_rotation_speed = tobj->getRotationSpeed();
 }
-	
+
 void Fader::display(){
 	pushMatrix();
 	translate(x(), y());
-	selectTexture(0);
 	
-	int i = 0;
-	for(; i < 12; ++i){
-		rotate(30);
-		glBegin(GL_QUADS);
-		tex(0.0, 1.0); vertex(-20, 100);
-		tex(1.0, 1.0); vertex( 20, 100);
-		tex(1.0, 0.0); vertex( 20,  80);
-		tex(0.0, 0.0); vertex(-20,  80);
-		glEnd();
+	int n = floor(value/22.5);
+	float a = ((value - (n * 22.5)) * 0.9 / 22.5) + 0.1;
+	
+	for(int i = 1; i<=16; ++i){
+		selectTexture(i);
+		
+		if(i == n+1) alpha(a);
+		else if(i > n+1) alpha(0.1);
+		
+		texRect(200,200);
 	}
-	
-	selectTexture(1);
-	
-	for(; i < 12; ++i){
-		rotate(30);
-		glBegin(GL_QUADS);
-		tex(0.0, 1.0); vertex(-20, 100);
-		tex(1.0, 1.0); vertex( 20, 100);
-		tex(1.0, 0.0); vertex( 20,  80);
-		tex(0.0, 0.0); vertex(-20,  80);
-		glEnd();
-	}
-	
+	alpha(1.0);
 	popMatrix();
 };
+

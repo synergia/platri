@@ -9,6 +9,7 @@
 
 
 namespace helpers {
+	void alpha(float val);
 	void color(const char * name);
 	void clear(const char * name);
 	void pushMatrix();

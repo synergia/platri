@@ -17,9 +17,9 @@ public:
 	DemoObject(TuioObject *tobj);
 };
 
-class DemoGfxObject : public Graphic<Object> {
+class DemoGraphics : public Graphic<Object> {
 public:
-	DemoGfxObject(Object * obj, int m):Graphic<Object>(obj),angle(0),multiply(m){};
+	DemoGraphics(Object * obj, int m):Graphic<Object>(obj),angle(0),multiply(m){};
 	
 	void display();
 	
