@@ -19,23 +19,29 @@ DemoObject::DemoObject(TuioObject *tobj):Object(tobj){
 }
 
 void DemoObject::display(){
-//	color("#f90");
-//	pushMatrix();
-//	translate(x(), y());
-//	rotate(angle());
-//	square(50);
-//	popMatrix();
-	
+	// do some display
 	displayGraphics();
 }
 
 void DemoGfxObject::display(){
 	pushMatrix();
 	translate(parent->x(), parent->y());
+	rotate(parent->angle());
+	
 	enableTextures();
 	selectTexture(0);
-	color("#fff9");
-	texRect(100, 100);
+	
+	for(int i = 0; i < 12; ++i){
+		rotate(30);
+		glBegin(GL_QUADS);
+		tex(0.0, 1.0); vertex(-20, 100);
+		tex(1.0, 1.0); vertex( 20, 100);
+		tex(1.0, 0.0); vertex( 20,  80);
+		tex(0.0, 0.0); vertex(-20,  80);
+		glEnd();
+	}
+	
 	disableTextures();
+	
 	popMatrix();
 }

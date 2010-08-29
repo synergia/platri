@@ -18,27 +18,19 @@
 using namespace helpers;
 
 #define DEG2RAD(x) (x * M_PI / 180)
-#define RAD2DEG(x) (x * 180 / M_PI
-
-//  1 x 360
-//  2 x 180
-//  3 x 120
-//  4 x 90
-//  5 x 74
-//  6 x 60
-//  8 x 45
-//  9 x 40
-// 10 x 36
-// 12 x 30
-// 15 x 24
-// 18 x 20
+#define RAD2DEG(x) (x * 180 / M_PI)
 
 
 void DemoApp::display(){
 	clear("#2c4776");
-
-	//translate(100, 100);
+	
 	pushMatrix();
+	
+	
+	translate(200, 200);
+
+	popMatrix();
+
 	
 //	enableTextures();
 //	selectTexture(0);
@@ -95,7 +87,7 @@ void DemoApp::display(){
 	
 		
 	
-	popMatrix();
+	//popMatrix();
 }
 
 Object * DemoApp::createObject(TuioObject * tobj){

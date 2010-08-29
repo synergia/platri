@@ -30,5 +30,6 @@ namespace helpers {
 	void disableTextures();
 	void loadTexture(int index, const char * filename);
 	void selectTexture(int index);
+	void tex(float x, float y);
 }
 

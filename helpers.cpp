@@ -74,6 +74,10 @@ void helpers::texRect(int width, int height){
 	glEnd();
 }
 
+void helpers::tex(float x, float y){
+	glTexCoord2d(x, y);
+}
+
 void helpers::square(int width){
 	rect(width, width);
 }
