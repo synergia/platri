@@ -15,7 +15,7 @@
 template <class T> class Graphic {
 public:
 	Graphic(T * obj):parent(obj){};
-	
+	virtual ~Graphic(){};
 	virtual void display()=0;
 	
 protected:

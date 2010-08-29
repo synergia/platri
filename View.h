@@ -7,6 +7,8 @@
  *
  */
 
+// see http://dewitters.koonsolo.com/gameloop.html
+
 #ifndef _VIEW_H_
 #define _VIEW_H_
 
@@ -20,6 +22,7 @@ public:
 	static void keyboard(unsigned char key, int x, int y);
 	static void display();
 	static void idle();
+	static void animate(int value);
 	static void reshape(int width, int height);	
 	static void start(Application * app);
 	static void displayFPS();

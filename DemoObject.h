@@ -20,20 +20,18 @@ public:
 
 class DemoAnimation : public Animation<int> {
 public:
-	DemoAnimation(int * ptr):Animation<int>(ptr){
-		printf("DemoAnimation()\n");
-		step();
-	};
+	DemoAnimation(int * ptr):Animation<int>(ptr){};
 	
 	void step(){
 		printf("DemoAnimation#step\n");
+		sleep(1);
 	}
 };
 
 class DemoGfxObject : public Graphic<Object> {
 public:
 	DemoGfxObject(Object * obj);
-	~DemoGfxObject();
+	virtual ~DemoGfxObject();
 	
 	void display();
 	

@@ -13,6 +13,9 @@
 #include "Application.h"
 #include "helpers.h"
 
+#define FPS 100
+#define TIMERMSECS (1000/FPS)
+
 using namespace helpers;
 
 int View::frame;
@@ -54,7 +57,10 @@ void View::init(int width, int height, bool fullscreen, int * argc, char ** argv
 	}
 
 	glutDisplayFunc(display);
-	glutIdleFunc(idle);
+	
+	//glutIdleFunc(idle);
+	glutTimerFunc(TIMERMSECS, animate, 0);
+	
 	glutReshapeFunc(reshape);
 	glutKeyboardFunc(keyboard);
 	
@@ -94,6 +100,11 @@ void View::display(){
 }
 
 void View::idle(){
+	glutPostRedisplay();
+}
+
+void View::animate(int value){
+	glutTimerFunc(TIMERMSECS, animate, 0);
 	glutPostRedisplay();
 }
 

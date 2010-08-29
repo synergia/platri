@@ -18,7 +18,7 @@ using namespace TUIO;
 class Object {
 public:
 	Object(TuioObject *tobj);
-	~Object();
+	virtual ~Object();
 	
 	// properties accessors
 	int symbolID();

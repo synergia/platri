@@ -22,7 +22,14 @@ public:
 		pthread_create(&thread, NULL, animation_thread_callback<T>, this);
 	};
 	
-	virtual void step()=0;
+	~Animation(){
+		printf("~Animation()\n");
+		pthread_kill(thread, 0);
+	}
+	
+	virtual void step(){
+		printf("Application#step\n");
+	};
 	
 protected:
 	T * ptr;
@@ -30,7 +37,12 @@ protected:
 };
 
 template <class T> void * animation_thread_callback(void * parent){
-	((Animation<T> *)parent)->step();
+	Animation<T> * anim = (Animation<T> * )parent;
+	while(true){
+		printf("animation_thread_callback()\n");
+		if(anim != NULL)
+			anim->step();
+	}
 	return NULL;
 }
 
