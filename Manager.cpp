@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include "Manager.h"
 
+#include "Fader.h"
 
 using namespace std;
 using namespace TUIO;
@@ -106,6 +107,23 @@ void Manager::refresh(TuioTime ftime){
 	//log("Refresh");
 }
 
+
+// tools
+
+list<Object *> Manager::findCloseObjects(Object * obj, int range, const std::type_info &type){
+	list<Object *> close;
+	
+	printf("%ld close objects: ", obj->sid());
+	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
+		if(obj != *it && typeid(**it) == type && obj->distanceTo(*it) <= range){
+			printf("%ld, ", (*it)->sid());
+			close.push_back(*it);
+		}
+	}
+		
+	printf("\n");
+	return close;
+}
 
 
 

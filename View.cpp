@@ -52,7 +52,7 @@ void View::init(int width, int height, bool fullscreen, int * argc, char ** argv
 		glutEnterGameMode();
 	} else {
 		glutInitWindowSize(width, height);
-		// glutInitWindowPosition(800, 200);
+		glutInitWindowPosition(800, 200);
 		glutCreateWindow("platri");
 	}
 
@@ -130,6 +130,6 @@ void View::displayFPS(){
 		timebase = _time;		
 		frame = 0;
 	}
-	color("#fff");
-	text(300, 30, s);
+	color("#000");
+	text(windowWidth-100, 30, s);
 }

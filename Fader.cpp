@@ -46,6 +46,7 @@ void Fader::onUpdate(){
 }
 
 void Fader::display(){
+	Object::display();
 	pushMatrix();
 	translate(x(), y());
 	

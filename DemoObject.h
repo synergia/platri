@@ -15,6 +15,7 @@
 class DemoObject : public Object {
 public:
 	DemoObject(TuioObject *tobj);
+	void onUpdate();
 };
 
 class DemoGraphics : public Graphic<Object> {

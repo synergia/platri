@@ -12,18 +12,24 @@
 #include <GLUT/glut.h>
 
 using namespace helpers;
+using namespace std;
 
 DemoObject::DemoObject(TuioObject *tobj):Object(tobj){
 	graphics.push_back(new DemoGraphics(this, 1));
-	graphics.push_back(new DemoGraphics(this, 3));
+}
+
+void DemoObject::onUpdate(){
+	list<Object *> close = findCloseObjects(300, typeid(DemoObject));
+	
 }
 
 void DemoGraphics::display(){
+	color("#fff");
 	angle += multiply;
 	if(angle >= 360) angle = 0;
 	
 	pushMatrix();
-	translate(multiply*parent->x(), parent->y());
+	translate(parent->x(), parent->y());
 	rotate(angle);
 	
 	selectTexture(17);
