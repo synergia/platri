@@ -109,21 +109,42 @@ void Manager::refresh(TuioTime ftime){
 
 
 // tools
-
-list<Object *> Manager::findCloseObjects(Object * obj, int range, const std::type_info &type){
+list<Object *> Manager::findCloseObjects(Node<> * node, int range, const std::type_info &type){
 	list<Object *> close;
 	
-	printf("%ld close objects: ", obj->sid());
 	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
-		if(obj != *it && typeid(**it) == type && obj->distanceTo(*it) <= range){
-			printf("%ld, ", (*it)->sid());
+		if(node != (Node<>*)(*it) && typeid(**it) == type && node->distanceTo((Node<>*)*it) <= range){
 			close.push_back(*it);
 		}
 	}
-		
-	printf("\n");
+	
 	return close;
 }
 
+list<Object *> Manager::findCloseObjects(Node<> * node, int range){
+	// TODO: Implement this
+	list<Object *> close;
+	
+	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
+		if(node != (Node<>*)(*it) && node->distanceTo((Node<>*)*it) <= range){
+			close.push_back(*it);
+		}
+	}
+	
+	return close;
+}
+
+list<Cursor *> Manager::findCloseCursors(Node<> * node, int range){
+	// TODO: Implement this
+	list<Cursor *> close;
+	
+	for (list<Cursor*>::iterator it = cursors.begin(); it != cursors.end(); ++it){
+		if(node != (Node<>*)(*it) && node->distanceTo((Node<>*)*it) <= range){
+			close.push_back(*it);
+		}
+	}
+	
+	return close;
+}
 
 

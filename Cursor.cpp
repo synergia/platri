@@ -11,10 +11,6 @@
 #include "View.h"
 #include <GLUT/GLUT.h>
 
-Cursor::Cursor(TuioCursor * tcur):Node<TuioCursor>(tcur){
-	
-}
-
 void Cursor::display(){
 	glPushMatrix();
 	glColor3f(1.0, 0.0, 0.0);

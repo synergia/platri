@@ -16,10 +16,6 @@
 
 using namespace helpers;
 
-Object::Object(TuioObject *tobj):Node<TuioObject>(tobj){
-	
-}
-
 Object::~Object(){
 	for (list<Graphic *>::iterator it = graphics.begin(); it != graphics.end(); ++it){
 		Graphic * gfx = *it;
@@ -52,5 +48,5 @@ void Object::displayGraphics(){
 }
 
 list<Object *> Object::findCloseObjects(int range, const std::type_info &type){
-	return View::manager->findCloseObjects(this, range, type);
+	return View::manager->findCloseObjects((Node<>*)this, range, type);
 }

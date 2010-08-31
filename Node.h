@@ -23,7 +23,7 @@ using namespace std;
 using namespace helpers;
 #endif
 
-template <class T> class Node {
+template <class T = TuioContainer> class Node {
 public:
 	Node(T *source):source(source){};
 	virtual ~Node(){};

@@ -44,8 +44,10 @@ public:
 	void refresh(TuioTime frameTime);
 	
 	// tools
-	list<Object *> findCloseObjects(Object * obj, int range, const std::type_info &type);
-	list<Object *> findCloseObjects(Object * obj, int range);
+	list<Object *> findCloseObjects(Node<> * node, int range, const std::type_info &type);
+	list<Object *> findCloseObjects(Node<> * node, int range);
+	
+	list<Cursor *> findCloseCursors(Node<> * node, int range);
 
 	
 protected:

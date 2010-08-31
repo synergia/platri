@@ -17,7 +17,7 @@ using namespace TUIO;
 
 class Cursor : public Node<TuioCursor> {
 public:
-	Cursor(TuioCursor *tcur);
+	Cursor(TuioCursor *tcur):Node<TuioCursor>(tcur){};
 	void display();
 };
 

@@ -19,7 +19,7 @@ using namespace std;
 
 class Object : public Node<TuioObject> {
 public:
-	Object(TuioObject *tobj);
+	Object(TuioObject *tobj):Node<TuioObject>(tobj){};
 	virtual ~Object();
 	
 	// properties accessors
