@@ -71,7 +71,7 @@ void Manager::removeTuioObject(TuioObject *tobj){
 	// see http://gist.github.com/545615
 	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
 		Object * obj = *it;
-		if(obj->checkTuioObject(tobj)){
+		if(obj->checkSource(tobj)){
 			objects.remove(obj);
 			delete obj;
 			return;
@@ -94,7 +94,7 @@ void Manager::updateTuioCursor(TuioCursor *tcur){
 void Manager::removeTuioCursor(TuioCursor *tcur){
 	for (list<Cursor*>::iterator it = cursors.begin(); it != cursors.end(); ++it){
 		Cursor * cur = *it;
-		if(cur->checkTuioCursor(tcur)){
+		if(cur->checkSource(tcur)){
 			cursors.remove(cur);
 			delete cur;
 			return;

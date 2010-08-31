@@ -18,9 +18,9 @@ public:
 	void onUpdate();
 };
 
-class DemoGraphics : public Graphic<Object> {
+class DemoGraphics : public Graphic {
 public:
-	DemoGraphics(Object * obj, int m):Graphic<Object>(obj),angle(0),multiply(m){};
+	DemoGraphics(Object * parent, int m):Graphic(parent),angle(0),multiply(m){};
 	
 	void display();
 	

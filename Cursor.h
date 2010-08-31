@@ -11,25 +11,14 @@
 #define _CURSOR_H_
 
 #include "TuioCursor.h"
+#include "Node.h"
 
 using namespace TUIO;
 
-class Cursor {
+class Cursor : public Node<TuioCursor> {
 public:
 	Cursor(TuioCursor *tcur);
-	
-	// properties accessors
-	int x();
-	int y();
-	
-	// calbacks
-	virtual void onUpdate(){};
-	
-	virtual void display();
-	
-	bool checkTuioCursor(TuioCursor * cur);
-protected:
-	TuioCursor *tcur;
+	void display();
 };
 
 #endif

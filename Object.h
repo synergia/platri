@@ -11,25 +11,21 @@
 #define _OBJECT_H_
 
 #include "TuioObject.h"
+#include "Node.h"
 #include "Graphic.h"
-
-#define DEG2RAD(x) (x * M_PI / 180)
-#define RAD2DEG(x) (x * 180 / M_PI)
 
 using namespace TUIO;
 using namespace std;
 
-class Object {
+class Object : public Node<TuioObject> {
 public:
 	Object(TuioObject *tobj);
 	virtual ~Object();
 	
 	// properties accessors
 	int symbolID();
-	int x();
-	int y();
 	int angle();
-	long sid(); // sessionID
+	float rotationSpeed();
 	
 	// calbacks
 	virtual void onUpdate(){};
@@ -38,15 +34,11 @@ public:
 	void displayGraphics();
 	
 	// tools
-	bool checkTuioObject(TuioObject * obj);
 	list<Object *> findCloseObjects(int range, const std::type_info &type);
 	list<Object *> findCloseObjects(int range);
-	float distanceTo(Object * that);
-	float angleTo(Object * that);
 	
-protected:	
-	TuioObject * tobj;
-	std::list<Graphic<Object> *> graphics;
+protected:
+	list<Graphic *> graphics;
 };
 
 

@@ -3,7 +3,7 @@
 #include "DemoApp.h"
 
 int main (int argc, char * const argv[]) {
-	View::init(800, 600, false);
+	View::init();
 	View::start(new DemoApp());
     return 0;
 }

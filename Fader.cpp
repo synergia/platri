@@ -21,7 +21,7 @@ using namespace helpers;
 Fader::Fader(TuioObject * tobj):Object(tobj), value(0), _angle(0.0), _angle_diff(0.0), _prev_rotation_speed(0.0){};
 	
 void Fader::onUpdate(){
-	float rspeed = tobj->getRotationSpeed();
+	float rspeed = rotationSpeed();
 	
 	if(rspeed != 0){
 		if(rspeed * _prev_rotation_speed < 0){ // change direction
@@ -42,7 +42,7 @@ void Fader::onUpdate(){
 		}
 	}
 	
-	_prev_rotation_speed = tobj->getRotationSpeed();
+	_prev_rotation_speed = rotationSpeed();
 }
 
 void Fader::display(){

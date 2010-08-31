@@ -11,16 +11,8 @@
 #include "View.h"
 #include <GLUT/GLUT.h>
 
-Cursor::Cursor(TuioCursor * tcur):tcur(tcur){
+Cursor::Cursor(TuioCursor * tcur):Node<TuioCursor>(tcur){
 	
-}
-
-int Cursor::x(){ 
-	return tcur->getX() * View::windowWidth; 
-}
-
-int Cursor::y(){ 
-	return tcur->getY() * View::windowHeight;
 }
 
 void Cursor::display(){
@@ -31,8 +23,4 @@ void Cursor::display(){
 	gluDisk(quad, 0, 20, 24, 10);
 	gluDeleteQuadric(quad);
 	glPopMatrix();
-}
-
-bool Cursor::checkTuioCursor(TuioCursor * cur){
-	return (tcur == cur);
 }

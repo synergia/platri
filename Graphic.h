@@ -10,14 +10,16 @@
 #ifndef _GRAPHIC_H_
 #define _GRAPHIC_H_
 
-template <class T> class Graphic {
+class Object;
+
+class Graphic {
 public:
-	Graphic(T * obj):parent(obj){};
+	Graphic(Object * parent):parent(parent){};
 	virtual ~Graphic(){};
 	virtual void display()=0;
 	
 protected:
-	T * parent;
+	Object * parent;
 };
 
 #endif

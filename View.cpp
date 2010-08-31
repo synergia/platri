@@ -12,8 +12,8 @@
 #include "View.h"
 #include "Application.h"
 #include "helpers.h"
+#include "config.h"
 
-#define FPS 50
 #define TIMERMSECS (1000/FPS)
 
 using namespace helpers;
@@ -24,34 +24,25 @@ int View::timebase = 0;
 char View::s[30];
 
 Manager * View::manager;
-int View::windowWidth;
-int View::windowHeight;
 
 void View::init(){
-	init(1280, 960, false);
-}
-
-void View::init(int width, int height, bool fullscreen){
 	int argc = 0;
 	char **argv;
-	init(width, height, fullscreen, &argc, argv);
+	init(&argc, argv);
 }
 
-void View::init(int width, int height, bool fullscreen, int * argc, char ** argv){
-	windowWidth = width;
-	windowHeight = height;
-	
+void View::init(int * argc, char ** argv){	
 	glutInit(argc, argv);
 		
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	
-	if(fullscreen){
+	if(FULLSCREEN){
 		char buffer[20];
-		sprintf(buffer, "%dx%d:16@60", width, height);
-		glutGameModeString("1280x960:16@60");
+		sprintf(buffer, "%dx%d:16@60", SCREEN_WIDTH, SCREEN_HEIGHT);
+		glutGameModeString(buffer);
 		glutEnterGameMode();
 	} else {
-		glutInitWindowSize(width, height);
+		glutInitWindowSize(SCREEN_WIDTH, SCREEN_HEIGHT);
 		glutInitWindowPosition(800, 200);
 		glutCreateWindow("platri");
 	}
@@ -131,5 +122,5 @@ void View::displayFPS(){
 		frame = 0;
 	}
 	color("#000");
-	text(windowWidth-100, 30, s);
+	text(SCREEN_WIDTH-100, 30, s);
 }
