@@ -15,6 +15,7 @@
 #include "TuioListener.h"
 #include "TuioClient.h"
 #include "Application.h"
+#include "DirectedConnection.h"
 
 using namespace TUIO;
 using namespace std;
@@ -43,11 +44,15 @@ public:
 	
 	void refresh(TuioTime frameTime);
 	
-	// tools
+	
+	
 	list<Object *> findCloseObjects(Node<> * node, int range, const std::type_info &type);
 	list<Object *> findCloseObjects(Node<> * node, int range);
-	
 	list<Cursor *> findCloseCursors(Node<> * node, int range);
+	
+	
+	void addConnection(DirectedConnection * con);
+	void removeConnection(DirectedConnection * con);
 
 	
 protected:
@@ -56,6 +61,8 @@ protected:
 	
 	list<Object*> objects;
 	list<Cursor*> cursors;
+	
+	list<DirectedConnection *> connections;
 };
 
 #endif

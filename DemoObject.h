@@ -15,7 +15,7 @@
 class DemoObject : public Object {
 public:
 	DemoObject(TuioObject *tobj);
-	void onUpdate();
+	void onEvent(Event event);
 };
 
 class DemoGraphics : public Graphic {

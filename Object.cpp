@@ -47,6 +47,56 @@ void Object::displayGraphics(){
 	}
 }
 
+void Object::move(){
+	call(E_MOVE);
+	calculateCloseObjects();
+}
+
+void Object::calculateCloseObjects(){
+	list<Object *> new_close = findCloseObjects(CLOSE_OBJECT_DISTANCE);
+	
+	for(list<Object *>::iterator nit = new_close.begin(); nit != new_close.end(); ++nit){
+		bool include = false;
+		for(list<Object *>::iterator oit = old_close.begin(); oit != old_close.end(); ++oit){
+			if(*nit == *oit){
+				include = true;
+				break;
+			}
+		}
+		
+		if(include){
+			old_close.remove(*nit);
+		} else {
+			call(E_NEW_CLOSE_OBJECT, (Node<> *)*nit);
+		}
+	}
+	
+	for(list<Object *>::iterator oit = old_close.begin(); oit != old_close.end(); ++oit){
+		call(E_REMOVE_CLOSE_OBJECT, (Node<> *)*oit);
+	}
+	
+	old_close = new_close;
+}
+
+// proxy methods
+
 list<Object *> Object::findCloseObjects(int range, const std::type_info &type){
 	return View::manager->findCloseObjects((Node<>*)this, range, type);
 }
+
+list<Object *> Object::findCloseObjects(int range){
+	return View::manager->findCloseObjects((Node<>*)this, range);
+}
+
+list<Cursor *> Object::findCloseCursors(int range){
+	return View::manager->findCloseCursors((Node<>*)this, range);
+}
+
+void Object::addConnection(DirectedConnection * con){
+	View::manager->addConnection(con);
+}
+
+void Object::removeConnection(DirectedConnection * con){
+	View::manager->removeConnection(con);
+}
+

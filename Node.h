@@ -18,12 +18,23 @@
 using namespace TUIO;
 using namespace std;
 
+template <class T = TuioContainer> class Node;
+
+typedef unsigned int E_TYPE;
+
+struct Event {
+	E_TYPE type;
+	Node <> * node;
+};
+
+
+
 #if DEBUG
 #include "helpers.h"
 using namespace helpers;
 #endif
 
-template <class T = TuioContainer> class Node {
+template <class T> class Node {
 public:
 	Node(T *source):source(source){};
 	virtual ~Node(){};
@@ -41,8 +52,19 @@ public:
 		return source->getSessionID();
 	};
 	
-	// calbacks
-	virtual void onUpdate(){};
+	// Events
+	virtual void onEvent(Event event){};
+	
+	void call(E_TYPE type){
+		call(type, NULL);
+	};
+	
+	void call(E_TYPE type, Node <> * node){
+		Event ev;
+		ev.type = type;
+		ev.node = node;
+		onEvent(ev);
+	};
 	
 	virtual void display(){
 		
@@ -78,6 +100,5 @@ public:
 protected:	
 	T * source;
 };
-
 
 #endif

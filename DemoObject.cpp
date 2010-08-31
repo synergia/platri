@@ -18,9 +18,21 @@ DemoObject::DemoObject(TuioObject *tobj):Object(tobj){
 	graphics.push_back(new DemoGraphics(this, 1));
 }
 
-void DemoObject::onUpdate(){
-	list<Object *> close = findCloseObjects(300, typeid(DemoObject));
-	
+void DemoObject::onEvent(Event event){
+	switch(event.type){
+		case E_MOVE:
+			printf("[EVENT] E_MOVE\n");
+			break;
+			
+		case E_NEW_CLOSE_OBJECT:
+			printf("[EVENT] E_NEW_CLOSE_OBJECT\n");
+			break;
+			
+		case E_REMOVE_CLOSE_OBJECT:
+			printf("[EVENT] E_REMOVE_CLOSE_OBJECT\n");
+			break;
+	}
+
 }
 
 void DemoGraphics::display(){
@@ -38,3 +50,4 @@ void DemoGraphics::display(){
 	
 	popMatrix();
 }
+

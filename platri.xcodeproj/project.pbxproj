@@ -123,6 +123,7 @@
 		6FB888D61226B5BB00DAD45F /* helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helpers.cpp; sourceTree = "<group>"; };
 		6FCFE37E122D22AB00950436 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		6FCFE3AB122D255700950436 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		6FCFE5BC122D378300950436 /* DirectedConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectedConnection.h; sourceTree = "<group>"; };
 		6FEFBD4D12284D2F0097DBB7 /* stb_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image.c; sourceTree = "<group>"; };
 		6FEFBD5B12284E320097DBB7 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
 		6FEFBEAF122861AF0097DBB7 /* platri-osx-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "platri-osx-Info.plist"; sourceTree = "<group>"; };
@@ -203,6 +204,7 @@
 				6F1DBEF31226FA9B00E6B259 /* Graphic.h */,
 				6FCFE37E122D22AB00950436 /* Node.h */,
 				6FCFE3AB122D255700950436 /* config.h */,
+				6FCFE5BC122D378300950436 /* DirectedConnection.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";

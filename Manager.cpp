@@ -41,6 +41,11 @@ void Manager::display(){
 	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
 		(*it)->display();
 	}
+	
+	// display objects connections
+	for (list<DirectedConnection*>::iterator it = connections.begin(); it != connections.end(); ++it){
+		(*it)->display();
+	}
 	tuioClient->unlockObjectList();
 	
 
@@ -63,7 +68,7 @@ void Manager::addTuioObject(TuioObject *tobj){
 void Manager::updateTuioObject(TuioObject *tobj){
 	// update is done automatically via TuioObject pointers in Object instances
 	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
-		(*it)->onUpdate();
+		(*it)->move();
 	}
 }
 
@@ -87,7 +92,7 @@ void Manager::addTuioCursor(TuioCursor *tcur){
 void Manager::updateTuioCursor(TuioCursor *tcur){
 	// update is done automatically via TuioCursor pointers in Cursor instances
 	for (list<Cursor*>::iterator it = cursors.begin(); it != cursors.end(); ++it){
-		(*it)->onUpdate();
+		(*it)->call(E_MOVE);
 	}
 }
 
@@ -145,6 +150,15 @@ list<Cursor *> Manager::findCloseCursors(Node<> * node, int range){
 	}
 	
 	return close;
+}
+
+void Manager::addConnection(DirectedConnection * con){
+	connections.push_back(con);
+}
+
+void Manager::removeConnection(DirectedConnection * con){
+	connections.remove(con);
+	delete con;
 }
 
 

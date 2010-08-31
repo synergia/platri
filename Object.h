@@ -13,6 +13,8 @@
 #include "TuioObject.h"
 #include "Node.h"
 #include "Graphic.h"
+#include "Cursor.h"
+#include "DirectedConnection.h"
 
 using namespace TUIO;
 using namespace std;
@@ -26,19 +28,25 @@ public:
 	int symbolID();
 	int angle();
 	float rotationSpeed();
-	
-	// calbacks
-	virtual void onUpdate(){};
-	
+		
 	virtual void display();
 	void displayGraphics();
 	
-	// tools
+	void move();
+	
+	// proxy
 	list<Object *> findCloseObjects(int range, const std::type_info &type);
 	list<Object *> findCloseObjects(int range);
+	list<Cursor *> findCloseCursors(int range);
+	
+	void addConnection(DirectedConnection * con);	
+	void removeConnection(DirectedConnection * con);
 	
 protected:
 	list<Graphic *> graphics;
+	list<Object *> old_close;
+	
+	void calculateCloseObjects();
 };
 
 
