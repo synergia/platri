@@ -38,6 +38,7 @@ float Object::rotationSpeed(){
 }
 
 void Object::display(){
+	Node<TuioObject>::display();
 	displayGraphics();
 }
 
@@ -49,10 +50,10 @@ void Object::displayGraphics(){
 
 void Object::move(){
 	call(E_MOVE);
-	calculateCloseObjects();
+	updateCloseObjects(true);
 }
 
-void Object::calculateCloseObjects(){
+void Object::updateCloseObjects(bool recursive){
 	list<Object *> new_close = findCloseObjects(CLOSE_OBJECT_DISTANCE);
 	
 	for(list<Object *>::iterator nit = new_close.begin(); nit != new_close.end(); ++nit){
@@ -67,12 +68,21 @@ void Object::calculateCloseObjects(){
 		if(include){
 			old_close.remove(*nit);
 		} else {
-			call(E_NEW_CLOSE_OBJECT, (Node<> *)*nit);
+			if (recursive) {
+				call(E_NEW_CLOSE_OBJECT, (Node<> *)*nit);
+				(*nit)->call(E_NEW_CLOSE_OBJECT, (Node<> *)this);
+				(*nit)->updateCloseObjects(false);
+			}
+
 		}
 	}
 	
-	for(list<Object *>::iterator oit = old_close.begin(); oit != old_close.end(); ++oit){
-		call(E_REMOVE_CLOSE_OBJECT, (Node<> *)*oit);
+	if(recursive){
+		for(list<Object *>::iterator oit = old_close.begin(); oit != old_close.end(); ++oit){
+			call(E_REMOVE_CLOSE_OBJECT, (Node<> *)*oit);
+			(*oit)->call(E_REMOVE_CLOSE_OBJECT, (Node<> *)this);
+			(*oit)->updateCloseObjects(false);
+		}
 	}
 	
 	old_close = new_close;
@@ -92,11 +102,11 @@ list<Cursor *> Object::findCloseCursors(int range){
 	return View::manager->findCloseCursors((Node<>*)this, range);
 }
 
-void Object::addConnection(DirectedConnection * con){
-	View::manager->addConnection(con);
+void Object::addConnection(Object * from, Object * to){
+	View::manager->addConnection(from, to);
 }
 
-void Object::removeConnection(DirectedConnection * con){
-	View::manager->removeConnection(con);
+void Object::removeConnection(Object * from, Object * to){
+	View::manager->removeConnection(from, to);
 }
 

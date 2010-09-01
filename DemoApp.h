@@ -21,5 +21,28 @@ public:
 	
 };
 
+class Base : public Object {
+public:
+	Base(TuioObject *tobj);
+	void onEvent(Event event);
+};
+
+class Child : public Object {
+public:
+	Child(TuioObject *tobj);
+	void onEvent(Event event);
+};
+
+
+class DemoGraphics : public Graphic {
+public:
+	DemoGraphics(Object * parent, int m):Graphic(parent),angle(0),multiply(m){};
+	
+	void display();
+	
+protected:
+	int angle;
+	int multiply;
+};
 
 #endif

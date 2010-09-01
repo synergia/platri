@@ -51,8 +51,8 @@ public:
 	list<Cursor *> findCloseCursors(Node<> * node, int range);
 	
 	
-	void addConnection(DirectedConnection * con);
-	void removeConnection(DirectedConnection * con);
+	void addConnection(Object * from, Object * to);
+	void removeConnection(Object * from, Object * to);
 
 	
 protected:

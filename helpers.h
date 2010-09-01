@@ -19,6 +19,7 @@ namespace helpers {
 	void rotate(int angle);
 	void rect(int width, int height);
 	void texRect(int width, int height);
+	void texSquare(int width);
 	void square(int width);
 	void circle(int r);
 	void ellipse(int rx, int ry);

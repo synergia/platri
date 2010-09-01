@@ -99,7 +99,6 @@ void View::animate(int value){
 
 void View::reshape(int width, int height){
 	glViewport(0, 0, width, height);
-	    
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluOrtho2D(0, width, height, 0); // Use top-left as (0,0) and bottom-right as (width, height)

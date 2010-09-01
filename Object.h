@@ -39,14 +39,14 @@ public:
 	list<Object *> findCloseObjects(int range);
 	list<Cursor *> findCloseCursors(int range);
 	
-	void addConnection(DirectedConnection * con);	
-	void removeConnection(DirectedConnection * con);
+	void addConnection(Object * from, Object * to);
+	void removeConnection(Object * from, Object * to);
 	
+	void updateCloseObjects(bool recursive);
+
 protected:
 	list<Graphic *> graphics;
 	list<Object *> old_close;
-	
-	void calculateCloseObjects();
 };
 
 

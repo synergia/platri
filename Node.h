@@ -89,12 +89,13 @@ public:
 	};
 	
 	float angleTo(Node * that){
-		int side = this->x() - that->x();
-		int height = this->y() - that->y();
-		float angle = (float)(asin(side/height) + M_PI_2);
+		float side = this->x() - that->x();
+		float height = this->y() - that->y();
+		float distance = distanceTo(that);
+		float angle = (float)(asin(side/distance) + M_PI_2);
 		if(height < 0) angle = 2*M_PI - angle;
 		
-		return RAD2DEG(angle);
+		return -RAD2DEG(angle);
 	};
 	
 protected:	

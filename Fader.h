@@ -12,8 +12,8 @@
 class Fader : public Object {
 public:
 	Fader(TuioObject * tobj);
-	void onUpdate();
 	virtual void display();
+	void onEvent(Event event);
 	int value;
 	
 protected:

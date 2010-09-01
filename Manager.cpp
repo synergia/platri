@@ -62,26 +62,59 @@ void Manager::display(){
 // TUIO callbacks
 
 void Manager::addTuioObject(TuioObject *tobj){
-	objects.push_back(app()->createObject(tobj));
+	Object * obj = app()->createObject(tobj);
+	obj->move();
+	objects.push_back(obj);
 }
 
 void Manager::updateTuioObject(TuioObject *tobj){
+	tuioClient->lockObjectList(); // prevent TUIO thread disaster
+
 	// update is done automatically via TuioObject pointers in Object instances
 	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
-		(*it)->move();
+		if((*it)->checkSource(tobj)) {
+			(*it)->move();
+		}
 	}
+	
+	
+	
+	for (list<DirectedConnection*>::iterator it = connections.begin(); it != connections.end(); ++it){
+		DirectedConnection * con = *it;
+		printf("(%ld, %ld), ", con->from->sid(), con->to->sid());
+	}
+	
+	printf("\n");
+	tuioClient->unlockObjectList();
 }
 
 void Manager::removeTuioObject(TuioObject *tobj){
-	// see http://gist.github.com/545615
-	for (list<Object*>::iterator it = objects.begin(); it != objects.end(); ++it){
+	tuioClient->lockObjectList(); // prevent TUIO thread disaster
+	
+	for (list<Object*>::iterator it = objects.begin(); it != objects.end();){
 		Object * obj = *it;
 		if(obj->checkSource(tobj)){
-			objects.remove(obj);
+			
+			for (list<DirectedConnection*>::iterator cit = connections.begin(); cit != connections.end();){
+				DirectedConnection * con = *cit;
+				if(con->check(obj)){
+					cit = connections.erase(cit);
+					delete con;
+				} else {
+					cit++;
+				}
+			}
+			
+			
+			it = objects.erase(it);
 			delete obj;
-			return;
+		} else {
+			it++;
 		}
+
 	}
+	
+	tuioClient->unlockObjectList();
 }
 
 
@@ -148,17 +181,23 @@ list<Cursor *> Manager::findCloseCursors(Node<> * node, int range){
 			close.push_back(*it);
 		}
 	}
-	
+		
 	return close;
 }
 
-void Manager::addConnection(DirectedConnection * con){
-	connections.push_back(con);
+void Manager::addConnection(Object * from, Object * to){
+	connections.push_back(new DirectedConnection(from, to));
 }
 
-void Manager::removeConnection(DirectedConnection * con){
-	connections.remove(con);
-	delete con;
+void Manager::removeConnection(Object * from, Object * to){
+	for (list<DirectedConnection*>::iterator it = connections.begin(); it != connections.end(); ++it){
+		DirectedConnection * con = *it;
+		if(con->check(from, to)){
+			connections.remove(con);
+			delete con;
+			return;
+		}
+	}
 }
 
 

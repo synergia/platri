@@ -12,15 +12,18 @@
 
 class DirectedConnection {
 public:
-	DirectedConnection(Object * from, Object * to):from(from), to(to){};
+	DirectedConnection(Object * from, Object * to);
 	
-	virtual void display(){
-		printf("Connection#display\n");
-	};
+	virtual void display();
 	
-protected:
+	bool check(Object * first, Object * second);
+	bool check(Object * first);
+	
+//protected:
 	Object * from;
 	Object * to;
+	
+	float dist;
 };
 
 #endif

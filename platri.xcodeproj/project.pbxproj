@@ -26,8 +26,8 @@
 		6FB888471226A2B000DAD45F /* DemoApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888411226A2B000DAD45F /* DemoApp.cpp */; };
 		6FB8884A1226A2C300DAD45F /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB888491226A2C300DAD45F /* GLUT.framework */; };
 		6FB8884C1226A2C300DAD45F /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB8884B1226A2C300DAD45F /* OpenGL.framework */; };
-		6FB888761226A61100DAD45F /* DemoObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888751226A61100DAD45F /* DemoObject.cpp */; };
 		6FB888D71226B5BB00DAD45F /* helpers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FB888D61226B5BB00DAD45F /* helpers.cpp */; };
+		6FCFE733122D553900950436 /* DirectedConnection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FCFE732122D553900950436 /* DirectedConnection.cpp */; };
 		6FEFBD4E12284D2F0097DBB7 /* stb_image.c in Sources */ = {isa = PBXBuildFile; fileRef = 6FEFBD4D12284D2F0097DBB7 /* stb_image.c */; };
 		6FF33CA3122B17DA00390F48 /* circle200.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C8D122B17DA00390F48 /* circle200.png */; };
 		6FF33CA4122B17DA00390F48 /* circle200blur.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FF33C8E122B17DA00390F48 /* circle200blur.png */; };
@@ -117,16 +117,14 @@
 		6FB888421226A2B000DAD45F /* DemoApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoApp.h; sourceTree = "<group>"; };
 		6FB888491226A2C300DAD45F /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		6FB8884B1226A2C300DAD45F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
-		6FB888741226A61100DAD45F /* DemoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoObject.h; sourceTree = "<group>"; };
-		6FB888751226A61100DAD45F /* DemoObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DemoObject.cpp; sourceTree = "<group>"; };
 		6FB888D51226B5BB00DAD45F /* helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = helpers.h; sourceTree = "<group>"; };
 		6FB888D61226B5BB00DAD45F /* helpers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = helpers.cpp; sourceTree = "<group>"; };
 		6FCFE37E122D22AB00950436 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		6FCFE3AB122D255700950436 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
 		6FCFE5BC122D378300950436 /* DirectedConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectedConnection.h; sourceTree = "<group>"; };
+		6FCFE732122D553900950436 /* DirectedConnection.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DirectedConnection.cpp; sourceTree = "<group>"; };
 		6FEFBD4D12284D2F0097DBB7 /* stb_image.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image.c; sourceTree = "<group>"; };
 		6FEFBD5B12284E320097DBB7 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
-		6FEFBEAF122861AF0097DBB7 /* platri-osx-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "platri-osx-Info.plist"; sourceTree = "<group>"; };
 		6FF33C7B122B17A300390F48 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6FF33C8D122B17DA00390F48 /* circle200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle200.png; sourceTree = "<group>"; };
 		6FF33C8E122B17DA00390F48 /* circle200blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle200blur.png; sourceTree = "<group>"; };
@@ -177,7 +175,6 @@
 				C6859E8C029090F304C91782 /* Documentation */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
 				6FB8884D1226A2CA00DAD45F /* Linked Frameworks */,
-				6FEFBEAF122861AF0097DBB7 /* platri-osx-Info.plist */,
 				6FF33C7B122B17A300390F48 /* Cocoa.framework */,
 			);
 			name = platri;
@@ -205,6 +202,7 @@
 				6FCFE37E122D22AB00950436 /* Node.h */,
 				6FCFE3AB122D255700950436 /* config.h */,
 				6FCFE5BC122D378300950436 /* DirectedConnection.h */,
+				6FCFE732122D553900950436 /* DirectedConnection.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -317,8 +315,6 @@
 			children = (
 				6FB888411226A2B000DAD45F /* DemoApp.cpp */,
 				6FB888421226A2B000DAD45F /* DemoApp.h */,
-				6FB888751226A61100DAD45F /* DemoObject.cpp */,
-				6FB888741226A61100DAD45F /* DemoObject.h */,
 			);
 			name = Demo;
 			sourceTree = "<group>";
@@ -468,10 +464,10 @@
 				6FB888451226A2B000DAD45F /* Manager.cpp in Sources */,
 				6FB888461226A2B000DAD45F /* Object.cpp in Sources */,
 				6FB888471226A2B000DAD45F /* DemoApp.cpp in Sources */,
-				6FB888761226A61100DAD45F /* DemoObject.cpp in Sources */,
 				6FB888D71226B5BB00DAD45F /* helpers.cpp in Sources */,
 				6F1DC0801227E24400E6B259 /* Fader.cpp in Sources */,
 				6FEFBD4E12284D2F0097DBB7 /* stb_image.c in Sources */,
+				6FCFE733122D553900950436 /* DirectedConnection.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
