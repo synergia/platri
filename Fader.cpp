@@ -55,6 +55,7 @@ void Fader::display(){
 	pushMatrix();
 	translate(x(), y());
 	color("#fff");
+	
 	int n = floor(value/22.5);
 	float a = ((value - (n * 22.5)) * 0.9 / 22.5) + 0.1;
 	

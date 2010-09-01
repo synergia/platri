@@ -87,15 +87,10 @@ void Base::onEvent(Event event){
 			break;
 			
 		case E_NEW_CLOSE_OBJECT:
-			printf("[EVENT | base] E_NEW_CLOSE_OBJECT\n");
-			
 			addConnection(this, (Object *)event.node);
-			
 			break;
 			
 		case E_REMOVE_CLOSE_OBJECT:
-			printf("[EVENT | base] E_REMOVE_CLOSE_OBJECT\n");
-			
 			removeConnection(this, (Object *)event.node);
 			break;
 	}
@@ -103,19 +98,15 @@ void Base::onEvent(Event event){
 }
 
 void Child::onEvent(Event event){
-	switch(event.type){
-		case E_MOVE:
-			//printf("[EVENT | child] E_MOVE\n");
-			break;
-			
-		case E_NEW_CLOSE_OBJECT:
-			printf("[EVENT | child] E_NEW_CLOSE_OBJECT\n");
-			break;
-			
-		case E_REMOVE_CLOSE_OBJECT:
-			printf("[EVENT | child] E_REMOVE_CLOSE_OBJECT\n");
-			break;
-	}
-	
+//	switch(event.type){
+//		case E_MOVE:
+//			break;
+//			
+//		case E_NEW_CLOSE_OBJECT:
+//			break;
+//			
+//		case E_REMOVE_CLOSE_OBJECT:
+//			break;
+//	}
 }
 

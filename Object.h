@@ -34,8 +34,7 @@ public:
 	
 	void move();
 	
-	// proxy
-	list<Object *> findCloseObjects(int range, const std::type_info &type);
+	// proxy methods
 	list<Object *> findCloseObjects(int range);
 	list<Cursor *> findCloseCursors(int range);
 	
@@ -43,6 +42,7 @@ public:
 	void removeConnection(Object * from, Object * to);
 	
 	void updateCloseObjects(bool recursive);
+	list<DirectedConnection *> connections();
 
 protected:
 	list<Graphic *> graphics;

@@ -89,11 +89,6 @@ void Object::updateCloseObjects(bool recursive){
 }
 
 // proxy methods
-
-list<Object *> Object::findCloseObjects(int range, const std::type_info &type){
-	return View::manager->findCloseObjects((Node<>*)this, range, type);
-}
-
 list<Object *> Object::findCloseObjects(int range){
 	return View::manager->findCloseObjects((Node<>*)this, range);
 }
@@ -110,3 +105,6 @@ void Object::removeConnection(Object * from, Object * to){
 	View::manager->removeConnection(from, to);
 }
 
+list<DirectedConnection *> Object::connections(){
+	return View::manager->connectionsForObject(this);
+}

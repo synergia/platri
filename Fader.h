@@ -14,10 +14,10 @@ public:
 	Fader(TuioObject * tobj);
 	virtual void display();
 	void onEvent(Event event);
-	int value;
 	
 protected:
 	float _prev_rotation_speed;
 	int _angle;
 	int _angle_diff;
+	int value;
 };

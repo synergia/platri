@@ -55,6 +55,10 @@ public:
 	// Events
 	virtual void onEvent(Event event){};
 	
+	virtual void move(){
+		call(E_MOVE);
+	};
+	
 	void call(E_TYPE type){
 		call(type, NULL);
 	};

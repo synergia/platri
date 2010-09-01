@@ -11,6 +11,7 @@
 #define _MANAGER_H_
 
 #include <list>
+#include <map>
 
 #include "TuioListener.h"
 #include "TuioClient.h"
@@ -19,6 +20,9 @@
 
 using namespace TUIO;
 using namespace std;
+
+typedef map<TuioObject *, Object *> objects_t;
+typedef map<TuioCursor *, Cursor *> cursors_t;
 
 class Manager : public TuioListener {
 public:
@@ -44,23 +48,22 @@ public:
 	
 	void refresh(TuioTime frameTime);
 	
-	
-	
-	list<Object *> findCloseObjects(Node<> * node, int range, const std::type_info &type);
 	list<Object *> findCloseObjects(Node<> * node, int range);
 	list<Cursor *> findCloseCursors(Node<> * node, int range);
 	
 	
 	void addConnection(Object * from, Object * to);
 	void removeConnection(Object * from, Object * to);
+	list<DirectedConnection *> connectionsForObject(Object * obj);
+
 
 	
 protected:
 	Application *_app;
 	TuioClient *tuioClient;
 	
-	list<Object*> objects;
-	list<Cursor*> cursors;
+	objects_t objects;
+	cursors_t cursors;
 	
 	list<DirectedConnection *> connections;
 };
