@@ -69,8 +69,8 @@ void Object::updateCloseObjects(bool recursive){
 			old_close.remove(*nit);
 		} else {
 			if (recursive) {
-				call(E_NEW_CLOSE_OBJECT, (Node<> *)*nit);
-				(*nit)->call(E_NEW_CLOSE_OBJECT, (Node<> *)this);
+				call(E_CLOSE_ADDED, (Node<> *)*nit);
+				(*nit)->call(E_CLOSE_ADDED, (Node<> *)this);
 				(*nit)->updateCloseObjects(false);
 			}
 
@@ -79,8 +79,8 @@ void Object::updateCloseObjects(bool recursive){
 	
 	if(recursive){
 		for(list<Object *>::iterator oit = old_close.begin(); oit != old_close.end(); ++oit){
-			call(E_REMOVE_CLOSE_OBJECT, (Node<> *)*oit);
-			(*oit)->call(E_REMOVE_CLOSE_OBJECT, (Node<> *)this);
+			call(E_CLOSE_REMOVED, (Node<> *)*oit);
+			(*oit)->call(E_CLOSE_REMOVED, (Node<> *)this);
 			(*oit)->updateCloseObjects(false);
 		}
 	}

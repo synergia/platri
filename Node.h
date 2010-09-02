@@ -76,7 +76,7 @@ public:
 		// display session id
 		disableTextures();
 		char ss[10];
-		sprintf(ss, "%ld", sid());
+		sprintf(ss, "%s(%ld)", typeid(*this).name(), sid());
 		color("#000");
 		text(x(), y(), ss);
 		enableTextures();

@@ -36,15 +36,15 @@ void Manager::display(){
 	// display application
 	app()->display();
 	
-	// display objects	
 	tuioClient->lockObjectList(); // prevent TUIO thread disaster
-	for (objects_t::iterator it = objects.begin(); it != objects.end(); ++it){
-		it->second->display();
-	}
-	
 	// display objects connections
 	for (list<DirectedConnection*>::iterator it = connections.begin(); it != connections.end(); ++it){
 		(*it)->display();
+	}
+	
+	// display objects	
+	for (objects_t::iterator it = objects.begin(); it != objects.end(); ++it){
+		it->second->display();
 	}
 	tuioClient->unlockObjectList();
 	

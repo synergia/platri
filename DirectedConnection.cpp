@@ -8,7 +8,9 @@
  */
 
 #include "Object.h"
-#include <GLUT/glut.h>
+#include "helpers.h"
+
+using namespace helpers;
 
 DirectedConnection::DirectedConnection(Object * from, Object * to):from(from), to(to), dist(0.0){
 };
@@ -16,22 +18,28 @@ DirectedConnection::DirectedConnection(Object * from, Object * to):from(from), t
 void DirectedConnection::display(){
 	dist += 0.03;
 	if(dist > 1.0) dist = 0.0;
-	pushMatrix();
 	
 	int length = from->distanceTo(to);
 	int angle = from->angleTo(to);
 		
+	pushMatrix();
 	translate(from->x(), from->y());
 	rotate(angle);
-	translate((length-100)*dist + 50, 0);
 	
-	selectTexture(0);
+	pushMatrix();
+	selectTexture(19);
+	color("#fff");
+	translate(length/2, 0);
+	texRect(length-50, 40);
+	popMatrix();
+		 
+	selectTexture(18);
 	color("#fff");
 	
-	texRect(20, 20);
+	translate((length-100)*dist + 50, 0);
+	texRect(20, 10);
 	
 	popMatrix();
-	
 };
 
 bool DirectedConnection::check(Object * first, Object * second){

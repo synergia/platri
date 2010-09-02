@@ -111,7 +111,8 @@ void helpers::arc(int ri, int ro, int start, int angle){
 }
 
 void helpers::text(int x, int y, const char * str){
-	glRasterPos2f(x, y);
+	int len = strlen(str)*8;
+	glRasterPos2f(x-(len/2), y);
 	for(char * c = (char *)str; *c != '\0'; ++c){
 		glutBitmapCharacter(GLUT_BITMAP_8_BY_13, *c);
 	}

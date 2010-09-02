@@ -83,8 +83,9 @@ void View::display(){
 	glPopMatrix();
 	disableTextures();
 	
+#if DEBUG
 	displayFPS();
-
+#endif
 	glutSwapBuffers();
 }
 

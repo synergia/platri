@@ -20,11 +20,10 @@
 #define BASE_SIZE 100
 
 
-
 // events (do not touch)
-#define E_MOVE					0x01
-#define E_NEW_CLOSE_OBJECT		0x02
-#define E_REMOVE_CLOSE_OBJECT	0x03
+#define E_MOVE			0x01
+#define E_CLOSE_ADDED	0x02
+#define E_CLOSE_REMOVED	0x03
 
 #if DEBUG
 

@@ -27,19 +27,17 @@ void DemoApp::start(){
 	}
 	
 	loadTexture(17, "/Users/teamon/code/app/platri/Resources/circle200blur.png");
-	
+	loadTexture(18, "/Users/teamon/code/app/platri/Resources/bulb.png");
+	loadTexture(19, "/Users/teamon/code/app/platri/Resources/road.png");
 }
 
 void DemoApp::display(){
-	clear("#fff");
+	clear("#d0d0d0");
 }
 
 Object * DemoApp::createObject(TuioObject * tobj){
 	switch(SYMBOL(tobj)){
-		case 0:
-			return new Fader(tobj);
-			break;
-			
+		case 0:			
 		case 1:
 			return new Base(tobj);
 			break;
@@ -86,11 +84,12 @@ void Base::onEvent(Event event){
 			//printf("[EVENT | base] E_MOVE\n");
 			break;
 			
-		case E_NEW_CLOSE_OBJECT:
-			addConnection(this, (Object *)event.node);
+		case E_CLOSE_ADDED:
+			if(typeid(*event.node) == typeid(Child))
+				addConnection(this, (Object *)event.node);
 			break;
 			
-		case E_REMOVE_CLOSE_OBJECT:
+		case E_CLOSE_REMOVED:
 			removeConnection(this, (Object *)event.node);
 			break;
 	}
@@ -102,10 +101,10 @@ void Child::onEvent(Event event){
 //		case E_MOVE:
 //			break;
 //			
-//		case E_NEW_CLOSE_OBJECT:
+//		case E_CLOSE_ADDED:
 //			break;
 //			
-//		case E_REMOVE_CLOSE_OBJECT:
+//		case E_CLOSE_REMOVED:
 //			break;
 //	}
 }
