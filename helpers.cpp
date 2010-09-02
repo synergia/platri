@@ -17,7 +17,7 @@
 
 float * _parse_color(const char * str);
 
-GLuint textures[10];
+GLuint textures[100];
 
 
 void helpers::color(const char * name){

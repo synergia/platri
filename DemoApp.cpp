@@ -17,18 +17,20 @@ using namespace helpers;
 
 void DemoApp::start(){
 	// load textures	
-	
-	loadTexture(0, "/Users/teamon/code/app/platri/Resources/bg.png");
+	char buffer[1000];
+	std::cout << "Current directory is: " << getcwd( buffer, 1000) << "\n";
+
+	loadTexture(0, "Resources/bg.png");
 	
 	char s[100];
 	for(int i=1; i<=16; ++i){
-		sprintf(s, "/Users/teamon/code/app/platri/Resources/fader/%d.png", i);
+		sprintf(s, "fader%d.png", i);
 		loadTexture(i, s);
 	}
 	
-	loadTexture(17, "/Users/teamon/code/app/platri/Resources/circle200blur.png");
-	loadTexture(18, "/Users/teamon/code/app/platri/Resources/bulb.png");
-	loadTexture(19, "/Users/teamon/code/app/platri/Resources/road.png");
+	loadTexture(17, "circle200blur.png");
+	loadTexture(18, "bulb.png");
+	loadTexture(19, "road.png");
 }
 
 void DemoApp::display(){
