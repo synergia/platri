@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F55F9D7122FE4AC00319852 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
-		6F55FA10122FE4C600319852 /* oscserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F55F9CC122FE44700319852 /* oscserver.cpp */; };
-		6F55FA57122FE92800319852 /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D5F122FBCDA00CD1211 /* OscOutboundPacketStream.cpp */; };
-		6F55FA5A122FE92800319852 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D62122FBCDA00CD1211 /* OscPrintReceivedElements.cpp */; };
-		6F55FA5C122FE92800319852 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D64122FBCDA00CD1211 /* OscReceivedElements.cpp */; };
-		6F55FA5E122FE92800319852 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D66122FBCDA00CD1211 /* OscTypes.cpp */; };
-		6F55FA60122FE92F00319852 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D4E122FBCDA00CD1211 /* IpEndpointName.cpp */; };
-		6F55FA66122FE93400319852 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D53122FBCDA00CD1211 /* NetworkingUtils.cpp */; };
-		6F55FA67122FE93400319852 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D54122FBCDA00CD1211 /* UdpSocket.cpp */; };
+		6F935DE01231532B00D87D63 /* NetworkingUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D53122FBCDA00CD1211 /* NetworkingUtils.cpp */; };
+		6F935DE11231532B00D87D63 /* UdpSocket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D54122FBCDA00CD1211 /* UdpSocket.cpp */; };
+		6F935DE21231532B00D87D63 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D4E122FBCDA00CD1211 /* IpEndpointName.cpp */; };
+		6F935DE31231532B00D87D63 /* OscOutboundPacketStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D5F122FBCDA00CD1211 /* OscOutboundPacketStream.cpp */; };
+		6F935DE41231532B00D87D63 /* OscPrintReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D62122FBCDA00CD1211 /* OscPrintReceivedElements.cpp */; };
+		6F935DE51231532B00D87D63 /* OscReceivedElements.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D64122FBCDA00CD1211 /* OscReceivedElements.cpp */; };
+		6F935DE61231532B00D87D63 /* OscTypes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D66122FBCDA00CD1211 /* OscTypes.cpp */; };
+		6F935DE71231532B00D87D63 /* midi.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F704E02123145C0004251F1 /* midi.cpp */; };
+		6F935DFB123159A900D87D63 /* midi_console.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6F935DFA123159A900D87D63 /* midi_console.cpp */; };
 		6FC11D3A122FBC4000CD1211 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC11D39122FBC4000CD1211 /* OpenGL.framework */; };
 		6FC11D3E122FBC4500CD1211 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC11D3D122FBC4500CD1211 /* GLUT.framework */; };
 		6FC11D6B122FBCDA00CD1211 /* IpEndpointName.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6FC11D4E122FBCDA00CD1211 /* IpEndpointName.cpp */; };
@@ -72,9 +72,11 @@
 		256AC3F00F4B6AF500CF3369 /* platri_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = platri_Prefix.pch; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6F55F9C3122FE3FB00319852 /* oscserver-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "oscserver-Info.plist"; sourceTree = "<group>"; };
-		6F55F9CC122FE44700319852 /* oscserver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = oscserver.cpp; sourceTree = "<group>"; };
-		6F55FA0D122FE4AC00319852 /* platri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = platri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F55FA0F122FE4AD00319852 /* platri-Info copy.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "platri-Info copy.plist"; sourceTree = "<group>"; };
+		6F704E01123145C0004251F1 /* midi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
+		6F704E02123145C0004251F1 /* midi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midi.cpp; sourceTree = "<group>"; };
+		6F935DDC1231530A00D87D63 /* midiconsole */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = midiconsole; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F935DFA123159A900D87D63 /* midi_console.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = midi_console.cpp; sourceTree = "<group>"; };
 		6FC11D39122FBC4000CD1211 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		6FC11D3D122FBC4500CD1211 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		6FC11D4E122FBCDA00CD1211 /* IpEndpointName.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IpEndpointName.cpp; sourceTree = "<group>"; };
@@ -161,7 +163,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6F55FA07122FE4AC00319852 /* Frameworks */ = {
+		6F935DDA1231530A00D87D63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -183,6 +185,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6F704E00123145B1004251F1 /* MIDI */,
 				6FC11D8A122FBD2C00CD1211 /* Application.cpp */,
 				6FC11D8B122FBD2C00CD1211 /* Application.h */,
 				6FC11D8C122FBD2C00CD1211 /* config.h */,
@@ -228,7 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* platri.app */,
-				6F55FA0D122FE4AC00319852 /* platri.app */,
+				6F935DDC1231530A00D87D63 /* midiconsole */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -236,7 +239,6 @@
 		29B97314FDCFA39411CA2CEA /* platri */ = {
 			isa = PBXGroup;
 			children = (
-				6F55F9CA122FE42700319852 /* oscserver */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -280,12 +282,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6F55F9CA122FE42700319852 /* oscserver */ = {
+		6F704E00123145B1004251F1 /* MIDI */ = {
 			isa = PBXGroup;
 			children = (
-				6F55F9CC122FE44700319852 /* oscserver.cpp */,
+				6F704E01123145C0004251F1 /* midi.h */,
+				6F704E02123145C0004251F1 /* midi.cpp */,
+				6F935DFA123159A900D87D63 /* midi_console.cpp */,
 			);
-			name = oscserver;
+			name = MIDI;
 			sourceTree = "<group>";
 		};
 		6FC11D4B122FBCDA00CD1211 /* oscpack */ = {
@@ -400,23 +404,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6F55F9D5122FE4AC00319852 /* oscserver */ = {
+		6F935DDB1231530A00D87D63 /* midiconsole */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6F55FA0A122FE4AC00319852 /* Build configuration list for PBXNativeTarget "oscserver" */;
+			buildConfigurationList = 6F935DE81231533400D87D63 /* Build configuration list for PBXNativeTarget "midiconsole" */;
 			buildPhases = (
-				6F55F9D6122FE4AC00319852 /* Resources */,
-				6F55F9F1122FE4AC00319852 /* Sources */,
-				6F55FA07122FE4AC00319852 /* Frameworks */,
+				6F935DD91231530A00D87D63 /* Sources */,
+				6F935DDA1231530A00D87D63 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = oscserver;
-			productInstallPath = "$(HOME)/Applications";
-			productName = platri;
-			productReference = 6F55FA0D122FE4AC00319852 /* platri.app */;
-			productType = "com.apple.product-type.application";
+			name = midiconsole;
+			productName = osctest;
+			productReference = 6F935DDC1231530A00D87D63 /* midiconsole */;
+			productType = "com.apple.product-type.tool";
 		};
 		8D1107260486CEB800E47090 /* platri */ = {
 			isa = PBXNativeTarget;
@@ -449,20 +451,12 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* platri */,
-				6F55F9D5122FE4AC00319852 /* oscserver */,
+				6F935DDB1231530A00D87D63 /* midiconsole */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6F55F9D6122FE4AC00319852 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6F55F9D7122FE4AC00319852 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8D1107290486CEB800E47090 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -499,18 +493,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6F55F9F1122FE4AC00319852 /* Sources */ = {
+		6F935DD91231530A00D87D63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F55FA66122FE93400319852 /* NetworkingUtils.cpp in Sources */,
-				6F55FA67122FE93400319852 /* UdpSocket.cpp in Sources */,
-				6F55FA60122FE92F00319852 /* IpEndpointName.cpp in Sources */,
-				6F55FA57122FE92800319852 /* OscOutboundPacketStream.cpp in Sources */,
-				6F55FA5A122FE92800319852 /* OscPrintReceivedElements.cpp in Sources */,
-				6F55FA5C122FE92800319852 /* OscReceivedElements.cpp in Sources */,
-				6F55FA5E122FE92800319852 /* OscTypes.cpp in Sources */,
-				6F55FA10122FE4C600319852 /* oscserver.cpp in Sources */,
+				6F935DE01231532B00D87D63 /* NetworkingUtils.cpp in Sources */,
+				6F935DE11231532B00D87D63 /* UdpSocket.cpp in Sources */,
+				6F935DE21231532B00D87D63 /* IpEndpointName.cpp in Sources */,
+				6F935DE31231532B00D87D63 /* OscOutboundPacketStream.cpp in Sources */,
+				6F935DE41231532B00D87D63 /* OscPrintReceivedElements.cpp in Sources */,
+				6F935DE51231532B00D87D63 /* OscReceivedElements.cpp in Sources */,
+				6F935DE61231532B00D87D63 /* OscTypes.cpp in Sources */,
+				6F935DE71231532B00D87D63 /* midi.cpp in Sources */,
+				6F935DFB123159A900D87D63 /* midi_console.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +551,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6F55FA0B122FE4AC00319852 /* Debug */ = {
+		6F935DDE1231530B00D87D63 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -565,26 +560,26 @@
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = platri_Prefix.pch;
 				HEADER_SEARCH_PATHS = ./oscpack;
-				INFOPLIST_FILE = "platri-Info copy.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = platri;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = "-lcurses";
+				PREBINDING = NO;
+				PRODUCT_NAME = midiconsole;
 			};
 			name = Debug;
 		};
-		6F55FA0C122FE4AC00319852 /* Release */ = {
+		6F935DDF1231530B00D87D63 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = platri_Prefix.pch;
-				INFOPLIST_FILE = "platri-Info copy.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = platri;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = osctest;
+				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
@@ -649,11 +644,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6F55FA0A122FE4AC00319852 /* Build configuration list for PBXNativeTarget "oscserver" */ = {
+		6F935DE81231533400D87D63 /* Build configuration list for PBXNativeTarget "midiconsole" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6F55FA0B122FE4AC00319852 /* Debug */,
-				6F55FA0C122FE4AC00319852 /* Release */,
+				6F935DDE1231530B00D87D63 /* Debug */,
+				6F935DDF1231530B00D87D63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
