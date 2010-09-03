@@ -40,7 +40,11 @@ void DemoApp::display(){
 Object * DemoApp::createObject(TuioObject * tobj){
 	switch(SYMBOL(tobj)){
 		case 0:			
+			return new Fader(tobj);
+			break;
 		case 1:
+		case 4:
+		case 5:
 			return new Base(tobj);
 			break;
 		
@@ -50,7 +54,7 @@ Object * DemoApp::createObject(TuioObject * tobj){
 			break;
 			
 		default:
-			return new Fader(tobj);
+			return new Child(tobj);
 			break;
 	}
 }
