@@ -36,13 +36,15 @@
 #define TIMING_CLOCK           0xF8
 #define TUNE_REQUEST           0xF6
 
-
 namespace midi {
 	void init(const char * address, int port);
 	void send(int command, int channel, int data1, int data2);
 	void note_on(int data1);
 	void note_on(int data1, int data2);
 	void note_on(int data1, int data2, int channel);
+	
+	int _parse_note(const char * note);
+
 	
 	
 	class OSCProxy {

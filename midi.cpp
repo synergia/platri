@@ -35,6 +35,29 @@ void midi::note_on(int data1, int data2, int channel){
 	send(NOTE_ON, channel, data1, data2);
 }
 
+//int midi::_parse_note(const char * note){
+//	int len = strlen(note);
+//	int octave = 0;
+//	int value;
+//	
+//	switch(note[0]){
+//		case 'C': value = 0; break;
+//		case 'D': value = 2; break;
+//		case 'E': value = 4; break;
+//		case 'F': value = 5; break;
+//		case 'G': value = 7; break;
+//		case 'A': value = 9; break;
+//		case 'H': value = 11; break;
+//	}
+//	
+//	if(len > 1){
+//		if(note[1] == '#') value++;
+//		if(len > 2 && note[1] >= '0' && note[1] <= '9') octave = note[1]-48;
+//	}
+//	
+//	return (octave + 2)*12 + value;
+//}
+
 midi::OSCProxy::OSCProxy(){
 	initialize("127.0.0.1", 4444, 1500);
 }
@@ -68,3 +91,5 @@ void midi::OSCProxy::send(int command, int channel, int data1, int data2){
 	
 	socket->Send(fullPacket->Data(), fullPacket->Size());
 }
+
+
