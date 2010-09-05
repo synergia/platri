@@ -26,6 +26,22 @@ object App extends Application {
 	}
 }
 
+class Road(from: Object, to: Object) extends Connection(from, to){
+	def display {
+		val length = from distanceTo to
+		val angle = from angleTo to
+		
+		matrix {
+			translate(from.x, from.y)
+			rotate(angle)
+			
+			App.roadTexture.foreach(_.bind)
+			translate(length/2, 0)
+			rect(length-50, 40)
+		}
+	}
+}
+
 class DemoGraphic(parent: Object, val multiply: Int) extends Graphic(parent) {
 	protected var angle = 0
 	
@@ -47,7 +63,7 @@ class Base(tobj: TuioObject) extends Object(tobj) {
 	graphics += new DemoGraphic(this, 1)
 	
 	override def onCloseAdded(obj: Object) {
-		if(obj.getClass == classOf[Child]) addConnection(obj)
+		if(obj.getClass == classOf[Child]) addConnection(new Road(this, obj))
 	}
 	
 	override def onCloseRemoved(obj: Object) {

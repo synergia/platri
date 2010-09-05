@@ -19,10 +19,6 @@ class Manager(val app: Application) extends TuioListener {
 		cursors.foreach(_._2.display)
 	}
 	
-	def addConnection(from: Object, to: Object){
-		connections += new Connection(from, to)
-	}
-	
 	def removeConnection(from: Object, to: Object){
 		connections.filter(_.check(from, to)).foreach( connections -= _ )
 	}
@@ -59,7 +55,7 @@ class Manager(val app: Application) extends TuioListener {
 		
 	}
 	
-	def findCloseObjects(node: Node, range: Int) = objects.values.filter(o => o != node && node.distanceTo(o) <= range)
-	
+	def findCloseObjects(node: Node, range: Int) = 
+		objects.values.filter(o => o != node && node.distanceTo(o) <= range)
 	
 }

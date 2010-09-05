@@ -29,8 +29,8 @@ class Object(val source: TuioObject) extends Node with Events {
 	
 	def connections = View.manager.connections.filter(_.check(this))
 	
-	def addConnection(obj: Object){
-		View.manager.addConnection(this, obj)
+	def addConnection(connection: Connection){
+		View.manager.connections += connection
 	}
 	
 	def removeConnection(obj: Object){
