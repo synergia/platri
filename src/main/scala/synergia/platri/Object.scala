@@ -1,9 +1,8 @@
 package synergia.platri
 
 import scala.collection.mutable.ListBuffer
-import scala.math._
 import TUIO._
-
+	
 abstract class Graphic(val parent: Object) extends Helpers {
 	def display
 }
@@ -69,68 +68,4 @@ class Object(val source: TuioObject) extends Node with Events {
 	}
 	
 	protected def findCloseObjects(range: Int) = View.manager.findCloseObjects(this, range)
-}
-
-class Cursor(val source: TuioCursor) extends Node with Events {
-	def move = onMoved
-}
-
-trait Events {
-	def onMoved { println("[EVENT] onMove") }
-	def onCloseAdded(obj: Object) { println("[EVENT] onCloseAdded") }
-	def onCloseRemoved(obj: Object) { println("[EVENT] onCloseRemoved") }
-}
-
-class Connection(val from: Object, val to: Object) extends Helpers {
-	def display {
-		val length = from distanceTo to
-		val angle = from angleTo to
-		
-		matrix {
-			translate(from.x, from.y)
-			rotate(angle)
-			
-			apps.midi.App.roadTexture.foreach(_.bind)
-			translate(length/2, 0)
-			rect(length-50, 40)
-		}
-	}
-	
-	def check(obj: Object) = obj == from || obj == to
-	def check(obj1: Object, obj2: Object) = (obj1 == from && obj2 == to) || (obj2 == from && obj1 == to)
-}
-
-trait Node extends Helpers {
-	// Required interface
-	def source: TuioContainer
-	def display {
-		withoutTextures {
-			color("#000")
-			text(x, y, "%s(%d)".format(this.getClass.getName, sid))
-		}
-	}
-	
-	def x = (source.getX * Config.WIDTH).toInt
-	
-	def y = (source.getY * Config.HEIGHT).toInt
-	
-	def distanceTo(that: Node) = {
-		val dx = x - that.x
-		val dy = y - that.y
-	
-		sqrt(dx*dx + dy*dy).toInt
-	}
-	
-	def angleTo(that: Node) = {
-		val side = x - that.x
-		val height = y - that.y
-		val distance = distanceTo(that)
-		var angle = (asin(side.toDouble/distance) + Pi/2);
-		if(height < 0) angle = 2*Pi - angle
-		
-		-(angle * 180 / Pi).toInt
-	}
-	
-	def sid = source.getSessionID
-	
 }

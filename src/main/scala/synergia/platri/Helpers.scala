@@ -104,8 +104,8 @@ trait Helpers {
 	
 	def texture(path: String, seq: Seq[Any]): Seq[Option[Texture]] = seq.map { i => texture(path.format(i)) }
 	
-	//@deprecated("That sucks, use textures") 
-	def circle(r: Int) = glu.gluDisk(glu.gluNewQuadric, 0, r, 24, 10)
+	@deprecated("That sucks, use textures") 
+	def circle(r: Int) = withoutTextures { glu.gluDisk(glu.gluNewQuadric, 0, r, 24, 10) }
 
 	def rect(width: Int, height: Int) {
 		val w2 = (width/2).toFloat;
