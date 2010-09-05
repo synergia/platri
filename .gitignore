@@ -16,3 +16,7 @@ Makefile
 *.o
 
 doc/*
+target/
+lib_managed/
+src_managed/
+project/boot/
