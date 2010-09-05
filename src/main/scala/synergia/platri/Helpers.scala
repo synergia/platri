@@ -14,6 +14,9 @@ trait Helpers {
 	final val RRGGBB 	= """#([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})""".r
 	final val RRGGBBAA = """#([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})([a-f0-9]{2})""".r
 	
+	private lazy val gl = View.gl
+	private lazy val glu = View.glu
+	private lazy val glut = View.glut
 	
 	protected def parseColor(name: String) = {
 		def s(s: String) = {
@@ -30,10 +33,19 @@ trait Helpers {
 		}
 	}
 	
-	def text(x: Int, y: Int, str: String) {
+	
+	def text(x: Int, y: Int, str: String) { text(x, y, str, true) }
+	
+	def text(x: Int, y: Int, str: String, center: Boolean) {
 		val font = GLUT.BITMAP_8_BY_13
-		val len = glut.glutBitmapLength(font, str)
-		gl.glRasterPos2f(x-(len/2), y)
+		
+		if(center){
+			val len = glut.glutBitmapLength(font, str)
+			gl.glRasterPos2f(List(List(x-(len/2), len/2).max, Config.WIDTH-(len/2)).min, y)
+		} else {
+			gl.glRasterPos2f(x, y)
+		}
+
 		str.toArray.foreach(glut.glutBitmapCharacter(font, _))
 	}
 	
@@ -92,12 +104,12 @@ trait Helpers {
 			val text = TextureIO.newTexture(new File(url.toURI), false)
 			text.setTexParameteri(GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR)
 			text.setTexParameteri(GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR)
-			println("[platri] Loaded texture " + path)
+			Debug.info("Loaded texture " + path)
 			return Some(text)
 		} catch { 
 			case e => 
-				println(e.getMessage())
-				println("Error loading texture " + path)
+				Debug.error(e.getMessage())
+				Debug.error("Error loading texture " + path)
 		}
 		return None
 	}
@@ -119,8 +131,5 @@ trait Helpers {
 	}
 	
 	def square(size: Int) = rect(size, size)
-	
-	private lazy val gl = View.gl
-	private lazy val glu = View.glu
-	private lazy val glut = View.glut
+
 }

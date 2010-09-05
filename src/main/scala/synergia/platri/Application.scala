@@ -9,9 +9,9 @@ abstract class Application extends Helpers {
 	
 	def display {}
 	
-	def start { println("[PLATRI] Application START") }
+	def start { Debug.info("Application START") }
 	
-	def stop { println("[PLATRI] Application STOP") }
+	def stop { Debug.info("Application STOP") }
 	
 	protected def sym(tobj: TuioObject) = tobj.getSymbolID
 }

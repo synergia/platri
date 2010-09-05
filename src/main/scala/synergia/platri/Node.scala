@@ -4,9 +4,9 @@ import scala.math._
 import TUIO._
 
 trait Events {
-	def onMoved { println("[EVENT] onMove") }
-	def onCloseAdded(obj: Object) { println("[EVENT] onCloseAdded") }
-	def onCloseRemoved(obj: Object) { println("[EVENT] onCloseRemoved") }
+	def onMoved { Debug.event("onMove") }
+	def onCloseAdded(obj: Object) { Debug.event("onCloseAdded") }
+	def onCloseRemoved(obj: Object) { Debug.event("onCloseRemoved") }
 }
 
 
@@ -14,9 +14,11 @@ trait Node extends Helpers {
 	// Required interface
 	def source: TuioContainer
 	def display {
-		withoutTextures {
-			color("#000")
-			text(x, y, "%s(%d)".format(this.getClass.getName, sid))
+		if(Config.DEBUG){
+			withoutTextures {
+				color("#000")
+				text(x, y, "%s(%d)".format(this.getClass.getName, sid))
+			}
 		}
 	}
 	

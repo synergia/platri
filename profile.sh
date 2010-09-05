@@ -1,0 +1,2 @@
+#/bin/sh
+java -agentpath:/Users/teamon/Downloads/YourKit_Java_Profiler_9.0.8.app/bin/mac/libyjpagent.jnilib  -cp .:project/boot/scala-2.8.0/lib/scala-library.jar:lib/jogl.jar:lib/gluegen.jar:lib/libTUIO.jar::target/scala_2.8.0/classes synergia.platri.View

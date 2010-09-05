@@ -8,14 +8,6 @@ import javax.media.opengl._
 import javax.media.opengl.glu.GLU
 import com.sun.opengl.util.GLUT
 
-object Config {
-	final val WIDTH = 800
-	final val HEIGHT = 600
-	final val FULLSCREEN = false
-	final val CLOSE_OBJECT_DISTANCE = 300
-	final val BASE_SIZE = 100
-}
-
 object View extends GLEventListener {
 	import Config._
 	
@@ -36,7 +28,7 @@ object View extends GLEventListener {
 	frame.getContentPane.setLayout(new BorderLayout)
 	frame.getContentPane.add(glCanvas, BorderLayout.CENTER)
 	
-	val animator = new FPSAnimator(glCanvas, 50)
+	val animator = new FPSAnimator(glCanvas, FPS)
 	animator.setRunAsFastAsPossible(true)
 	
 	var appFunc: () => Application = null
@@ -120,26 +112,6 @@ object View extends GLEventListener {
 	var glu: GLU = _
 	var glut: GLUT = _
 	
-	object FPSCounter extends Helpers {
-		private var frameCount = 0
-		private var timebase = 0L
-		private var fpsStr = ""
-		
-		def display {
-			frameCount += 1;
-			val time = System.currentTimeMillis
-
-			if(time - timebase > 1000) {
-				fpsStr = "FPS:%4.2f".format(frameCount * 1000.0 / (time - timebase))
-				timebase = time
-				frameCount = 0
-			}
-			
-			color(0, 0, 0)
-			text(WIDTH-100, 60, fpsStr)
-		}
-	}
-	
 	def init(dr: GLAutoDrawable) {
 		drawable = dr
 		gl = drawable.getGL
@@ -169,13 +141,14 @@ object View extends GLEventListener {
 	def display(dr: GLAutoDrawable) {
 		gl.glClear(GL_COLOR_BUFFER_BIT)
 		gl.glClearColor(1f, 1f, 1f, 1f)
+		
+		if(DEBUG) Debug.display
 
 		gl.glPushMatrix
 		gl.glEnable(GL.GL_TEXTURE_2D)
 		manager.display
 		gl.glDisable(GL.GL_TEXTURE_2D)
 		gl.glPopMatrix
-		FPSCounter.display
 		
 		gl.glFlush
 	}
