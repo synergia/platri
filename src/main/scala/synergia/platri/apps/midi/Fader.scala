@@ -3,8 +3,9 @@ package synergia.platri.apps.midi
 import synergia.platri._
 import TUIO.TuioObject
 
+import App.Textures._
 
-class Fader(tobj: TuioObject) extends Object(tobj) {
+class Fader(tobj: TuioObject, color: OnOffTexture) extends Object(tobj) {
 	protected var calculatedAngle = 0.0
 	
 	override def onMoved {
@@ -22,16 +23,12 @@ class Fader(tobj: TuioObject) extends Object(tobj) {
 			translate(x, y)
 			color("#fff")
 			
-			val n = (angle/22.5).floor
-			val a = ((angle - (n*22.5)) * 0.9 / 22.5) + 0.1
+			color.on
+			square(Config.BASE_SIZE)
 			
-			App.faderTextures.zipWithIndex.foreach { case(tex, i) =>
-				tex.foreach(_.bind)
-				if(i == n+1) alpha(a)
-				else if(i > n+1) alpha(0.1)
-				
-				square(Config.BASE_SIZE)
-			}
+			color.off
+			alpha(angle / 360.0)
+			square(Config.BASE_SIZE)
 		}
 	}
 }

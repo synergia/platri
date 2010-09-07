@@ -7,5 +7,5 @@ object Config {
 	final val CLOSE_OBJECT_DISTANCE = 300
 	final val BASE_SIZE = 100
 	final val FPS = 50
-	final val DEBUG = true
+	final val DEBUG = false
 }
