@@ -21,6 +21,9 @@ object App extends Application {
 		case 1 => new Note(tobj, Textures.Green, 48)
 		case 2 => new Note(tobj, Textures.Orange, 35)
 		case 3 => new Note(tobj, Textures.Yellow, 38)
+		case 4 => new TempoDevider(tobj)
+		case 5 => new TempoDevider(tobj)
+		case 6 => new TempoDevider(tobj)
 		
 		case _ => new TempoSource(tobj)
 	}
