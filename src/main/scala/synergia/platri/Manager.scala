@@ -61,7 +61,6 @@ class Manager(val app: Application) extends TuioListener {
 		
 	}
 	
-	def findCloseObjects(node: Node, range: Int) = 
-		objects.values.filter(o => o != node && node.distanceTo(o) <= range)
+	def findCloseObjects(node: Node, range: Int) = objects.values.filter(o => o != node && node.distanceTo(o) <= range)
 	
 }

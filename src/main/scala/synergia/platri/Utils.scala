@@ -1,6 +1,6 @@
 package synergia.platri
 
-class Loop(var timeout: Int, func: () => Unit) extends Thread {
+abstract class Loop(var timeout: Int) extends Thread {
 	var keep = true
 	
 	start
@@ -9,14 +9,20 @@ class Loop(var timeout: Int, func: () => Unit) extends Thread {
 	
 	override def run {
 		while(keep){
-			func()
+			tick
 			Thread.sleep(timeout)
 		}
 	}
+	
+	def tick
+}
+
+class FuncLoop(timeout: Int, func: () => Unit) extends Loop(timeout) {
+	def tick = func()
 }
 
 trait Loops {
-	def loop(timeout: Int)(f: => Unit) = new Loop(timeout, f _)
+	def loop(timeout: Int)(f: => Unit) = new FuncLoop(timeout, f _)
 }
 
 class Texture(path: String) extends Helpers {

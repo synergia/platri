@@ -32,7 +32,7 @@ object View extends GLEventListener with KeyListener {
 	val animator = new FPSAnimator(glCanvas, FPS)
 	animator.setRunAsFastAsPossible(true)
 	
-	var appFunc: () => Application = null
+	var application: Application = null
 		
 	def init {
 		frame.setUndecorated(FULLSCREEN)
@@ -65,8 +65,8 @@ object View extends GLEventListener with KeyListener {
 		glCanvas.requestFocus
 	}
 	
-	def start(app: () => Application) {
-		appFunc = app
+	def start(app: Application) {
+		application = app
 		animator.start
 	}
 	
@@ -104,8 +104,13 @@ object View extends GLEventListener with KeyListener {
 			).getOrElse(displayModes(0))
 	}	
 	
+	
+	// KeyListener implementation
+	
 	def keyReleased(event: KeyEvent) {}
+	
 	def keyPressed(event: KeyEvent) {}
+	
 	def keyTyped(event: KeyEvent) {
 		event.getKeyCode match {
 			case KeyEvent.VK_ESCAPE => 
@@ -138,7 +143,7 @@ object View extends GLEventListener with KeyListener {
 		gl.glEnable(GL.GL_BLEND)
         gl.glBlendFunc(GL.GL_SRC_ALPHA, GL.GL_ONE_MINUS_SRC_ALPHA)
 
-		manager = new Manager(appFunc())
+		manager = new Manager(application)
 	}
 	
 	def reshape(dr: GLAutoDrawable, x: Int, y: Int, width: Int, height: Int) {
@@ -168,6 +173,6 @@ object View extends GLEventListener with KeyListener {
 
 	def main(args: Array[String]) {	
 		init
-		start(() => apps.midi.App)
+		start(apps.midi.App)
 	}
 }

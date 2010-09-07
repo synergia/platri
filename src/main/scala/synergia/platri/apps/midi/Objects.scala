@@ -8,6 +8,8 @@ abstract class MidiObject(tobj: TuioObject) extends Object(tobj) {
 }
 
 class MidiConnection(from: Object, to: MidiObject) extends Connection(from, to){
+	var progress = 0
+	
 	def display {
 		val length = from distanceTo to
 		val angle = from angleTo to
@@ -15,15 +17,29 @@ class MidiConnection(from: Object, to: MidiObject) extends Connection(from, to){
 		matrix {
 			translate(from.x, from.y)
 			rotate(angle)
+			alpha(1)
 			
-			color("#fff")
-			App.Textures.Connection.bind
-			translate(length/2, 0)
-			rect(length-50, 40)
+			// road
+			matrix {
+				App.Textures.Connection.bind
+				translate(length/2, 0)
+				rect(length-70, 40)
+			}
+			
+			// bullet
+			matrix {
+				translate((length-70)*progress/100 + 35, 0)
+				App.Textures.Yellow.on
+				rect(10, 10)
+			}			
 		}
 	}
 	
 	def call = to.call
+	
+	def move(i: Int) {
+		progress = i
+	}
 }
 
 class Note(tobj: TuioObject, color: OnOffTexture, note: Int) extends MidiObject(tobj) {
@@ -42,7 +58,7 @@ class Note(tobj: TuioObject, color: OnOffTexture, note: Int) extends MidiObject(
 	}
 }
 
-class TempoSource(tobj: TuioObject) extends Object(tobj) with Loops {
+class TempoSource(tobj: TuioObject) extends Fader(tobj, App.Textures.Red) with Loops {
 	graphics += new Graphic(this){
 		def display {
 			matrix {
@@ -54,7 +70,14 @@ class TempoSource(tobj: TuioObject) extends Object(tobj) with Loops {
 		}
 	}
 	
-	val tempo = loop(300) {
+	def tempo = (angle / 36).toInt + 2
+	
+	val tempoLoop = loop(0){
+		(1 to 100) foreach { i => 
+			connections foreach { case c: MidiConnection => c.move(i) }
+			Thread.sleep(tempo)
+		}
+		
 		connections foreach { case c: MidiConnection => c.call }
 	}
 	
