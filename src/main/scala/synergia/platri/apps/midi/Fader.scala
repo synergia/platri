@@ -3,8 +3,6 @@ package synergia.platri.apps.midi
 import synergia.platri._
 import TUIO.TuioObject
 
-import App.Textures._
-
 class Fader(tobj: TuioObject, color: OnOffTexture) extends Object(tobj) {
 	protected var calculatedAngle = 0.0
 	

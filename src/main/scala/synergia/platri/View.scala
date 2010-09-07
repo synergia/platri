@@ -2,13 +2,13 @@ package synergia.platri
 
 import javax.swing.JFrame
 import java.awt._
-import java.awt.event.{WindowEvent, WindowAdapter}
+import java.awt.event._
 import com.sun.opengl.util.FPSAnimator
 import javax.media.opengl._
 import javax.media.opengl.glu.GLU
 import com.sun.opengl.util.GLUT
 
-object View extends GLEventListener {
+object View extends GLEventListener with KeyListener {
 	import Config._
 	
 	// Temporary configuration
@@ -23,6 +23,7 @@ object View extends GLEventListener {
 	glCanvas.setSize(WIDTH, HEIGHT)
 	glCanvas.setIgnoreRepaint(true)
 	glCanvas.addGLEventListener(this)
+	glCanvas.addKeyListener(this)
 	
 	val frame = new JFrame("platri")
 	frame.getContentPane.setLayout(new BorderLayout)
@@ -70,6 +71,7 @@ object View extends GLEventListener {
 	}
 	
 	def stop {
+		manager.stop
 		animator.stop
 		if(FULLSCREEN){
 			usedDevice.setFullScreenWindow(null)
@@ -101,6 +103,17 @@ object View extends GLEventListener {
 							(requestedRefreshRate == DONT_CARE || requestedDepth == dm.getRefreshRate)
 			).getOrElse(displayModes(0))
 	}	
+	
+	def keyReleased(event: KeyEvent) {}
+	def keyPressed(event: KeyEvent) {}
+	def keyTyped(event: KeyEvent) {
+		event.getKeyCode match {
+			case KeyEvent.VK_ESCAPE => 
+				stop
+				exit(0)
+			case c => Debug.info("[key] " + c)
+		}
+	}
 	
 	
 	// GLEventListener implementation

@@ -7,10 +7,16 @@ class Manager(val app: Application) extends TuioListener {
 	val tuio = new TuioClient
 	tuio.addTuioListener(this)
 	tuio.connect
+	
+	app.start
 	 
 	val objects = new HashMap[TuioObject, Object]
 	val cursors = new HashMap[TuioCursor, Cursor]
 	val connections = new ListBuffer[Connection]
+	
+	def stop {
+		app.stop
+	}
 	
 	def display {
 		app.display
