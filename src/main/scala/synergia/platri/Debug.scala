@@ -1,7 +1,5 @@
 package synergia.platri
 
-import scala.collection.mutable.ListBuffer
-
 object Debug extends Helpers {
 	final val INFO = 1
 	final val WARN = 2
@@ -12,16 +10,15 @@ object Debug extends Helpers {
 	private var timebase = 0L
 	private var fpsStr = ""
 	
-	val messages = new ListBuffer[(String, Int)]()
+	def info(msg: String) = log(INFO, "[info] " + msg, Console.RESET)
+	def warn(msg: String) = log(WARN, "[warn] " + msg, Console.YELLOW)
+	def error(msg: String) = log(ERROR, "[error] " + msg, Console.RED)
+	def event(msg: String) = log(EVENT, "[event] " + msg, Console.BLUE)
 	
-	def info(msg: String) = log(INFO, "[info] " + msg)
-	def warn(msg: String) = log(WARN, "[warn] " + msg)
-	def error(msg: String) = log(ERROR, "[error] " + msg)
-	def event(msg: String) = log(EVENT, "[event] " + msg)
-	
-	def log(kind: Int, msg: String) {
-		println(msg)
-		messages += ((msg, kind))
+	def log(kind: Int, msg: String, color: String) {
+		System.out.print(color)
+		System.out.println(msg)
+		System.out.print(Console.RESET)
 	}
 	
 	def display {
@@ -36,20 +33,6 @@ object Debug extends Helpers {
 		
 		color("#000")
 		text(Config.WIDTH-100, 60, fpsStr)
-		
-		// displayLog
-	}
-	
-	def displayLog {
-		messages.takeRight(35).zipWithIndex.foreach { case((msg, kind), i) => 
-			kind match {
-				case INFO => color("#777")
-				case WARN => color("#f90")
-				case ERROR => color("#f00")
-				case EVENT => color("#00f")
-			} 
-			text(10, 20 + i*15, msg, false)
-		}
 	}
 	
 }
