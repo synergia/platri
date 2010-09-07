@@ -30,7 +30,7 @@ trait Node extends Helpers {
 		val dx = x - that.x
 		val dy = y - that.y
 	
-		sqrt(dx*dx + dy*dy).toInt
+		sqrt(dx*dx + dy*dy)
 	}
 	
 	def angleTo(that: Node) = {
@@ -40,7 +40,7 @@ trait Node extends Helpers {
 		var angle = (asin(side.toDouble/distance) + Pi/2);
 		if(height < 0) angle = 2*Pi - angle
 		
-		-(angle * 180 / Pi).toInt
+		-(angle * 180 / Pi)
 	}
 	
 	def sid = source.getSessionID

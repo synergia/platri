@@ -2,7 +2,7 @@ package synergia.platri
 
 import javax.media.opengl.GL
 import com.sun.opengl.util.GLUT
-import com.sun.opengl.util.texture.{Texture, TextureIO}
+import com.sun.opengl.util.texture.{Texture => GLTexture, TextureIO => GLTextureIO}
 import java.io.File
 import scala.util.matching.Regex
 import scala.collection.mutable.ListBuffer
@@ -61,20 +61,20 @@ trait Helpers {
 		gl.glClearColor(rgba(0), rgba(1), rgba(2), rgba(3))
 	}
 	
-	def alpha(value: Double) = gl.glColor4f(1f, 1f, 1f, value.toFloat)
+	def alpha(value: Double) = gl.glColor4d(1.0, 1.0, 1.0, value)
 	
-	def translate(x: Int, y: Int) = gl.glTranslated(x, y, 0)
+	def translate(x: Double, y: Double) = gl.glTranslated(x, y, 0)
 	
-	def translateAnd(x: Int, y: Int)(func: => Unit) {
+	def translateAnd(x: Double, y: Double)(func: => Unit) {
 		matrix {
 			translate(x, y)
 			func
 		}
 	}
 	
-	def rotate(angle: Int) = gl.glRotated(angle, 0, 0, 1)
+	def rotate(angle: Double) = gl.glRotated(angle, 0, 0, 1)
 	
-	def rotateAnd(angle: Int)(func: => Unit) {
+	def rotateAnd(angle: Double)(func: => Unit) {
 		matrix {
 			rotate(angle)
 			func
@@ -97,11 +97,11 @@ trait Helpers {
 	
 	def disableTextures = gl.glDisable(GL.GL_TEXTURE_2D)
 	
-	def texture(path: String): Option[Texture] = {
+	def texture(path: String): Option[GLTexture] = {
 		val url = getClass.getResource(if(path.startsWith("/")) path else "/" + path)
 		
 		try {
-			val text = TextureIO.newTexture(new File(url.toURI), false)
+			val text = GLTextureIO.newTexture(new File(url.toURI), false)
 			text.setTexParameteri(GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR)
 			text.setTexParameteri(GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR)
 			Debug.info("Loaded texture " + path)
@@ -114,22 +114,31 @@ trait Helpers {
 		return None
 	}
 	
-	def texture(path: String, seq: Seq[Any]): Seq[Option[Texture]] = seq.map { i => texture(path.format(i)) }
+	def texture(path: String, seq: Seq[Any]): Seq[Option[GLTexture]] = seq.map { i => texture(path.format(i)) }
 	
 	@deprecated("That sucks, use textures") 
 	def circle(r: Int) = withoutTextures { glu.gluDisk(glu.gluNewQuadric, 0, r, 24, 10) }
 
-	def rect(width: Int, height: Int) {
+	def rect(width: Double, height: Double) {
 		val w2 = (width/2).toFloat;
 		val h2 = (height/2).toFloat;
 		gl.glBegin(GL.GL_QUADS)
-		gl.glTexCoord2d(0f, 1f); gl.glVertex2f(-w2,  h2);
-		gl.glTexCoord2d(1f, 1f); gl.glVertex2f( w2,  h2);
-		gl.glTexCoord2d(1f, 0f); gl.glVertex2f( w2, -h2);
-		gl.glTexCoord2d(0f, 0f); gl.glVertex2f(-w2, -h2);
+		gl.glTexCoord2d(0f, 1f); gl.glVertex2d(-w2,  h2);
+		gl.glTexCoord2d(1f, 1f); gl.glVertex2d( w2,  h2);
+		gl.glTexCoord2d(1f, 0f); gl.glVertex2d( w2, -h2);
+		gl.glTexCoord2d(0f, 0f); gl.glVertex2d(-w2, -h2);
 		gl.glEnd
 	}
 	
-	def square(size: Int) = rect(size, size)
+	def rect(x: Double, y: Double, width: Double, height: Double) {
+		gl.glBegin(GL.GL_QUADS)
+		gl.glTexCoord2d(0f, 1f); gl.glVertex2d(x,       y+height);
+		gl.glTexCoord2d(1f, 1f); gl.glVertex2d(x+width, y+height);
+		gl.glTexCoord2d(1f, 0f); gl.glVertex2d(x+width, y);
+		gl.glTexCoord2d(0f, 0f); gl.glVertex2d(x,       y);
+		gl.glEnd
+	}
+	
+	def square(size: Double) = rect(size, size)
 
 }
