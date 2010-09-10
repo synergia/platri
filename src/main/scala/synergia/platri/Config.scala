@@ -1,11 +1,14 @@
 package synergia.platri
 
 object Config {
-	final val WIDTH = 800
-	final val HEIGHT = 600
+	final val DEBUG = true
 	final val FULLSCREEN = false
-	final val CLOSE_OBJECT_DISTANCE = 300
-	final val BASE_SIZE = 100
 	final val FPS = 60
-	final val DEBUG = false
+	final val width = 800
+	final val height = 600
+	
+	lazy val WIDTH = if(FULLSCREEN) View.width else width
+	lazy val HEIGHT = if(FULLSCREEN) View.height else height
+	lazy val BASE_SIZE = WIDTH / 8
+	lazy val CLOSE_OBJECT_DISTANCE = BASE_SIZE * 3
 }
