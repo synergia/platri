@@ -100,10 +100,11 @@ trait Helpers {
 	def disableTextures = gl.glDisable(GL.GL_TEXTURE_2D)
 	
 	def texture(path: String): Option[GLTexture] = {
-		val url = getClass.getResource(if(path.startsWith("/")) path else "/" + path)
+		val ext = path.split('.').last
+		val stream = getClass.getResourceAsStream(if(path.startsWith("/")) path else "/" + path)
 		
 		try {
-			val text = GLTextureIO.newTexture(new File(url.toURI), false)
+			val text = GLTextureIO.newTexture(stream, false, ext)
 			text.setTexParameteri(GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR)
 			text.setTexParameteri(GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR)
 			Debug.info("Loaded texture " + path)
