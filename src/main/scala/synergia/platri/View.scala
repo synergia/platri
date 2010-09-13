@@ -120,7 +120,5 @@ object View {
 	def height = scene.getHeight()
 	
 	
-	def main(args: Array[String]): Unit = {
-		View	
-	}
+	def main(args: Array[String]) = View	
 }

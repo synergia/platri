@@ -29,10 +29,12 @@ object App extends Application {
 	}
 	
 	override def start {
-		Midi.start("Java Sound Synthesizer")
+		Debug.info("Application started")
+		Midi.start(Properties("apps.midi.device"))
 	}
 	
 	override def stop {
+		Debug.info("Application stopped")
 		Midi.stop
 	}
 	

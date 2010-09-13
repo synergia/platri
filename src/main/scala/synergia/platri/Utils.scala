@@ -37,3 +37,27 @@ class OnOffTexture(onPath: String, offPath: String) extends Helpers {
 	def on { onTexture.foreach(_.bind) }
 	def off { offTexture.foreach(_.bind) }
 }
+
+object Properties {
+	val data = loadFile("config.ini")
+	
+	def apply(key: String) = data.map(_(key)) getOrElse ""
+	
+	protected def loadFile(fname: String) : Option[Map[String,String]] = {
+		try {
+			val props = new java.util.Properties
+			props.load(new java.io.FileInputStream(fname))
+			import scala.collection.JavaConversions._
+			
+			val m: scala.collection.mutable.Map[String, String] = props
+			Some(m.toMap.withDefaultValue(""))
+			
+		}
+		catch {
+			case e: Exception => 
+				println("Properties.loadFile: " + e)
+				None
+		}
+	}    
+
+}
