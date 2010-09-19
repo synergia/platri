@@ -24,25 +24,34 @@ object Midi {
 	def <<(msg: MidiMessage) = receiver.foreach(_.send(msg, -1))
 	
 	def start(deviceName: String) {
-		val devices = MidiSystem.getMidiDeviceInfo.toList
-		devices.find(_.getName == deviceName).map(MidiSystem.getMidiDevice(_)) match {
-			case Some(d) => {
-				Debug.info("[midi] Opening MIDI device: " + deviceName)
-				d.open
-				receiver = if(d.getReceiver != null) Some(d.getReceiver) else None
-			}
-			case None => {
-				Debug.error("Could not find device with name: " + deviceName)
-				Debug.info("Available devices:")
-				devices.foreach(e => println(" * " + e.getName))	
-				exit(0)			
-			}
-		}
+		findReceiver(deviceName)
 		
 		// set drums!
 		val msg = new ShortMessage
 		msg.setMessage(ShortMessage.PROGRAM_CHANGE, 9, 1, 0)
 		this << msg
+	}
+	
+	def findReceiver(deviceName: String) {
+		val devices = MidiSystem.getMidiDeviceInfo.toList
+		
+		devices.filter(_.getName == deviceName).map(MidiSystem.getMidiDevice(_)).foreach { d => 
+			try {
+				Debug.info("[midi] Opening MIDI device: " + deviceName)
+				d.open
+				receiver = if(d.getReceiver != null) Some(d.getReceiver) else None
+				return
+			} catch {
+				case _ => 
+			}
+		}
+		
+		if(receiver == None) {
+			Debug.error("Could not find device with name: " + deviceName)
+			Debug.info("Available devices:")
+			devices.foreach(e => println(" * " + e.getName))	
+			exit(0)
+		}
 	}
 	
 	def stop {

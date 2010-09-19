@@ -22,7 +22,7 @@ object Debug extends Helpers {
 	}
 	
 	def display {
-		frameCount += 1;
+		frameCount += 1
 		val time = System.currentTimeMillis
 
 		if(time - timebase > 1000) {
