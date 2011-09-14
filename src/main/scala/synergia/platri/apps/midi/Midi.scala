@@ -8,7 +8,9 @@ object MidiNote {
 	
 	def off(data1: Int, data2: Int) = msg(ShortMessage.NOTE_OFF, data1, data2)
 	
-	def msg(kind: Int, data1: Int, data2: Int) = raw(kind, 9, data1, data2)
+	def control(data1: Int, data2: Int) = msg(ShortMessage.CONTROL_CHANGE, data1, data2)
+	
+	def msg(kind: Int, data1: Int, data2: Int) = raw(kind, 0, data1, data2)
 	
 	def raw(kind: Int, channel: Int, data1: Int, data2: Int) = {
 		val m = new ShortMessage
@@ -21,14 +23,16 @@ object Midi {
 	var device: Option[MidiDevice] = None
 	var receiver: Option[Receiver] = None
 	
-	def <<(msg: MidiMessage) = receiver.foreach(_.send(msg, -1))
+	var chujcidupe = 0
+	
+	def <<(msg: MidiMessage) = { chujcidupe += 1; receiver.foreach(_.send(msg, chujcidupe)) }
 	
 	def start(deviceName: String) {
 		findReceiver(deviceName)
 		
 		// set drums!
 		val msg = new ShortMessage
-		msg.setMessage(ShortMessage.PROGRAM_CHANGE, 9, 1, 0)
+		msg.setMessage(ShortMessage.PROGRAM_CHANGE, 0, 1, 0)
 		this << msg
 	}
 	

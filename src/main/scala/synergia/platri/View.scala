@@ -47,13 +47,15 @@ object View {
 			gl.glClear(GL_COLOR_BUFFER_BIT)
 			gl.glClearColor(1f, 1f, 1f, 1f)
 			
-			if(DEBUG) Debug.display
-	
 			gl.glPushMatrix
+			gl.glTranslated(Calibration.offsetX, Calibration.offsetY, 0)
 			gl.glEnable(GL.GL_TEXTURE_2D)
 			manager.display
 			gl.glDisable(GL.GL_TEXTURE_2D)
 			gl.glPopMatrix
+			
+			if(DEBUG) Debug.display
+			if(Calibration.enabled) Calibration.display
 			
 			gl.glFlush
 		}
@@ -85,11 +87,12 @@ object View {
 		def keyPressed(event: KeyEvent) {}
 		
 		def keyTyped(event: KeyEvent) {
-			event.getKeyCode match {
-				case KeyEvent.VK_ESCAPE => 
-					View.stop
-					exit(0)
-				case c => Debug.info("[key] " + c)
+			event.getKeyChar match {
+				case 'x' => Config.toggleDebug
+				// case 'q' => 
+				// 	View.stop
+				// 	exit(0)
+				case c => Calibration.key(c)
 			}
 		}
 	}

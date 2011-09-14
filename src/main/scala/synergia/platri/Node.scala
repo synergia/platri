@@ -5,6 +5,7 @@ import TUIO._
 
 trait Events {
 	def onMoved { Debug.event("onMove") }
+	def onRemoved { Debug.event("onRemoved") }
 	def onCloseAdded(obj: Object) { Debug.event("onCloseAdded") }
 	def onCloseRemoved(obj: Object) { Debug.event("onCloseRemoved") }
 }
@@ -16,7 +17,7 @@ trait Node extends Helpers {
 	def display {
 		if(Config.DEBUG){
 			withoutTextures {
-				color("#000")
+				color("#fff")
 				text(x, y, "%s(%d)".format(this.getClass.getName, sid))
 			}
 		}

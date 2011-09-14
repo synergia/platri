@@ -10,7 +10,10 @@ class Fader(tobj: TuioObject, color: OnOffTexture) extends Object(tobj) {
 		calculatedAngle += rotationSpeed*10
 		if(calculatedAngle > 360) calculatedAngle = 360
 		else if(calculatedAngle < 0) calculatedAngle = 0
+		onRotated
 	}
+	
+	def onRotated {}
 	
 	override def angle = calculatedAngle.toInt
 	

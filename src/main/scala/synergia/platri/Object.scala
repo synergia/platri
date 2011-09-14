@@ -24,7 +24,11 @@ class Object(val source: TuioObject) extends Node with Events {
 	
 	def move {
 		onMoved
-		updateCloseObjects(true)
+		// updateCloseObjects(true)
+	}
+	
+	def remove {
+		onRemoved
 	}
 	
 	def connections = View.manager.connections.filter(_.check(this))

@@ -6,9 +6,10 @@ import TUIO._
 class Manager(val app: Application) extends TuioListener {
 	val tuio = new TuioClient
 	tuio.addTuioListener(this)
-	tuio.connect
 	
 	app.start
+	
+	tuio.connect
 	 
 	val objects = new HashMap[TuioObject, Object]
 	val cursors = new HashMap[TuioCursor, Cursor]
@@ -41,6 +42,7 @@ class Manager(val app: Application) extends TuioListener {
 	
 	def removeTuioObject(tobj: TuioObject) {
 		val obj = objects(tobj)
+		obj.remove
 		connections.filter(_.check(obj)).foreach(connections -= _)
 		objects -= tobj
 	}

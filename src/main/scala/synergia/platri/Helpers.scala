@@ -89,6 +89,12 @@ trait Helpers {
 		gl.glPopMatrix
 	}
 	
+	def quad(func: => Unit) {
+		gl.glBegin(GL2.GL_QUADS)
+		func
+		gl.glEnd
+	}
+	
 	def withoutTextures(func: => Unit) {
 		disableTextures
 		func
@@ -144,4 +150,5 @@ trait Helpers {
 	
 	def square(size: Double) = rect(size, size)
 
+	def vec(x: Double, y: Double) = gl.glVertex2d(x, y)
 }
