@@ -31,7 +31,7 @@ object View extends PApplet {
         frame.setVisible(true)
     }
 
-    override def keyPressed {
+    override def keyTyped {
         key match {
             case 'x' => Config.toggleDebug
             case c => Calibration.key(c)
@@ -40,7 +40,7 @@ object View extends PApplet {
 
     override def setup {
         import PConstants._
-        size(400, 300, JAVA2D)
+        size(1280, 768, JAVA2D)
         hint(ENABLE_NATIVE_FONTS)
         textFont(helvetica, 14)
     }
@@ -50,7 +50,7 @@ object View extends PApplet {
         Manager.display
     }
 
-    lazy val helvetica = loadFont("Helvetica-14.vlw")
+    lazy val helvetica = loadFont("fonts/Helvetica-14.vlw")
 
     // utils
 
