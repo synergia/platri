@@ -3,28 +3,32 @@ package synergia.platri
 import scala.collection.mutable.{ListBuffer, HashMap}
 import TUIO._
 
-class Manager(val app: Application) extends TuioListener with GFX {
+object Manager extends TuioListener with GFX {
+    protected var application: Option[Application] = None
+
     val tuio = new TuioClient
     tuio.addTuioListener(this)
-
-    app.start
-
     tuio.connect
+
+    View // init the object
 
     val objects = new HashMap[TuioObject, Object]
     val cursors = new HashMap[TuioCursor, Cursor]
     val connections = new ListBuffer[Connection]
 
-    def stop {
-        app.stop
+    def run(app: Application){
+        application = Some(app)
+        app.start
     }
 
-    def display(view: View) {
-        // app.display
+    def stop {
+        application.foreach(_.stop)
+    }
 
-        (objects.values ++ cursors.values ++ connections).collect {
-            case x: GFX => x.display(view)
-        }
+    def display {
+        Debug.info("Manager.display")
+        // application.foreach(_.display(view))
+        (objects.values ++ cursors.values ++ connections).foreach(_.display)
     }
 
     def removeConnection(from: Object, to: Object){
@@ -32,9 +36,13 @@ class Manager(val app: Application) extends TuioListener with GFX {
     }
 
     def addTuioObject(tobj: TuioObject) {
-        val obj = app.createObject(tobj)
-        obj.move
-        objects(tobj) = obj
+        Debug.info("app: " + application)
+
+        application.foreach { app =>
+            val obj = app.createObject(tobj)
+            obj.move
+            objects(tobj) = obj
+        }
     }
 
     def updateTuioObject(tobj: TuioObject) {
@@ -49,7 +57,9 @@ class Manager(val app: Application) extends TuioListener with GFX {
     }
 
     def addTuioCursor(tcur: TuioCursor) {
-        cursors(tcur) = app.createCursor(tcur)
+        application.foreach { app =>
+            cursors(tcur) = app.createCursor(tcur)
+        }
     }
 
     def updateTuioCursor(tcur: TuioCursor) {
@@ -66,4 +76,10 @@ class Manager(val app: Application) extends TuioListener with GFX {
 
     def findCloseObjects(node: Node, range: Int) = objects.values.filter(o => o != node && node.distanceTo(o) <= range)
 
+}
+
+object Main {
+    def main(args: Array[String]) {
+        Manager.run(apps.test.App)
+    }
 }

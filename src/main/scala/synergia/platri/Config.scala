@@ -16,7 +16,7 @@ object Config {
     def toggleDebug { DEBUG = !DEBUG }
 }
 
-object Calibration extends Helpers {
+object Calibration extends GFX {
     var offsetX = Properties("calibration.offsetX").toInt
     var offsetY = Properties("calibration.offsetY").toInt
     var width   = Properties("calibration.width").toInt

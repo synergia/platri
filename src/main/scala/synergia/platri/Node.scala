@@ -11,16 +11,16 @@ trait Events {
 }
 
 
-trait Node extends Helpers {
+trait Node extends GFX {
     // Required interface
     def source: TuioContainer
     def display {
-        if(Config.DEBUG){
-            // withoutTextures {
-            //     // color("#fff")
-            //     text(x, y, "%s(%d)".format(this.getClass.getName, sid))
-            // }
-        }
+    //     if(Config.DEBUG){
+    //         // withoutTextures {
+    //         //     // color("#fff")
+    //         //     text(x, y, "%s(%d)".format(this.getClass.getName, sid))
+    //         // }
+    //     }
     }
 
     def x = (source.getX * Config.WIDTH).toInt

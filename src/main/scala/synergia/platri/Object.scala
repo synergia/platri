@@ -3,12 +3,10 @@ package synergia.platri
 import scala.collection.mutable.ListBuffer
 import TUIO._
 
-abstract class Graphic(val parent: Object) extends Helpers {
-    def display
-}
+abstract class Graphic(val parent: Object) extends GFX
 
 class Object(val source: TuioObject) extends Node with Events {
-    protected var oldClose = new ListBuffer[Object]()
+    var oldClose = new ListBuffer[Object]()
     protected val graphics = new ListBuffer[Graphic]()
 
     def symbolID = source.getSymbolID
@@ -24,25 +22,25 @@ class Object(val source: TuioObject) extends Node with Events {
 
     def move {
         onMoved
-        updateCloseObjects(true)
+        // updateCloseObjects(true)
     }
 
     def remove {
         onRemoved
     }
 
-    def connections = View.manager.connections.filter(_.check(this))
+    def connections = Manager.connections.filter(_.check(this))
 
-    def incomingConnections = View.manager.connections.filter(_.to == this)
+    def incomingConnections = Manager.connections.filter(_.to == this)
 
-    def outgoingConnections = View.manager.connections.filter(_.from == this)
+    def outgoingConnections = Manager.connections.filter(_.from == this)
 
     def addConnection(connection: Connection){
-        View.manager.connections += connection
+        Manager.connections += connection
     }
 
     def removeConnection(obj: Object){
-        View.manager.removeConnection(this, obj)
+        Manager.removeConnection(this, obj)
     }
 
     protected def displayGraphics {
@@ -75,5 +73,5 @@ class Object(val source: TuioObject) extends Node with Events {
         oldClose.appendAll(newClose)
     }
 
-    protected def findCloseObjects(range: Int) = View.manager.findCloseObjects(this, range)
+    protected def findCloseObjects(range: Int) = Manager.findCloseObjects(this, range)
 }

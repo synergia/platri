@@ -5,13 +5,22 @@ import java.awt.event._
 import processing.core._
 
 trait GFX {
-    def display(view: View)
+    def display
 }
 
-object View extends View
-
-class View extends PApplet {
-    val manager = new Manager(apps.test.App)
+object View extends PApplet {
+    {
+        val frame = new JFrame("Test")
+        frame.addWindowListener(new WindowAdapter(){
+            override def windowClosing(e: WindowEvent){
+                System.exit(0)
+            }
+        })
+        frame.getContentPane.add(this)
+        init
+        frame.pack
+        frame.setVisible(true)
+    }
 
     override def setup {
         // Debug.info(Config.WIDTH + " x " + Config.HEIGHT)
@@ -20,23 +29,10 @@ class View extends PApplet {
 
     override def draw {
         background(51)
-
-        manager.display(this)
+        Debug.info("paplet draw")
+        Manager.display
     }
-
-    def main(args: Array[String]) {
-        val frame = new JFrame("Test")
-        frame.addWindowListener(new WindowAdapter(){
-            override def windowClosing(e: WindowEvent){
-                System.exit(0)
-            }
-        })
-        frame.getContentPane().add(View)
-        View.init
-        frame.pack
-        frame.setVisible(true)
-
-    }
+}
 
 
 
@@ -158,4 +154,4 @@ class View extends PApplet {
     // def main(args: Array[String]) {
     //     View
     // }
-}
+// }

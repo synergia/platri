@@ -1,6 +1,6 @@
 package synergia.platri
 
-object Debug extends Helpers {
+object Debug extends GFX {
     final val INFO = 1
     final val WARN = 2
     final val ERROR = 3
