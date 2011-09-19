@@ -80,6 +80,6 @@ object Manager extends TuioListener with GFX {
 
 object Main {
     def main(args: Array[String]) {
-        Manager.run(apps.test.App)
+        Manager.run(apps.boxee.App)
     }
 }
