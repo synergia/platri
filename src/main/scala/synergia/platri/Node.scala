@@ -16,14 +16,14 @@ trait Node extends GFX {
     def source: TuioContainer
     def display {
         if(Config.DEBUG){
-            // Debug.debug("Node %s (%d,%d)".format(this.toString, x, y))
-            // text(x, y, "%s(%d)".format(this.getClass.getName, sid))
+            View.fill(70)
+            View.text("%s(%d)".format(this.getClass.getName.split("\\.").last, sid), x+50, y+50)
         }
     }
 
-    def x = (source.getX * Config.WIDTH).toInt
+    def x = Calibration.calculateX(source.getX)
 
-    def y = (source.getY * Config.HEIGHT).toInt
+    def y = Calibration.calculateY(source.getY)
 
     def distanceTo(that: Node) = {
         val dx = x - that.x

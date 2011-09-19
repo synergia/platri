@@ -27,6 +27,7 @@ object Manager extends TuioListener with GFX {
 
     def display {
         Calibration.display
+        Debug.display
         application.foreach(_.display)
         (objects.values ++ cursors.values ++ connections).foreach(_.display)
     }

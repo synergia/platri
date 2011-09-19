@@ -23,17 +23,19 @@ object Debug extends GFX {
     }
 
     def display {
-        frameCount += 1
-        val time = System.currentTimeMillis
+        if(Config.DEBUG){
+            frameCount += 1
+            val time = System.currentTimeMillis
 
-        if(time - timebase > 1000) {
-            fpsStr = "FPS:%4.2f".format(frameCount * 1000.0 / (time - timebase))
-            timebase = time
-            frameCount = 0
+            if(time - timebase > 1000) {
+                fpsStr = "FPS:%4.2f".format(frameCount * 1000.0 / (time - timebase))
+                timebase = time
+                frameCount = 0
+            }
+
+            View.fill(70)
+            View.text(fpsStr, Calibration.calculateX(0.9), Calibration.calculateY(0.1))
         }
-
-        // color("#fff")
-        // text(Config.WIDTH-100, 60, fpsStr)
     }
 
 }

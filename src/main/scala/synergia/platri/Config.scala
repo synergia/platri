@@ -19,7 +19,7 @@ object Config {
     lazy val HEIGHT = if(FULLSCREEN) View.height else height
     lazy val BASE_SIZE = width / 4
 
-    var CLOSE_OBJECT_DISTANCE = Calibration.closeObjectDistance
+    def CLOSE_OBJECT_DISTANCE = Calibration.closeObjectDistance
 
     def toggleDebug { DEBUG = !DEBUG }
 }
@@ -38,60 +38,64 @@ object Calibration extends GFX {
     def toggle { enabled = !enabled }
 
     def key(ch: Char) {
+        val amount = if(ch.isUpperCase) 10 else 1
+
         ch match {
             case 'c' => toggle
             case c =>
                 if(enabled){
-                    ch match {
+                    ch.toLowerCase match {
                         // move
                         case 'i' =>
-                            offsetY -= 1
+                            offsetY -= amount
                             *("calibration.offsetY") = offsetY
                             *.save
                         case 'k' =>
-                            offsetY += 1
+                            offsetY += amount
                             *("calibration.offsetY") = offsetY
                             *.save
                         case 'j' =>
-                            offsetX -= 1
+                            offsetX -= amount
                             *("calibration.offsetX") = offsetX
                             *.save
                         case 'l' =>
-                            offsetX += 1
+                            offsetX += amount
                             *("calibration.offsetX") = offsetX
                             *.save
 
                         // resize
                         case 'w' =>
-                            displayHeight -= 1
+                            displayHeight -= amount
                             *("calibration.displayHeight") = displayHeight
                             *.save
                         case 's' =>
-                            displayHeight += 1
+                            displayHeight += amount
                             *("calibration.displayHeight") = displayHeight
                             *.save
                         case 'a' =>
-                            displayWidth -= 1
+                            displayWidth -= amount
                             *("calibration.displayWidth") = displayWidth
                             *.save
                         case 'd' =>
-                            displayWidth += 1
+                            displayWidth += amount
                             *("calibration.displayWidth") = displayWidth
                             *.save
 
                         // change close object distance
                         case ']' =>
-                            closeObjectDistance += 1
+                            closeObjectDistance += amount
                             *("calibration.closeObjectDistance") = closeObjectDistance
                             *.save
 
                         case '[' =>
-                            closeObjectDistance -= 1
+                            closeObjectDistance -= amount
                             *("calibration.closeObjectDistance") = closeObjectDistance
                             *.save
 
 
-                        case c => Debug.info("[key] " + c)
+                        case c =>
+
+                            Debug.info("[key] " + c)
                     }
                 } else {
                     Debug.info("[key] " + c)
@@ -122,8 +126,14 @@ object Calibration extends GFX {
             rect(offsetX + displayWidth / 2 - 100, offsetY + displayHeight / 2 - 50, 200, 100)
 
             fill(0)
-            text("Size:   %d x %d".format(displayWidth, displayHeight),     offsetX + displayWidth / 2 - 50, offsetY + displayHeight / 2 - 10)
-            text("Offset: (%d, %d)".format(offsetX, offsetY), offsetX + displayWidth / 2 - 50, offsetY + displayHeight / 2 + 10)
+            text("Size:   %d x %d".format(displayWidth, displayHeight),   offsetX + displayWidth / 2 - 80, offsetY + displayHeight / 2 - 20)
+            text("Offset: (%d, %d)".format(offsetX, offsetY),             offsetX + displayWidth / 2 - 80, offsetY + displayHeight / 2)
+            text("Close object distance: %d".format(closeObjectDistance), offsetX + displayWidth / 2 - 80, offsetY + displayHeight / 2 + 20)
+
         }
     }
+
+    def calculateX(x: Double) = (offsetX + displayWidth * x).toInt
+
+    def calculateY(y: Double) = (offsetY + displayHeight * y).toInt
 }
