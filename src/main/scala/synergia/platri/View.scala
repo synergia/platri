@@ -23,13 +23,11 @@ object View extends PApplet {
     }
 
     override def setup {
-        // Debug.info(Config.WIDTH + " x " + Config.HEIGHT)
         size(400, 300, PConstants.P3D)
     }
 
     override def draw {
         background(51)
-        Debug.info("paplet draw")
         Manager.display
     }
 }

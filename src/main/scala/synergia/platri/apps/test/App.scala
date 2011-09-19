@@ -5,7 +5,7 @@ import TUIO._
 
 class TestObject(tobj: TuioObject) extends Object(tobj) with GFX {
     override def display {
-        Debug.info("display object")
+        super.display
         View.rect(30, 30, 55, 55)
     }
 }

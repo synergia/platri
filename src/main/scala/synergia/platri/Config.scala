@@ -1,11 +1,19 @@
 package synergia.platri
 
+object Props {
+    val * = new Properties("config.ini")
+}
+
 object Config {
-    var DEBUG = true
-    final val FULLSCREEN = Properties("fullscreen").toBoolean
+    import Props._
+
+    var DEBUG = *("debug") or true
+
+    final val FULLSCREEN = *("fullscreen") or false
     final val FPS = 60
-    final val width = Calibration.width
-    final val height = Calibration.height
+
+    def width = Calibration.width
+    def height = Calibration.height
 
     lazy val WIDTH = if(FULLSCREEN) View.width else width
     lazy val HEIGHT = if(FULLSCREEN) View.height else height
@@ -17,13 +25,15 @@ object Config {
 }
 
 object Calibration extends GFX {
-    var offsetX = Properties("calibration.offsetX").toInt
-    var offsetY = Properties("calibration.offsetY").toInt
-    var width   = Properties("calibration.width").toInt
-    var height  = Properties("calibration.height").toInt
-    var closeObjectDistance  = Properties("calibration.closeObjectDistance").toInt
+    import Props._
 
-    var enabled = false
+    var offsetX = *("calibration.offsetX") or 0
+    var offsetY = *("calibration.offsetY") or 0
+    var width   = *("calibration.width") or 400
+    var height  = *("calibration.height") or 300
+    var closeObjectDistance  = *("calibration.closeObjectDistance") or 100
+
+    var enabled = *("calibration.enabled") or true
 
     def toggle { enabled = !enabled }
 
@@ -33,49 +43,49 @@ object Calibration extends GFX {
                 // move
                 case 'i' =>
                     offsetY -= 1
-                    Properties("calibration.offsetY") = offsetY.toString
-                    Properties.save
+                    *("calibration.offsetY") = offsetY.toString
+                    *.save
                 case 'k' =>
                     offsetY += 1
-                    Properties("calibration.offsetY") = offsetY.toString
-                    Properties.save
+                    *("calibration.offsetY") = offsetY.toString
+                    *.save
                 case 'j' =>
                     offsetX -= 1
-                    Properties("calibration.offsetX") = offsetX.toString
-                    Properties.save
+                    *("calibration.offsetX") = offsetX.toString
+                    *.save
                 case 'l' =>
                     offsetX += 1
-                    Properties("calibration.offsetX") = offsetX.toString
-                    Properties.save
+                    *("calibration.offsetX") = offsetX.toString
+                    *.save
 
                 // resize
                 case 'w' =>
                     height -= 1
-                    Properties("calibration.height") = height.toString
-                    Properties.save
+                    *("calibration.height") = height.toString
+                    *.save
                 case 's' =>
                     height += 1
-                    Properties("calibration.height") = height.toString
-                    Properties.save
+                    *("calibration.height") = height.toString
+                    *.save
                 case 'a' =>
                     width -= 1
-                    Properties("calibration.width") = width.toString
-                    Properties.save
+                    *("calibration.width") = width.toString
+                    *.save
                 case 'd' =>
                     width += 1
-                    Properties("calibration.width") = width.toString
-                    Properties.save
+                    *("calibration.width") = width.toString
+                    *.save
 
                 // change close object distance
                 case ']' =>
                     closeObjectDistance += 1
-                    Properties("calibration.closeObjectDistance") = closeObjectDistance.toString
-                    Properties.save
+                    *("calibration.closeObjectDistance") = closeObjectDistance.toString
+                    *.save
 
                 case '[' =>
                     closeObjectDistance -= 1
-                    Properties("calibration.closeObjectDistance") = closeObjectDistance.toString
-                    Properties.save
+                    *("calibration.closeObjectDistance") = closeObjectDistance.toString
+                    *.save
 
 
                 case c => Debug.info("[key] " + c)

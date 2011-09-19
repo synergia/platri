@@ -26,8 +26,7 @@ object Manager extends TuioListener with GFX {
     }
 
     def display {
-        Debug.info("Manager.display")
-        // application.foreach(_.display(view))
+        application.foreach(_.display)
         (objects.values ++ cursors.values ++ connections).foreach(_.display)
     }
 
