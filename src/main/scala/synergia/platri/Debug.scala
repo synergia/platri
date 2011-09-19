@@ -33,7 +33,7 @@ object Debug extends GFX {
                 frameCount = 0
             }
 
-            View.fill(255)
+            View.fill(70)
             View.text(fpsStr, Calibration.calculateX(0.9), Calibration.calculateY(0.1))
         }
     }

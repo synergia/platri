@@ -8,7 +8,9 @@ trait GFX {
     def display
 }
 
-object View extends PApplet {
+object View extends View
+
+class View extends PApplet {
     {
         val frame = new JFrame("Test")
         frame.addWindowListener(new WindowAdapter(){
@@ -43,16 +45,22 @@ object View extends PApplet {
         size(1280, 768, JAVA2D)
         hint(ENABLE_NATIVE_FONTS)
         textFont(helvetica, 14)
+        smooth
     }
 
     override def draw {
-        background(51)
+        background(backgroudColor)
         Manager.display
     }
+
+    val backgroudColor = 51
+    def fillBackground = fill(backgroudColor)
 
     lazy val helvetica = loadFont("fonts/Helvetica-14.vlw")
 
     // utils
+
+    def apply(f: (View) => Unit) = f(this)
 
     def matrix(f: => Unit){
         pushMatrix

@@ -3,11 +3,12 @@ package synergia.platri.apps.test
 import synergia.platri._
 import TUIO._
 
+
 class TestObject(tobj: TuioObject) extends Object(tobj) with GFX {
-    override def display {
-        super.display
-        View.rect(30, 30, 55, 55)
-    }
+
+    override def onCloseAdded(obj: Object) = addConnection(new Connection(this, obj))
+
+    override def onCloseRemoved(obj: Object)  = removeConnection(obj)
 }
 
 object App extends Application {

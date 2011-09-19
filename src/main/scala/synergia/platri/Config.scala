@@ -19,7 +19,7 @@ object Config {
     lazy val HEIGHT = if(FULLSCREEN) View.height else height
     lazy val BASE_SIZE = width / 4
 
-    var CLOSE_OBJECT_DISTANCE = Calibration.closeObjectDistance
+    def CLOSE_OBJECT_DISTANCE = Calibration.closeObjectDistance
 
     def toggleDebug { DEBUG = !DEBUG }
 }
@@ -126,8 +126,10 @@ object Calibration extends GFX {
             rect(offsetX + displayWidth / 2 - 100, offsetY + displayHeight / 2 - 50, 200, 100)
 
             fill(0)
-            text("Size:   %d x %d".format(displayWidth, displayHeight),     offsetX + displayWidth / 2 - 50, offsetY + displayHeight / 2 - 10)
-            text("Offset: (%d, %d)".format(offsetX, offsetY), offsetX + displayWidth / 2 - 50, offsetY + displayHeight / 2 + 10)
+            text("Size:   %d x %d".format(displayWidth, displayHeight),   offsetX + displayWidth / 2 - 80, offsetY + displayHeight / 2 - 20)
+            text("Offset: (%d, %d)".format(offsetX, offsetY),             offsetX + displayWidth / 2 - 80, offsetY + displayHeight / 2)
+            text("Close object distance: %d".format(closeObjectDistance), offsetX + displayWidth / 2 - 80, offsetY + displayHeight / 2 + 20)
+
         }
     }
 
