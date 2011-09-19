@@ -1,5 +1,7 @@
 package synergia.platri
 
+import scala.collection.mutable.Map
+
 abstract class Loop(var timeout: Int) extends Thread {
     var keep = true
 
@@ -57,7 +59,7 @@ object Properties {
 
             val m: scala.collection.mutable.Map[String, String] = props
             Debug.info("Loaded properties file")
-            Some(m.toMap.withDefaultValue(""))
+            Some(Map.empty ++ m.toMap.withDefaultValue(""))
         }
         catch {
             case e: Exception =>

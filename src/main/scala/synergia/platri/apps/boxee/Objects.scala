@@ -6,9 +6,9 @@ import java.awt.event.KeyEvent._
 
 
 class SavedState[T](default: => T){
-    val storage = scala.collection.mutable.Map[Int, T]() withDefault default
+    val storage = scala.collection.mutable.Map[Int, T]() withDefaultValue default
 
-    def apply(id: Int) = storage(id)
+    def apply(id: Int): T = storage(id)
 
     def update(id: Int, data: T) { storage(id) = data }
 }

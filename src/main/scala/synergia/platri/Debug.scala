@@ -32,8 +32,8 @@ object Debug extends Helpers {
             frameCount = 0
         }
 
-        color("#fff")
-        text(Config.WIDTH-100, 60, fpsStr)
+        // color("#fff")
+        // text(Config.WIDTH-100, 60, fpsStr)
     }
 
 }

@@ -91,94 +91,94 @@ object Calibration extends Helpers {
     def display {
         val size = (100, 30)
 
-        matrix {
-            // corners
-            color("#3afdff")
-
-            // top left
-            translateAnd(offsetX, offsetY){
-                quad {
-                    // horizontal
-                    vec(0, 0)
-                    vec(0, size._2)
-                    vec(size._1, size._2)
-                    vec(size._1, 0)
-
-                    // vertical
-                    vec(0, 0)
-                    vec(0, size._1)
-                    vec(size._2, size._1)
-                    vec(size._2, 0)
-                }
-            }
-
-            // bottom left
-            translateAnd(offsetX, offsetY+height){
-                quad {
-                    // horizontal
-                    vec(0, 0)
-                    vec(0, -size._2)
-                    vec(size._1, -size._2)
-                    vec(size._1, 0)
-
-                    // vertical
-                    vec(0, 0)
-                    vec(0, -size._1)
-                    vec(size._2, -size._1)
-                    vec(size._2, 0)
-                }
-            }
-
-            // bottom right
-            translateAnd(offsetX+width, offsetY+height){
-                quad {
-                    // horizontal
-                    vec(0, 0)
-                    vec(0, -size._2)
-                    vec(-size._1, -size._2)
-                    vec(-size._1, 0)
-
-                    // vertical
-                    vec(0, 0)
-                    vec(0, -size._1)
-                    vec(-size._2, -size._1)
-                    vec(-size._2, 0)
-                }
-            }
-
-            // top right
-            translateAnd(offsetX+width, offsetY){
-                quad {
-                    // horizontal
-                    vec(0, 0)
-                    vec(0, size._2)
-                    vec(-size._1, size._2)
-                    vec(-size._1, 0)
-
-                    // vertical
-                    vec(0, 0)
-                    vec(0, size._1)
-                    vec(-size._2, size._1)
-                    vec(-size._2, 0)
-                }
-            }
-
-        }
-
-        // center window
-        matrix {
-            translate(offsetX + width / 2, offsetY + height / 2)
-            color("#3afdff")
-            quad {
-                vec(-100, -50)
-                vec(-100,  50)
-                vec( 100,  50)
-                vec( 100, -50)
-            }
-
-            color("#000")
-            text(-50, -20, "Size: %d x %d".format(width, height), false)
-            text(-50, 20, "Offset: (%d, %d)".format(offsetX, offsetY), false)
-        }
+        // matrix {
+        //     // corners
+        //     color("#3afdff")
+        //
+        //     // top left
+        //     translateAnd(offsetX, offsetY){
+        //         quad {
+        //             // horizontal
+        //             vec(0, 0)
+        //             vec(0, size._2)
+        //             vec(size._1, size._2)
+        //             vec(size._1, 0)
+        //
+        //             // vertical
+        //             vec(0, 0)
+        //             vec(0, size._1)
+        //             vec(size._2, size._1)
+        //             vec(size._2, 0)
+        //         }
+        //     }
+        //
+        //     // bottom left
+        //     translateAnd(offsetX, offsetY+height){
+        //         quad {
+        //             // horizontal
+        //             vec(0, 0)
+        //             vec(0, -size._2)
+        //             vec(size._1, -size._2)
+        //             vec(size._1, 0)
+        //
+        //             // vertical
+        //             vec(0, 0)
+        //             vec(0, -size._1)
+        //             vec(size._2, -size._1)
+        //             vec(size._2, 0)
+        //         }
+        //     }
+        //
+        //     // bottom right
+        //     translateAnd(offsetX+width, offsetY+height){
+        //         quad {
+        //             // horizontal
+        //             vec(0, 0)
+        //             vec(0, -size._2)
+        //             vec(-size._1, -size._2)
+        //             vec(-size._1, 0)
+        //
+        //             // vertical
+        //             vec(0, 0)
+        //             vec(0, -size._1)
+        //             vec(-size._2, -size._1)
+        //             vec(-size._2, 0)
+        //         }
+        //     }
+        //
+        //     // top right
+        //     translateAnd(offsetX+width, offsetY){
+        //         quad {
+        //             // horizontal
+        //             vec(0, 0)
+        //             vec(0, size._2)
+        //             vec(-size._1, size._2)
+        //             vec(-size._1, 0)
+        //
+        //             // vertical
+        //             vec(0, 0)
+        //             vec(0, size._1)
+        //             vec(-size._2, size._1)
+        //             vec(-size._2, 0)
+        //         }
+        //     }
+        //
+        // }
+        //
+        // // center window
+        // matrix {
+        //     translate(offsetX + width / 2, offsetY + height / 2)
+        //     color("#3afdff")
+        //     quad {
+        //         vec(-100, -50)
+        //         vec(-100,  50)
+        //         vec( 100,  50)
+        //         vec( 100, -50)
+        //     }
+        //
+        //     color("#000")
+        //     text(-50, -20, "Size: %d x %d".format(width, height), false)
+        //     text(-50, 20, "Offset: (%d, %d)".format(offsetX, offsetY), false)
+        // }
     }
 }

@@ -8,7 +8,7 @@ object App extends Application {
         case 112 => new UpDown(tobj)
         case 113 => new PlayPause(tobj)
         case 116 => new LeftRight(tobj)
-        case _ => new Fader(tobj, Textures.Green)
+        case _ => new LeftRight(tobj)
     }
 
     override def start {
@@ -20,8 +20,8 @@ object App extends Application {
     }
 
     override def display {
-        Textures
-        clear("#eee")
+        // Textures
+        // clear("#eee")
         // Textures.Background.bind
         // matrix {
             // alpha(1)
