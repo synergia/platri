@@ -16,7 +16,7 @@ trait Node extends GFX {
     def source: TuioContainer
     def display {
         if(Config.DEBUG){
-            Debug.debug("Node %s (%d,%d)".format(this.toString, x, y))
+            // Debug.debug("Node %s (%d,%d)".format(this.toString, x, y))
             // text(x, y, "%s(%d)".format(this.getClass.getName, sid))
         }
     }

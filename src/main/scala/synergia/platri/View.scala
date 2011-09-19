@@ -16,19 +16,48 @@ object View extends PApplet {
                 System.exit(0)
             }
         })
+
+        // def keyReleased(event: KeyEvent) {}
+        //
+        // def keyPressed(event: KeyEvent) {}
+        //
+        // def keyTyped(event: KeyEvent) {
+        //     event.getKeyChar
+        // }
+
         frame.getContentPane.add(this)
         init
         frame.pack
         frame.setVisible(true)
     }
 
+    override def keyPressed {
+        key match {
+            case 'x' => Config.toggleDebug
+            case c => Calibration.key(c)
+        }
+    }
+
     override def setup {
-        size(400, 300, PConstants.P3D)
+        import PConstants._
+        size(400, 300, JAVA2D)
+        hint(ENABLE_NATIVE_FONTS)
+        textFont(helvetica, 14)
     }
 
     override def draw {
         background(51)
         Manager.display
+    }
+
+    lazy val helvetica = loadFont("Helvetica-14.vlw")
+
+    // utils
+
+    def matrix(f: => Unit){
+        pushMatrix
+        f
+        popMatrix
     }
 }
 

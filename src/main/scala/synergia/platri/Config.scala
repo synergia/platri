@@ -12,8 +12,8 @@ object Config {
     final val FULLSCREEN = *("fullscreen") or false
     final val FPS = 60
 
-    def width = Calibration.width
-    def height = Calibration.height
+    def width = Calibration.displayWidth
+    def height = Calibration.displayHeight
 
     lazy val WIDTH = if(FULLSCREEN) View.width else width
     lazy val HEIGHT = if(FULLSCREEN) View.height else height
@@ -29,8 +29,8 @@ object Calibration extends GFX {
 
     var offsetX = *("calibration.offsetX") or 0
     var offsetY = *("calibration.offsetY") or 0
-    var width   = *("calibration.width") or 400
-    var height  = *("calibration.height") or 300
+    var displayWidth   = *("calibration.displayWidth") or 400
+    var displayHeight  = *("calibration.displayHeight") or 300
     var closeObjectDistance  = *("calibration.closeObjectDistance") or 100
 
     var enabled = *("calibration.enabled") or true
@@ -38,157 +38,92 @@ object Calibration extends GFX {
     def toggle { enabled = !enabled }
 
     def key(ch: Char) {
-        if(enabled){
-            ch match {
-                // move
-                case 'i' =>
-                    offsetY -= 1
-                    *("calibration.offsetY") = offsetY.toString
-                    *.save
-                case 'k' =>
-                    offsetY += 1
-                    *("calibration.offsetY") = offsetY.toString
-                    *.save
-                case 'j' =>
-                    offsetX -= 1
-                    *("calibration.offsetX") = offsetX.toString
-                    *.save
-                case 'l' =>
-                    offsetX += 1
-                    *("calibration.offsetX") = offsetX.toString
-                    *.save
-
-                // resize
-                case 'w' =>
-                    height -= 1
-                    *("calibration.height") = height.toString
-                    *.save
-                case 's' =>
-                    height += 1
-                    *("calibration.height") = height.toString
-                    *.save
-                case 'a' =>
-                    width -= 1
-                    *("calibration.width") = width.toString
-                    *.save
-                case 'd' =>
-                    width += 1
-                    *("calibration.width") = width.toString
-                    *.save
-
-                // change close object distance
-                case ']' =>
-                    closeObjectDistance += 1
-                    *("calibration.closeObjectDistance") = closeObjectDistance.toString
-                    *.save
-
-                case '[' =>
-                    closeObjectDistance -= 1
-                    *("calibration.closeObjectDistance") = closeObjectDistance.toString
-                    *.save
-
-
-                case c => Debug.info("[key] " + c)
-            }
-        }
-
         ch match {
             case 'c' => toggle
-            case c => Debug.info("[key] " + c)
+            case c =>
+                if(enabled){
+                    ch match {
+                        // move
+                        case 'i' =>
+                            offsetY -= 1
+                            *("calibration.offsetY") = offsetY
+                            *.save
+                        case 'k' =>
+                            offsetY += 1
+                            *("calibration.offsetY") = offsetY
+                            *.save
+                        case 'j' =>
+                            offsetX -= 1
+                            *("calibration.offsetX") = offsetX
+                            *.save
+                        case 'l' =>
+                            offsetX += 1
+                            *("calibration.offsetX") = offsetX
+                            *.save
+
+                        // resize
+                        case 'w' =>
+                            displayHeight -= 1
+                            *("calibration.displayHeight") = displayHeight
+                            *.save
+                        case 's' =>
+                            displayHeight += 1
+                            *("calibration.displayHeight") = displayHeight
+                            *.save
+                        case 'a' =>
+                            displayWidth -= 1
+                            *("calibration.displayWidth") = displayWidth
+                            *.save
+                        case 'd' =>
+                            displayWidth += 1
+                            *("calibration.displayWidth") = displayWidth
+                            *.save
+
+                        // change close object distance
+                        case ']' =>
+                            closeObjectDistance += 1
+                            *("calibration.closeObjectDistance") = closeObjectDistance
+                            *.save
+
+                        case '[' =>
+                            closeObjectDistance -= 1
+                            *("calibration.closeObjectDistance") = closeObjectDistance
+                            *.save
+
+
+                        case c => Debug.info("[key] " + c)
+                    }
+                } else {
+                    Debug.info("[key] " + c)
+                }
         }
     }
 
     def display {
-        val size = (100, 30)
+        if(enabled){
+            import View._
 
-        // matrix {
-        //     // corners
-        //     color("#3afdff")
-        //
-        //     // top left
-        //     translateAnd(offsetX, offsetY){
-        //         quad {
-        //             // horizontal
-        //             vec(0, 0)
-        //             vec(0, size._2)
-        //             vec(size._1, size._2)
-        //             vec(size._1, 0)
-        //
-        //             // vertical
-        //             vec(0, 0)
-        //             vec(0, size._1)
-        //             vec(size._2, size._1)
-        //             vec(size._2, 0)
-        //         }
-        //     }
-        //
-        //     // bottom left
-        //     translateAnd(offsetX, offsetY+height){
-        //         quad {
-        //             // horizontal
-        //             vec(0, 0)
-        //             vec(0, -size._2)
-        //             vec(size._1, -size._2)
-        //             vec(size._1, 0)
-        //
-        //             // vertical
-        //             vec(0, 0)
-        //             vec(0, -size._1)
-        //             vec(size._2, -size._1)
-        //             vec(size._2, 0)
-        //         }
-        //     }
-        //
-        //     // bottom right
-        //     translateAnd(offsetX+width, offsetY+height){
-        //         quad {
-        //             // horizontal
-        //             vec(0, 0)
-        //             vec(0, -size._2)
-        //             vec(-size._1, -size._2)
-        //             vec(-size._1, 0)
-        //
-        //             // vertical
-        //             vec(0, 0)
-        //             vec(0, -size._1)
-        //             vec(-size._2, -size._1)
-        //             vec(-size._2, 0)
-        //         }
-        //     }
-        //
-        //     // top right
-        //     translateAnd(offsetX+width, offsetY){
-        //         quad {
-        //             // horizontal
-        //             vec(0, 0)
-        //             vec(0, size._2)
-        //             vec(-size._1, size._2)
-        //             vec(-size._1, 0)
-        //
-        //             // vertical
-        //             vec(0, 0)
-        //             vec(0, size._1)
-        //             vec(-size._2, size._1)
-        //             vec(-size._2, 0)
-        //         }
-        //     }
-        //
-        // }
-        //
-        // // center window
-        // matrix {
-        //     translate(offsetX + width / 2, offsetY + height / 2)
-        //     color("#3afdff")
-        //     quad {
-        //         vec(-100, -50)
-        //         vec(-100,  50)
-        //         vec( 100,  50)
-        //         vec( 100, -50)
-        //     }
-        //
-        //     color("#000")
-        //     text(-50, -20, "Size: %d x %d".format(width, height), false)
-        //     text(-50, 20, "Offset: (%d, %d)".format(offsetX, offsetY), false)
-        // }
+            val w = 100
+            val h = 30
+
+            fill(58, 253, 255)
+            noStroke
+
+            rect(offsetX, offsetY, w, h)
+            rect(offsetX, offsetY, h, w)
+            rect(offsetX+displayWidth-w, offsetY, w, h)
+            rect(offsetX+displayWidth-h, offsetY, h, w)
+            rect(offsetX, offsetY+displayHeight-h, w, h)
+            rect(offsetX, offsetY+displayHeight-w, h, w)
+            rect(offsetX+displayWidth-w, offsetY+displayHeight-h, w, h)
+            rect(offsetX+displayWidth-h, offsetY+displayHeight-w, h, w)
+
+
+            rect(offsetX + displayWidth / 2 - 100, offsetY + displayHeight / 2 - 50, 200, 100)
+
+            fill(0)
+            text("Size:   %d x %d".format(displayWidth, displayHeight),     offsetX + displayWidth / 2 - 50, offsetY + displayHeight / 2 - 10)
+            text("Offset: (%d, %d)".format(offsetX, offsetY), offsetX + displayWidth / 2 - 50, offsetY + displayHeight / 2 + 10)
+        }
     }
 }
