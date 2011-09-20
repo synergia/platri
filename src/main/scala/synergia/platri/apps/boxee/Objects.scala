@@ -17,6 +17,20 @@ class SavedState[T](default: => T){
 object SavedPrevCurr extends SavedState[(Double, Double)]((0.0, 0.0))
 
 
+class Splash(tobj: TuioObject) extends Object(tobj) with Loops {
+    var doDisplay = true
+    override def display {
+        if(doDisplay){
+            // TODO: wieczorek
+        }
+
+        timeout(1000){
+            // remove
+            doDisplay = false
+        }
+    }
+}
+
 class StepFader(tobj: TuioObject, left: Int, right: Int, diff: Int = 20) extends Object(tobj) with Loops {
     object Step extends Enumeration {
         val None, Left, Right = Value
@@ -156,7 +170,7 @@ class UpDown(tobj: TuioObject) extends StepFader(tobj, VK_UP, VK_DOWN){
             case o: LeftRight =>
                 Debug.info("ENTER ON")
                 SystemEvents keyPress VK_ENTER
-                addConnection(newConnection(this, o))
+                // addConnection(newConnection(this, o))
             case _ =>
         }
     }
@@ -167,7 +181,7 @@ class UpDown(tobj: TuioObject) extends StepFader(tobj, VK_UP, VK_DOWN){
             case o: LeftRight =>
                 Debug.info("ENTER OFF")
                 SystemEvents keyRelease VK_ENTER
-                removeConnection(o)
+                // removeConnection(o)
             case _ =>
         }
     }

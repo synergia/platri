@@ -17,6 +17,7 @@ object App extends Application {
         case 113 | 0 => new UpDown(tobj)
         case 114 | 1 => new LeftRight(tobj)
         case 115 | 2 => new PlayPause(tobj)
+        case 111 => new Splash(tobj)
         case _ => new Object(tobj)
     }
 

@@ -31,7 +31,7 @@ object Manager extends TuioListener with GFX {
         Calibration.display
         Debug.display
         application.foreach(_.display)
-        (graphics ++ connections ++ objects.values ++ cursors.values ++ tobj).foreach(_.display)
+        (graphics ++ connections ++ objects.values ++ cursors.values ++ topGraphics).foreach(_.display)
     }
 
     def removeConnection(from: Object, to: Object){
