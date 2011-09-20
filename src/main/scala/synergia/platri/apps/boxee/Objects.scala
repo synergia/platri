@@ -96,15 +96,15 @@ class LeftRight(tobj: TuioObject) extends StepFader(tobj, VK_LEFT, VK_RIGHT){
         // left
         View.pushMatrix
         View.rotate((Math.Pi / 2).toFloat)
-        View.image(off, 3*x, -5*x)
-        if(step == Step.Left) View.image(on, 3*x, -5*x)
+        View.image(off, 3*x, (-3.5*x).toFloat)
+        if(step == Step.Left) View.image(on, 3*x, (-3.5*x).toFloat)
         View.popMatrix
 
         // right
         View.pushMatrix
         View.rotate(( Math.Pi *3 /2).toFloat)
-        View.image(off, -4*x, 6*x)
-        if(step == Step.Right) View.image(on, -4*x, 6*x)
+        View.image(off, -4*x, (4.5*x).toFloat)
+        if(step == Step.Right) View.image(on, -4*x, (4.5*x).toFloat)
         View.popMatrix
     }
 }
@@ -195,14 +195,14 @@ class UpDown(tobj: TuioObject) extends StepFader(tobj, VK_UP, VK_DOWN){
         val x = off.width
 
         // down
-        View.image(off, 5*x, 3*x)
-        if(step == Step.Right) View.image(on, 5*x, 3*x)
+        View.image(off, (3.5*x).toFloat, 3*x)
+        if(step == Step.Right) View.image(on, (3.5*x).toFloat, 3*x)
 
         // up
         View.pushMatrix
         View.rotate((Math.Pi).toFloat)
-        View.image(off, -6*x, -3*x)
-        if(step == Step.Left) View.image(on, -6*x, -3*x)
+        View.image(off, (-4.5*x).toFloat, -3*x)
+        if(step == Step.Left) View.image(on, (-4.5*x).toFloat, -3*x)
         View.popMatrix
     }
 }
