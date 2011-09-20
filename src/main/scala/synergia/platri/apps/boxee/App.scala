@@ -7,6 +7,7 @@ import processing.core._
 object Images {
     val off = View.loadImage("off.png")
     val on = View.loadImage("on.png")
+    val logo = View.loadImage("synergia.png");
 }
 
 object App extends Application {
@@ -28,25 +29,27 @@ object App extends Application {
     }
 
     override def display {
+        View.tint(255,255)
+        View.image(logo,10,100)
         val x = off.width
         View.pushMatrix
-        View.tint(255,0);
+        View.tint(255,0)
 
-        View.image(off,x,x)
+        View.image(off, x, 3*x) //down
 
         View.pushMatrix
         View.rotate((Math.Pi / 2).toFloat)
-        View.image(off, x, -x)
+        View.image(off, 3*x, -x) //left
         View.popMatrix
 
         View.pushMatrix
         View.rotate((Math.Pi).toFloat)
-        View.image(off, -2*x, -x)
+        View.image(off, -2*x, -3*x)  //up
         View.popMatrix
 
         View.pushMatrix
         View.rotate(( Math.Pi *3 /2).toFloat)
-        View.image(off, -2*x, 2*x)
+        View.image(off, -4*x, 2*x) //right
         View.popMatrix
 
         View.popMatrix
