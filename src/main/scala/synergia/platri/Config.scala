@@ -32,6 +32,7 @@ object Calibration extends GFX {
     var displayWidth   = *("calibration.displayWidth") or 400
     var displayHeight  = *("calibration.displayHeight") or 300
     var closeObjectDistance  = *("calibration.closeObjectDistance") or 100
+    var backgroundColor = *("calibration.backgroundColor") or 130
 
     var enabled = *("calibration.enabled") or true
 
@@ -42,6 +43,20 @@ object Calibration extends GFX {
 
         ch match {
             case 'c' => toggle
+
+            // change backgroud color
+            case '1' =>
+                backgroundColor -= 10
+                backgroundColor = math.max(0, math.min(backgroundColor, 255))
+                *("calibration.backgroundColor") = backgroundColor
+                *.save
+
+            case '2' =>
+                backgroundColor += 10
+                backgroundColor = math.max(0, math.min(backgroundColor, 255))
+                *("calibration.backgroundColor") = backgroundColor
+                *.save
+
             case c =>
                 if(enabled){
                     ch.toLowerCase match {

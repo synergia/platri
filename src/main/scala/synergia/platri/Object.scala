@@ -18,7 +18,7 @@ class Object(val source: TuioObject) extends Node with Events {
     override def display {
         super.display
         if(Config.DEBUG) {
-            View.fill(70)
+            View.fill(Calibration.backgroundColor-10)
             View.ellipse(x, y, 100, 100)
             View.fillBackground
             View.ellipse(x, y, 80, 80)

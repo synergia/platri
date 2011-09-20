@@ -49,12 +49,12 @@ class View extends PApplet {
     }
 
     override def draw {
-        background(backgroudColor)
+        background(backgroundColor)
         Manager.display
     }
 
-    val backgroudColor = 51
-    def fillBackground = fill(backgroudColor)
+    def backgroundColor = Calibration.backgroundColor
+    def fillBackground = fill(backgroundColor)
 
     lazy val helvetica = loadFont("fonts/Helvetica-14.vlw")
 

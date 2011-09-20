@@ -25,5 +25,15 @@ class FuncLoop(timeout: Int, func: () => Unit) extends Loop(timeout) {
 
 trait Loops {
     def loop(timeout: Int)(f: => Unit) = new FuncLoop(timeout, f _)
+
+    def timeout(time: Int)(f: => Unit){
+        val thread = new Thread {
+            override def run {
+                Thread.sleep(time)
+                f
+            }
+        }
+        thread.start
+    }
 }
 
