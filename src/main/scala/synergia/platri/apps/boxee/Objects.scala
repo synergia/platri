@@ -101,12 +101,62 @@ class UpDown(tobj: TuioObject) extends StepFader(tobj, VK_UP, VK_DOWN){
         SystemEvents keyStroke VK_ESCAPE
     }
 
+    def newConnection(a: Object, b: Object) = new Connection(a, b) with Loops {
+        var r = 0
+
+        override def display {
+            View.stroke(70)
+            View.strokeWeight(2)
+            View.line(from.x, from.y, to.x, to.y)
+            View.noStroke
+        }
+
+        override def onRemoved {
+            super.onRemoved
+
+            Manager.graphics += new GFX {
+                var r = 0
+                val x1 = math.abs(from.x + (to.x - from.x) / 2)
+                val y1 = math.abs(from.y + (to.y - to.y) / 2)
+
+                val gf = this
+
+                val t = new Thread {
+                    var x = 0
+                    override def run {
+                        Debug.debug("CondLoop run")
+                        while(x < 400){
+                            x += 15
+                            Debug.debug("CondLoop loop")
+                            r = x
+                            Thread.sleep(20)
+                        }
+
+                        Manager.graphics -= gf
+                    }
+                }
+                t.start
+
+                def display {
+                    if(r > 0){
+                        Debug.info("connection display")
+                        View.fill(Calibration.backgroundColor-20)
+                        View.ellipse(x1, y1, r, r)
+                        View.fillBackground
+                        View.ellipse(x1, y1, r-10, r-10)
+                    }
+                }
+            }
+        }
+    }
+
     override def onCloseAdded(obj: Object) {
         super.onCloseAdded(obj)
         obj match {
             case o: LeftRight =>
                 Debug.info("ENTER ON")
                 SystemEvents keyPress VK_ENTER
+                addConnection(newConnection(this, o))
             case _ =>
         }
     }
@@ -117,6 +167,7 @@ class UpDown(tobj: TuioObject) extends StepFader(tobj, VK_UP, VK_DOWN){
             case o: LeftRight =>
                 Debug.info("ENTER OFF")
                 SystemEvents keyRelease VK_ENTER
+                removeConnection(o)
             case _ =>
         }
     }

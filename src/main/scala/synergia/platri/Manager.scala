@@ -15,6 +15,8 @@ object Manager extends TuioListener with GFX {
     val objects = new HashMap[TuioObject, Object]
     val cursors = new HashMap[TuioCursor, Cursor]
     val connections = new ListBuffer[Connection]
+    val graphics = new ListBuffer[GFX]
+    val topGraphics = new ListBuffer[GFX]
 
     def run(app: Application){
         application = Some(app)
@@ -29,11 +31,14 @@ object Manager extends TuioListener with GFX {
         Calibration.display
         Debug.display
         application.foreach(_.display)
-        (objects.values ++ cursors.values ++ connections).foreach(_.display)
+        (graphics ++ connections ++ objects.values ++ cursors.values ++ tobj).foreach(_.display)
     }
 
     def removeConnection(from: Object, to: Object){
-        connections.filter(_.check(from, to)).foreach( connections -= _ )
+        connections.filter(_.check(from, to)).foreach { conn =>
+            conn.onRemoved
+            connections -= conn
+        }
     }
 
     def addTuioObject(tobj: TuioObject) {

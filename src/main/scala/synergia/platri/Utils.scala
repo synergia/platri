@@ -19,12 +19,26 @@ abstract class Loop(var timeout: Int) extends Thread {
     def tick
 }
 
+class CondLoop(var timeout: Int, cond: () => Boolean, f: => Unit) extends Thread {
+    start
+
+    override def run {
+        Debug.debug("CondLoop run")
+        while(cond()){
+            Debug.debug("CondLoop loop")
+            f
+            Thread.sleep(timeout)
+        }
+    }
+}
+
 class FuncLoop(timeout: Int, func: () => Unit) extends Loop(timeout) {
     def tick = func()
 }
 
 trait Loops {
     def loop(timeout: Int)(f: => Unit) = new FuncLoop(timeout, f _)
+    def condLoop(timeout: Int, cond: () => Boolean)(f: => Unit) = new CondLoop(timeout, cond, f _)
 
     def timeout(time: Int)(f: => Unit){
         val thread = new Thread {
