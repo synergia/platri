@@ -18,15 +18,21 @@ object SavedPrevCurr extends SavedState[(Double, Double)]((0.0, 0.0))
 
 
 class Splash(tobj: TuioObject) extends Object(tobj) with Loops {
-    var doDisplay = true
-    override def display {
-        if(doDisplay){
-            // TODO: wieczorek
+    Manager.topGraphics += new GFX with Loops {
+        var syn = true
+
+        def display {
+            View.tint(255,255)
+            if(syn) View.image(Images.synergia, 0, 0)
+            else View.image(Images.winko, 0, 0)
         }
 
-        timeout(1000){
-            // remove
-            doDisplay = false
+        timeout(5000){
+            syn = false
+
+            timeout(5000){
+                Manager.topGraphics -= this
+            }
         }
     }
 }

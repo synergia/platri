@@ -7,7 +7,10 @@ import processing.core._
 object Images {
     val off = View.loadImage("off.png")
     val on = View.loadImage("on.png")
-    val logo = View.loadImage("synergia.png");
+    val logo = View.loadImage("synergia.png")
+    val synergia = View.loadImage("synergia_logo.png")
+    val winko = View.loadImage("winko_logo.png")
+
 }
 
 object App extends Application {
@@ -17,7 +20,7 @@ object App extends Application {
         case 113 | 0 => new UpDown(tobj)
         case 114 | 1 => new LeftRight(tobj)
         case 115 | 2 => new PlayPause(tobj)
-        case 111 => new Splash(tobj)
+        case 111 | 4 => new Splash(tobj)
         case _ => new Object(tobj)
     }
 
