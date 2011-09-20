@@ -129,15 +129,15 @@ class UpDown(tobj: TuioObject) extends StepFader(tobj, VK_UP, VK_DOWN){
 
         val x = off.width
 
-        // up
-        View.image(off, x, x)
-        if(step == Step.Left) View.image(on, x, x)
-
         // down
+        View.image(off, x, x)
+        if(step == Step.Right) View.image(on, x, x)
+
+        // up
         View.pushMatrix
         View.rotate((Math.Pi).toFloat)
         View.image(off, -2*x, -x)
-        if(step == Step.Right) View.image(on, -2*x, -x)
+        if(step == Step.Left) View.image(on, -2*x, -x)
         View.popMatrix
     }
 }
