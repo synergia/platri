@@ -35,26 +35,26 @@ object App extends Application {
     override def display {
         val x = off.width
         View.tint(255,255)
-        View.image(logo,(2.5*x).toFloat,100)
-        
+        View.image(logo,0.5f*x,100)
+
         View.pushMatrix
         View.tint(255,0)
 
-        View.image(off, (3.5*x).toFloat, 3*x) //down
+        View.image(off, 1.5f*x, 3*x) //down
 
         View.pushMatrix
         View.rotate((Math.Pi / 2).toFloat)
-        View.image(off, 3*x, (-3.5*x).toFloat) //left
+        View.image(off, 3*x, (-1.5*x).toFloat) //left
         View.popMatrix
 
         View.pushMatrix
         View.rotate((Math.Pi).toFloat)
-        View.image(off, (-4.5*x).toFloat, -3*x)  //up
+        View.image(off, (-2.5*x).toFloat, -3*x)  //up
         View.popMatrix
 
         View.pushMatrix
         View.rotate(( Math.Pi *3 /2).toFloat)
-        View.image(off, -4*x, (4.5*x).toFloat) //right
+        View.image(off, -4*x, (2.5*x).toFloat) //right
         View.popMatrix
 
         View.popMatrix

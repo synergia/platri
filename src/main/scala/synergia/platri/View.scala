@@ -34,15 +34,22 @@ class View extends PApplet {
     }
 
     override def keyTyped {
-        key match {
-            case 'x' => Config.toggleDebug
-            case c => Calibration.key(c)
+        Debug.info("keyTyped: " + key)
+        try {
+            key match {
+                case 'x' => Config.toggleDebug
+                case c => Calibration.key(c)
+            }
+        } catch {
+            case ex =>
+                println("Ex: " + ex)
+                ex.printStackTrace()
         }
     }
 
     override def setup {
         import PConstants._
-        size(1280, 768, JAVA2D)
+        size(400, 300, JAVA2D)
         hint(ENABLE_NATIVE_FONTS)
         textFont(helvetica, 14)
         smooth

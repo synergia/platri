@@ -8,6 +8,7 @@ object Config {
     import Props._
 
     var DEBUG = *("debug") or true
+    var EV = *("ev") or false
 
     final val FULLSCREEN = *("fullscreen") or false
     final val FPS = 60
@@ -22,6 +23,8 @@ object Config {
     def CLOSE_OBJECT_DISTANCE = Calibration.closeObjectDistance
 
     def toggleDebug { DEBUG = !DEBUG }
+
+    def toggleEv { EV = !EV }
 }
 
 object Calibration extends GFX {
@@ -43,6 +46,8 @@ object Calibration extends GFX {
 
         ch match {
             case 'c' => toggle
+
+            case 'q' => Config.toggleEv
 
             // change backgroud color
             case '1' =>
